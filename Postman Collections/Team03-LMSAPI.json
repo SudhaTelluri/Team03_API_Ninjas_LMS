@@ -135,8 +135,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": 3,\r\n  \"batchName\": \"Java Basics Batch\",\r\n  \"batchDescription\": \"Introduction to Java programming covering fundamentals and basic concepts.\",\r\n  \"batchStatus\": \"Active\",\r\n  \"batchNoOfClasses\": 20,\r\n  \"programId\": 16733,\r\n  \"programName\": \"Java Development Program\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
 					},
 					"response": []
 				}
