@@ -7,7 +7,20 @@
 	"item": [
 		{
 			"name": "Login",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "51022c25-2583-4424-a087-51c627591440",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "7e4608fb-b709-43eb-b667-95a6467e2e0d"
 		},
 		{
@@ -43,8 +56,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": 8444,\r\n  \"classComments\": \"Java Opps\",\r\n  \"classDate\": \"2024-07-09\",\r\n  \"classDescription\": \"Java topics going on\",\r\n  \"classNo\": 2,\r\n  \"classNotes\": \"Java\",\r\n  \"classRecordingPath\": \"C:\\\\Recordings\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"super keywords\",\r\n  \"classScheduledDates\": [\r\n    \"2024-07-09T15:11:08.750Z\",\r\n    \"2024-07-10T15:11:08.750Z\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/CreateClassSchedule"
 					},
 					"response": []
 				}
