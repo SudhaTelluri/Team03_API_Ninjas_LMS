@@ -9,7 +9,7 @@
 			"name": "Login",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "User Login",
 					"id": "51022c25-2583-4424-a087-51c627591440",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -19,14 +19,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userLoginEmailId\": {{username}},\r\n  \"password\": {{password}}\r\n}",
+							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseURL}}/login"
+						"url": "{{baseUrl}}/login"
 					},
 					"response": []
 				}
