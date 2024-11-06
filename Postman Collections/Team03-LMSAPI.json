@@ -92,7 +92,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkzMDg5NCwiZXhwIjoxNzMwOTU5Njk0fQ.h8uZwLp-98sHSEvOWepOZy29hz2uRcf2UsVj_OW7NWd8F71DV1226eohgWXsBbcMa2mB4YhkXuHTdDKVTXBRlw"
+								"token": "{{token}}"
 							}
 						},
 						"method": "POST",
@@ -106,7 +106,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/saveprogram"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
 					},
 					"response": []
 				},
