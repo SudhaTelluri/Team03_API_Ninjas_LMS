@@ -37,7 +37,7 @@
 			"name": "Program",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "create program",
 					"id": "a919e933-1a08-4aa9-9f51-0d33606a1946",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
