@@ -38,13 +38,47 @@
 			"item": [
 				{
 					"name": "create program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ae6ade1-4c75-441b-806f-ab551968a803",
+								"exec": [
+									"const utilityPkg = pm.require('@team03lmsapi/utility-pkg');\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {
+									"@team03lmsapi/utility-pkg": {
+										"id": "0192ff11-ef23-7186-96cb-b4d0992c81db"
+									}
+								}
+							}
+						}
+					],
 					"id": "a919e933-1a08-4aa9-9f51-0d33606a1946",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programId\": Team03,\r\n  \"programName\": \"API Ninjas\",\r\n  \"programDescription\": \"Comprehensive program on API testing and development.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T20:15:49.574Z\",\r\n  \"lastModTime\": \"2024-11-06T20:15:49.574Z\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/saveprogram"
 					},
 					"response": []
 				}
