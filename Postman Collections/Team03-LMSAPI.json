@@ -64,7 +64,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDM5NSwiZXhwIjoxNzMwOTUzMTk1fQ.WTeHciEre-LGgWEU4B5yg42fJnXlGUDmAXwlAmb7nd0t7YDB749cXv9BctgbXbn7fH91TIzXf12Q0vsQ3xbZng\""
 							}
 						},
 						"method": "POST",
