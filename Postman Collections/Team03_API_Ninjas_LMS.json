@@ -64,14 +64,14 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDYzNCwiZXhwIjoxNzMwOTUzNDM0fQ.6BAopkwQ99V0MyQRquzjFBi6Uq9qBu1mG6yI-rryIS1nyZUJwuI9PhXxVu9y8EEmJTxlQpqxrdbHhpqEjrVMYA\""
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDkyOSwiZXhwIjoxNzMwOTUzNzI5fQ.cwpRj6LosxrxwbrEnnByQTTuAS2xtOmGRVVjdqUZH8aAj2Acj4EZcd0QX3-JSxZHLozGYtnw2fUW7ZlUnUsBdA"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programId\": Team,\r\n  \"programName\": \"API Ninjas\",\r\n  \"programDescription\": \"Comprehensive program on API testing and development.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T20:15:49.574Z\",\r\n  \"lastModTime\": \"2024-11-06T20:15:49.574Z\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"API development and testing\",\r\n  \"programName\": \"API Mastery Program\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
