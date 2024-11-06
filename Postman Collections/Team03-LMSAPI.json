@@ -71,7 +71,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"API development and testing\",\r\n  \"programName\": \"API Mastery Program\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"API development and testing\",\r\n  \"programName\": \"Program\",\r\n  \"programStatus\": \"Active\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
