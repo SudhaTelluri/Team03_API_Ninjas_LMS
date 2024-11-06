@@ -64,21 +64,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDM5NSwiZXhwIjoxNzMwOTUzMTk1fQ.WTeHciEre-LGgWEU4B5yg42fJnXlGUDmAXwlAmb7nd0t7YDB749cXv9BctgbXbn7fH91TIzXf12Q0vsQ3xbZng\""
+								"token": "\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMDkyNDYzNCwiZXhwIjoxNzMwOTUzNDM0fQ.6BAopkwQ99V0MyQRquzjFBi6Uq9qBu1mG6yI-rryIS1nyZUJwuI9PhXxVu9y8EEmJTxlQpqxrdbHhpqEjrVMYA\""
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programId\": Team03,\r\n  \"programName\": \"API Ninjas\",\r\n  \"programDescription\": \"Comprehensive program on API testing and development.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T20:15:49.574Z\",\r\n  \"lastModTime\": \"2024-11-06T20:15:49.574Z\"\r\n}\r\n",
+							"raw": "{\r\n  \"programId\": Team,\r\n  \"programName\": \"API Ninjas\",\r\n  \"programDescription\": \"Comprehensive program on API testing and development.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T20:15:49.574Z\",\r\n  \"lastModTime\": \"2024-11-06T20:15:49.574Z\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseUrl}}/saveprogram"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
 					},
 					"response": []
 				}
