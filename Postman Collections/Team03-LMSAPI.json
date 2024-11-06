@@ -35,7 +35,20 @@
 		},
 		{
 			"name": "Class",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "107df9b8-d531-4906-9b77-8101a11417ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "92ba670a-f05d-4414-bea7-ff5fd0fb98f0"
 		},
 		{
