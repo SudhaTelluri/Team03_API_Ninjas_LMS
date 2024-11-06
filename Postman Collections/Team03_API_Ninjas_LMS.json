@@ -99,7 +99,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programId\": 101,\r\n  \"programName\": \"API-yncript\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T22:01:48.472Z\",\r\n  \"lastModTime\": \"2024-11-06T22:01:48.472Z\"\r\n}\r\n",
+							"raw": "{\r\n  \"programId\": 101,\r\n  \"programName\": \"API-Ninjas\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T22:01:48.472Z\",\r\n  \"lastModTime\": \"2024-11-06T22:01:48.472Z\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -127,7 +127,20 @@
 		},
 		{
 			"name": "Batch",
-			"item": [],
+			"item": [
+				{
+					"name": "Create New Batch",
+					"id": "ee5c3612-cf48-4e0a-8472-2d308affe305",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "8c0fb30a-fd51-4a34-83bd-f4ac6da1c23d"
 		},
 		{
