@@ -163,7 +163,7 @@
 			"name": "Class",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Create Class",
 					"id": "107df9b8-d531-4906-9b77-8101a11417ba",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -187,6 +187,25 @@
 							}
 						},
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/CreateClassSchedule"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Class List",
+					"id": "759bc2b3-33f9-43f2-a813-0784a727a834",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
 					},
 					"response": []
 				}
