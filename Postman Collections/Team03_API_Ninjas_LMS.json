@@ -99,7 +99,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programId\": 101,\r\n  \"programName\": \"API-incript\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T22:01:48.472Z\",\r\n  \"lastModTime\": \"2024-11-06T22:01:48.472Z\"\r\n}\r\n",
+							"raw": "{\r\n  \"programId\": 101,\r\n  \"programName\": \"API-yncript\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T22:01:48.472Z\",\r\n  \"lastModTime\": \"2024-11-06T22:01:48.472Z\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
