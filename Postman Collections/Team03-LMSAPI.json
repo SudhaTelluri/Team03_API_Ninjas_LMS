@@ -206,7 +206,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/delete by progid/{{programId}}"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{programName}"
 					},
 					"response": []
 				}
