@@ -154,14 +154,40 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get all Program",
 					"id": "fa28759d-1ffc-45c0-8ff9-2d0f2e9fc3f2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allPrograms"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Program with users",
+					"id": "2ff256fd-ec25-49e6-ac99-18eb284ff389",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "ttps://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
 					},
 					"response": []
 				}
@@ -250,7 +276,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": 234,\r\n  \"classComments\": \"Java Opps\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Java topics going on\",\r\n  \"classNo\": 2,\r\n  \"classNotes\": \"Java\",\r\n  \"classRecordingPath\": \"C:\\\\Recordings\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"superdeo\",\r\n  \"classScheduledDates\": [\r\n    \"2024-11-25T15:11:08.750Z\",\r\n    \"2024-12-25T15:11:08.750Z\"\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"batchId\": {{batchId}},\r\n  \"classComments\": \"Introduction to Java OOP concepts\",\r\n  \"classDate\": \"2024-12-01\",\r\n  \"classDescription\": \"Discussion on Object-Oriented Programming concepts in Java, covering inheritance and polymorphism.\",\r\n  \"classNo\": 2,\r\n  \"classNotes\": \"Focus on inheritance, polymorphism, and encapsulation.\",\r\n  \"classRecordingPath\": \"C:\\\\Recordings\\\\JavaOOPSession2.mp4\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"Super Keyword and Method Overriding\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-01T15:11:08.750Z\",\r\n    \"2024-12-02T15:11:08.750Z\"\r\n  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
