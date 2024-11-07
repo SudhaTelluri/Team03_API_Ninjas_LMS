@@ -73,6 +73,10 @@
 								"id": "7ae6ade1-4c75-441b-806f-ab551968a803",
 								"exec": [
 									"const utilityPkg = pm.require('@team03lmsapi/utility-pkg');\r",
+									"const responseBody = pm.response.json();\r",
+									"const programId = responseBody.programId;\r",
+									"pm.globals.set(\"programId\", programId);\r",
+									"//console.log(\"Auth Token set:\", pm.globals.get(\"authToken\"));\r",
 									""
 								],
 								"type": "text/javascript",
@@ -81,6 +85,13 @@
 										"id": "0192ff11-ef23-7186-96cb-b4d0992c81db"
 									}
 								}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -99,7 +110,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programId\": 101,\r\n  \"programName\": \"API-Ninjas\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\",\r\n  \"creationTime\": \"2024-11-06T22:01:48.472Z\",\r\n  \"lastModTime\": \"2024-11-06T22:01:48.472Z\"\r\n}\r\n",
+							"raw": "{\r\n  \r\n  \"programName\": \"API-Ninjas\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
