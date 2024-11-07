@@ -125,7 +125,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearertoken}}"
 							}
 						},
 						"method": "POST",
@@ -191,12 +191,31 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearertoken}}"
 							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{programName}"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{APINinjas}"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"id": "0f774259-9010-411b-9eee-ebc719ac3a2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{APINinjas}"
 					},
 					"response": []
 				}
