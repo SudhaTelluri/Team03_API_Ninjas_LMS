@@ -39,7 +39,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}//login"
+						"url": "{{baseUrl}}/login"
 					},
 					"response": []
 				}
