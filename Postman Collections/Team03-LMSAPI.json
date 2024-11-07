@@ -257,6 +257,25 @@
 						"url": "{{baseUrl}}/programs/{programId}"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"id": "a55cd1e5-81d9-4c46-b194-3b4e5bca1f4d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/programs/{programId}"
+					},
+					"response": []
 				}
 			],
 			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
