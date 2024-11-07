@@ -182,6 +182,19 @@
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
 					},
 					"response": []
+				},
+				{
+					"name": "Create New Batch Copy",
+					"id": "bad6b532-bad4-413c-9c4c-873dcbd62e52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+					},
+					"response": []
 				}
 			],
 			"id": "8c0fb30a-fd51-4a34-83bd-f4ac6da1c23d"
