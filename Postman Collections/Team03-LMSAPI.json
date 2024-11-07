@@ -268,7 +268,7 @@
 								"exec": [
 									"const teamName = \"APINinjas\"; // Base name of the team\r",
 									"const uniqueSuffix = Math.random().toString(36).substring(2, 6).toUpperCase(); // Generates 4 random letters\r",
-									"const newProgramName = `${teamName}-${uniqueSuffix}`; // e.g., EliteForce-XYZA\r",
+									"const newProgramName = `${teamName}-${uniqueSuffix}`;\r",
 									"\r",
 									"// Set new programName and any other parameters as environment variables\r",
 									"pm.environment.set(\"updatedprogramName\", newProgramName);\r",
@@ -307,14 +307,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogrmstatus}}\"\r\n}\r\n\r\n",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/programs/program/{{programName}}"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/program/{{programName}}"
 					},
 					"response": []
 				},
