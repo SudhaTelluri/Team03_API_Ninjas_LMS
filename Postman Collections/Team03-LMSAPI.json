@@ -10,6 +10,19 @@
 			"item": [
 				{
 					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
+								"exec": [
+									"console.log(pm.variables.get(\"baseUrl\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "51022c25-2583-4424-a087-51c627591440",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -26,7 +39,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/login"
+						"url": "{{baseUrl}}//login"
 					},
 					"response": []
 				}
