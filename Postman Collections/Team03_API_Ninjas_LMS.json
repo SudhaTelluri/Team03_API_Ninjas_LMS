@@ -122,8 +122,15 @@
 								"id": "fd022429-a8a3-4026-89c0-b811f4c3c4c9",
 								"exec": [
 									"const teamName = \"APINinjas\"; // Replace this with your actual team name\r",
-									"const uniqueSuffix = Math.floor(Math.random() * 10000); // Generate a unique suffix\r",
-									"const programName = `${teamName}${uniqueSuffix}`;"
+									"const uniqueSuffix = Math.random().toString(36).substring(2, 6).toUpperCase(); // Random four letters\r",
+									"\r",
+									"// Combine team name and suffix, with an optional hyphen if needed\r",
+									"const programName = `${teamName}-${uniqueSuffix}`; \r",
+									"const programStatus = \"Active\"; // or any other valid status\r",
+									"\r",
+									"// Set dynamic values as environment or global variables\r",
+									"pm.environment.set(\"programName\", programName);\r",
+									"pm.environment.set(\"programStatus\", programStatus);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -145,7 +152,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas\",\r\n  \"programDescription\": \"api program for sdet \",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}",
+							"raw": "{\r\n  \r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"api program for sdet dynamically generated \",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
