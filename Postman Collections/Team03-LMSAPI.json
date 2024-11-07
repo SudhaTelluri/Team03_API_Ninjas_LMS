@@ -398,6 +398,18 @@
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "e84c71cb-35cb-4823-9a8b-0b629d6288db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "8c0fb30a-fd51-4a34-83bd-f4ac6da1c23d"
