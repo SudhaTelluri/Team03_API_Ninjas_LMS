@@ -79,6 +79,23 @@
 			"item": [
 				{
 					"name": "create program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"var responseBody=pm.response.json();\r",
+									"var programId=responseBody.programId;\r",
+									"pm.globals.set(\"programId\",programId);\r",
+									"console.log(\"Program ID set as global variable: \" + programId);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "92d259e8-9ecc-440e-a58a-90ad962a8761",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
