@@ -317,6 +317,25 @@
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/programs/program/{{programName}}"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request Copy 2",
+					"id": "74b304d5-07e8-4b4e-98ac-ae1e92c9d620",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/putprogram/{{programId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
