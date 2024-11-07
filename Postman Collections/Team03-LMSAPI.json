@@ -153,7 +153,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearertoken}}"
 							}
 						},
 						"method": "GET",
@@ -215,7 +215,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{APINinjas}"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/delete by progid/{16740}"
 					},
 					"response": []
 				}
