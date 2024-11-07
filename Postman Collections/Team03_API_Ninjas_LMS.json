@@ -190,6 +190,25 @@
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "3b997467-4b7a-498f-a6ec-852ae653a118",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/delete by progid/{{programId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
