@@ -115,6 +115,19 @@
 									}
 								}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fd022429-a8a3-4026-89c0-b811f4c3c4c9",
+								"exec": [
+									"const teamName = \"APINinjas\"; // Replace this with your actual team name\r",
+									"const uniqueSuffix = Math.floor(Math.random() * 10000); // Generate a unique suffix\r",
+									"const programName = `${teamName}${uniqueSuffix}`;"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "92d259e8-9ecc-440e-a58a-90ad962a8761",
