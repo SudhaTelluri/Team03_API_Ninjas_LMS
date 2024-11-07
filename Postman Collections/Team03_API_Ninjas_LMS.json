@@ -173,7 +173,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"api program for sdet dynamically generated \",\r\n  \"programStatus\": \"{{programStatus2}}\"\r\n  \r\n}",
+							"raw": "{\r\n  \r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"api program for sdet dynamically generated \",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
