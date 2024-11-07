@@ -10,6 +10,23 @@
 			"item": [
 				{
 					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4129e294-541d-45c9-bc05-5b81272d38f9",
+								"exec": [
+									"const responseBody = pm.response.json();\r",
+									"const token = responseBody.token;\r",
+									"pm.globals.set(\"bearertoken\", token);\r",
+									"const userId = responseBody.userId;\r",
+									"pm.globals.set(\"userId\", userId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "51022c25-2583-4424-a087-51c627591440",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
