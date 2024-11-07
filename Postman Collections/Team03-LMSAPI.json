@@ -218,116 +218,10 @@
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogid/{16740}"
 					},
 					"response": []
-				}
-			],
-			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
-		},
-		{
-			"name": "Program Copy",
-			"item": [
-				{
-					"name": "create program",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1c340750-a5e8-4b14-befa-62d0495e2dcf",
-								"exec": [
-									"const utilityPkg = pm.require('@team03lmsapi/utility-pkg');\r",
-									"const responseBody = pm.response.json();\r",
-									"const programId = responseBody.programId;\r",
-									"pm.globals.set(\"programId\", programId);\r",
-									"\r",
-									"const programName = responseBody.programName;\r",
-									"pm.globals.set(\"programName\", programName);\r",
-									"\r",
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"});\r",
-									"pm.test(\"Successful POST request\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {
-									"@team03lmsapi/utility-pkg": {
-										"id": "0192ff11-ef23-7186-96cb-b4d0992c81db"
-									}
-								}
-							}
-						}
-					],
-					"id": "740b11c8-3a80-4c67-93df-3b9a08700f65",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearertoken}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas1\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
-					},
-					"response": []
-				},
-				{
-					"name": "Get all Program",
-					"id": "ba2695cd-2422-4890-8a2c-859bd614de81",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearertoken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allPrograms"
-					},
-					"response": []
-				},
-				{
-					"name": "Get all Program with users",
-					"id": "869e4609-2fe2-4e6c-9ab9-974f6b7a3725",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
-					},
-					"response": []
 				},
 				{
 					"name": "New Request",
-					"id": "a9a811bb-31cf-4a8b-bbf4-40aefd06a8d7",
+					"id": "304852ef-e573-404d-affa-a6991833ddf5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -338,33 +232,14 @@
 								"token": "{{bearertoken}}"
 							}
 						},
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{APINinjas}"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete program by id",
-					"id": "2b424911-563d-40f5-b870-c971f46f87dc",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearertoken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogid/{16740}"
+						"url": "{{baseUrl}}/programs/{programId}"
 					},
 					"response": []
 				}
 			],
-			"id": "1e232c6a-8b28-4a3d-882b-b4b19ce29581"
+			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
 		},
 		{
 			"name": "Batch",
