@@ -271,8 +271,8 @@
 									"const newProgramName = `${teamName}-${uniqueSuffix}`; // e.g., EliteForce-XYZA\r",
 									"\r",
 									"// Set new programName and any other parameters as environment variables\r",
-									"pm.environment.set(\"programName\", newProgramName);\r",
-									"pm.environment.set(\"programStatus\", \"Active\"); // Or any other valid statu"
+									"pm.environment.set(\"updatedprogramName\", newProgramName);\r",
+									"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -307,7 +307,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}\r\n\r\n",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogrmstatus}}\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -333,6 +333,15 @@
 						},
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/putprogram/{{programId}}"
 					},
 					"response": []
