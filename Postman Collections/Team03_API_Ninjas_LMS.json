@@ -452,7 +452,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "422d1ac7-1585-471a-9ba4-9587237ba054",
+				"id": "bb2d9a78-b4bc-47ea-bc07-d206ea014ed8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -463,7 +463,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "42c523f9-65ca-46ae-96c5-9b1f03a24f68",
+				"id": "0b281d9d-865b-44d2-9e3c-b32b5080318b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -486,6 +486,13 @@
 					""
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/",
+			"type": "string"
 		}
 	]
 }
