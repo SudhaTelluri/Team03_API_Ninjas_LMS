@@ -467,34 +467,6 @@
 					"response": []
 				},
 				{
-					"name": "Create Class Copy",
-					"id": "3e08c02b-f747-4405-8086-c51a32bbf0f2",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId}},\r\n  \"classComments\": \"Introduction to Java OOP concepts\",\r\n  \"classDate\": \"2024-12-01\",\r\n  \"classDescription\": \"Discussion on Object-Oriented Programming concepts in Java, covering inheritance and polymorphism.\",\r\n  \"classNo\": 2,\r\n  \"classNotes\": \"Focus on inheritance, polymorphism, and encapsulation.\",\r\n  \"classRecordingPath\": \"C:\\\\Recordings\\\\JavaOOPSession2.mp4\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"Super Keyword and Method Overriding\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-01T15:11:08.750Z\",\r\n    \"2024-12-02T15:11:08.750Z\"\r\n  ]\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/CreateClassSchedule"
-					},
-					"response": []
-				},
-				{
 					"name": "Get All Class List",
 					"id": "759bc2b3-33f9-43f2-a813-0784a727a834",
 					"protocolProfileBehavior": {
