@@ -260,6 +260,38 @@
 				},
 				{
 					"name": "New Request Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6a90a9e9-ba97-48f2-b7d0-6102c8f2d562",
+								"exec": [
+									"const teamName = \"APINinjas\"; // Base name of the team\r",
+									"const uniqueSuffix = Math.random().toString(36).substring(2, 6).toUpperCase(); // Generates 4 random letters\r",
+									"const newProgramName = `${teamName}-${uniqueSuffix}`; // e.g., EliteForce-XYZA\r",
+									"\r",
+									"// Set new programName and any other parameters as environment variables\r",
+									"pm.environment.set(\"programName\", newProgramName);\r",
+									"pm.environment.set(\"programStatus\", \"Active\"); // Or any other valid statu"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "03df07e7-0adf-40c7-864c-77795f84f699",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a55cd1e5-81d9-4c46-b194-3b4e5bca1f4d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -271,9 +303,18 @@
 								"token": "{{bearertoken}}"
 							}
 						},
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
-						"url": "{{baseUrl}}/programs/{programId}"
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/programs/program/{{programName}}"
 					},
 					"response": []
 				}
