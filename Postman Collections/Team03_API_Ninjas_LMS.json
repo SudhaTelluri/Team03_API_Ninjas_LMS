@@ -121,16 +121,37 @@
 							"script": {
 								"id": "fd022429-a8a3-4026-89c0-b811f4c3c4c9",
 								"exec": [
-									"const teamName = \"APINinjas\"; // Replace this with your actual team name\r",
-									"const uniqueSuffix = Math.random().toString(36).substring(2, 6).toUpperCase(); // Random four letters\r",
+									"const teamName = \"APINinjas\";\r",
 									"\r",
-									"// Combine team name and suffix, with an optional hyphen if needed\r",
-									"const programName = `${teamName}-${uniqueSuffix}`; \r",
-									"const programStatus = \"Active\"; // or any other valid status\r",
+									"// Generate a random 4-letter suffix for uniqueness\r",
+									"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+									"let suffix1 = \"\", suffix2 = \"\";\r",
+									"for (let i = 0; i < 4; i++) {\r",
+									"    suffix1 += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+									"    suffix2 += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+									"}\r",
 									"\r",
-									"// Set dynamic values as environment or global variables\r",
-									"pm.environment.set(\"programName\", programName);\r",
-									"pm.environment.set(\"programStatus\", programStatus);"
+									"// Generate unique program names for two programs\r",
+									"const programName1 = `${teamName}-${suffix1}`; // e.g., APINinjas-ABCD\r",
+									"const programName2 = `${teamName}-${suffix2}`; // e.g., APINinjas-EFGH\r",
+									"\r",
+									"// Descriptions for each program\r",
+									"const programDescription1 = `Program ${programName1} for team ${teamName}`;\r",
+									"const programDescription2 = `Program ${programName2} for team ${teamName}`;\r",
+									"\r",
+									"// Set program status\r",
+									"const programStatus = \"Active\"; \r",
+									"\r",
+									"// Set values in environment variables for use in requests\r",
+									"pm.environment.set(\"programName1\", programName1);\r",
+									"pm.environment.set(\"programDescription1\", programDescription1);\r",
+									"pm.environment.set(\"programName2\", programName2);\r",
+									"pm.environment.set(\"programDescription2\", programDescription2);\r",
+									"pm.environment.set(\"programStatus\", programStatus);\r",
+									"\r",
+									"// Log generated values for verification\r",
+									"console.log(\"Generated Program 1 Name:\", programName1);\r",
+									"console.log(\"Generated Program 2 Name:\", programName2);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -152,7 +173,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"api program for sdet dynamically generated \",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n  \r\n}",
+							"raw": "{\r\n  \r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"api program for sdet dynamically generated \",\r\n  \"programStatus\": \"{{programStatus2}}\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
