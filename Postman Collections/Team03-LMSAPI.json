@@ -514,6 +514,25 @@
 					"response": []
 				},
 				{
+					"name": "Get All Class List Copy",
+					"id": "8b749874-3f03-467c-9b9f-397c5ac60e34",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
+					},
+					"response": []
+				},
+				{
 					"name": "New Request",
 					"id": "924ad9d5-9a37-422c-8f56-71e4b27016ff",
 					"protocolProfileBehavior": {
