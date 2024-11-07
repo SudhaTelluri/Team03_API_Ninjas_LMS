@@ -94,14 +94,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \r\n  \"programName\": \"APINinjasTeam\",\r\n  \"programDescription\": \"A QA team specializes in testing APIs to ensure reliability, performance, and functionality.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseUrl}}/saveprogram"
+						"url": "{{baseURL}}saveprogram"
 					},
 					"response": []
 				},
