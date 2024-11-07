@@ -81,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"APNinjas\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas1\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
