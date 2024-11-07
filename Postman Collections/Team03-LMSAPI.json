@@ -66,67 +66,6 @@
 			"item": [
 				{
 					"name": "create program",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7ae6ade1-4c75-441b-806f-ab551968a803",
-								"exec": [
-									"const utilityPkg = pm.require('@team03lmsapi/utility-pkg');\r",
-									"const responseBody = pm.response.json();\r",
-									"const programId = responseBody.programId;\r",
-									"pm.globals.set(\"programId\", programId);\r",
-									"//console.log(\"Auth Token set:\", pm.globals.get(\"authToken\"));\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {
-									"@team03lmsapi/utility-pkg": {
-										"id": "0192ff11-ef23-7186-96cb-b4d0992c81db"
-									}
-								}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "47a66ac3-174c-4f24-b9c7-ba4bdce3078b",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "a919e933-1a08-4aa9-9f51-0d33606a1946",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas1\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
-					},
-					"response": []
-				},
-				{
-					"name": "create program Copy",
 					"id": "92d259e8-9ecc-440e-a58a-90ad962a8761",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
