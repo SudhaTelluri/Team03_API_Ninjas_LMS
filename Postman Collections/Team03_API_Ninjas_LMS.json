@@ -114,7 +114,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}\r\n",
+							"raw": "{\r\n  \r\n  \"programName\": \"APINinjas1\",\r\n  \"programDescription\": \"An introductory program on API design, development, and testing techniques.\",\r\n  \"programStatus\": \"Active\"\r\n  \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -187,7 +187,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "ttps://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
 					},
 					"response": []
 				}
