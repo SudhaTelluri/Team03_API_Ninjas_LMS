@@ -261,7 +261,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all Program Negative invalisapi",
+					"name": "Get all Program Negative invalid api",
 					"event": [
 						{
 							"listen": "test",
