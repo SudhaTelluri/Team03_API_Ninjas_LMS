@@ -479,7 +479,14 @@
 							"script": {
 								"id": "004084cc-004e-4fc1-b382-8fbc528ced11",
 								"exec": [
-									"// Predefined storage for batch descriptions based on batch type\r",
+									"function generateRandomNumber() {\r",
+									"    return Math.floor(100 + Math.random() * 900);  // Generates a 3-digit number between 100 and 999\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name with random 3-digit number\r",
+									"var batchName = \"APINinjas\" + generateRandomNumber();\r",
+									"\r",
+									"console.log(programName1);// Predefined storage for batch descriptions based on batch type\r",
 									"const batchDescriptions = {\r",
 									"    \"Beginner\": \"An API testing course designed for beginners.\",\r",
 									"    \"Intermediate\": \"A workshop on advanced API testing, focusing on automation.\",\r",
