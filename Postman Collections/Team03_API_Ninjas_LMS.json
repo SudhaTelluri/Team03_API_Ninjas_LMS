@@ -27,7 +27,9 @@
 							"script": {
 								"id": "23dd270f-a8a1-4c5e-9736-cc29420c4ba3",
 								"exec": [
-									""
+									"var responseBody=pm.response.json();\r",
+									"var token=responseBody.token;\r",
+									"pm.globals.set(\"bearertoken\", token);"
 								],
 								"type": "text/javascript",
 								"packages": {}
