@@ -184,6 +184,21 @@
 				},
 				{
 					"name": "Get all Program with users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "53da3be7-ff42-4aba-afc7-ec8579c8f6af",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "2ff256fd-ec25-49e6-ac99-18eb284ff389",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -192,12 +207,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
+						"url": "{{baseURL}}/allProgramsWithUsers"
 					},
 					"response": []
 				},
