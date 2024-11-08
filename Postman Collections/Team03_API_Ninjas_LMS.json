@@ -103,7 +103,7 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"var randomProgramName = \"TeamAPINinjas-\" + Math.floor(Math.random() * 10000);\r",
+									"var randomProgramName = \"TeamAPINinjas\" + Math.floor(Math.random() * 10000);\r",
 									"pm.globals.set('programName', randomProgramName);\r",
 									"console.log('Generated Program Name: ' + randomProgramName);"
 								],
