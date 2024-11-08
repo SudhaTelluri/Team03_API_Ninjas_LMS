@@ -473,6 +473,57 @@
 			"item": [
 				{
 					"name": "Create New Batch",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "004084cc-004e-4fc1-b382-8fbc528ced11",
+								"exec": [
+									"// Predefined storage for batch descriptions based on batch type\r",
+									"const batchDescriptions = {\r",
+									"    \"Beginner\": \"An API testing course designed for beginners.\",\r",
+									"    \"Intermediate\": \"A workshop on advanced API testing, focusing on automation.\",\r",
+									"    \"Advanced\": \"A course in API security testing and vulnerability scanning.\",\r",
+									"    \"Specialized\": \"An in-depth program designed for specialized topics in API.\"\r",
+									"};\r",
+									"\r",
+									"// Predefined storage for the number of classes based on batch type\r",
+									"const batchClassCounts = {\r",
+									"    \"Beginner\": 5,\r",
+									"    \"Intermediate\": 10,\r",
+									"    \"Advanced\": 15,\r",
+									"    \"Specialized\": 20\r",
+									"};\r",
+									"\r",
+									"// Dynamic selection of batch type\r",
+									"const selectedBatchType = \"Advanced\"; // You can dynamically determine this based on your test setup\r",
+									"\r",
+									"// Retrieve batch description and number of classes based on the selected batch type\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
+									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
+									"\r",
+									"// Dynamically created batch data\r",
+									"const batchData = {\r",
+									"    \"batchDescription\": selectedBatchDescription,\r",
+									"    \"batchName\": `APINinjas${Math.floor(Math.random() * 1000)}`,  // Randomized batch name\r",
+									"    \"batchNoOfClasses\": selectedBatchClassCount,\r",
+									"    \"batchStatus\": \"Active\",\r",
+									"    \"programId\": 1234,  // You can dynamically set the Program ID\r",
+									"    \"programName\": \"API Ninjas\"\r",
+									"};\r",
+									"\r",
+									"// Save the batchData to environment for use in the request body\r",
+									"pm.environment.set(\"batchData\", JSON.stringify(batchData));\r",
+									"\r",
+									"// Log the generated batch data for verification\r",
+									"console.log(\"Generated Batch Data:\", batchData);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "9420f6dc-9243-453f-9984-258415c5f01e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -495,7 +546,7 @@
 								}
 							}
 						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+						"url": "{{baseURL}}"
 					},
 					"response": []
 				},
