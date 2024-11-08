@@ -563,7 +563,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}"
+						"url": "{{baseURL}}batches"
 					},
 					"response": []
 				},
