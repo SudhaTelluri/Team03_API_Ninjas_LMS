@@ -490,10 +490,10 @@
 									"var batchName1 = programName + generateRandomNumber();\r",
 									"\r",
 									"// Store batchName as a collection variable\r",
-									"pm.collectionVariables.set(\"batchName\", batchName);\r",
+									"pm.collectionVariables.set(\"batchName1\", batchName1);\r",
 									"\r",
 									"// Log the batchName for verification\r",
-									"console.log(\"Generated Batch Name:\", batchName);\r",
+									"console.log(\"Generated Batch Name:\", batchName1);\r",
 									"\r",
 									"\r",
 									"// Predefined storage for batch descriptions based on batch type\r",
@@ -525,8 +525,8 @@
 									"    \"batchName\": batchName1,  // Randomized batch name\r",
 									"    \"batchNoOfClasses\": selectedBatchClassCount,\r",
 									"    \"batchStatus\": \"Active\",\r",
-									"    \"programId\": {{programId1}},  // You can dynamically set the Program ID\r",
-									"    \"programName\": \"API Ninjas\"\r",
+									"    \"programId\": programId1,  // You can dynamically set the Program ID\r",
+									"    \"programName\": programName1\r",
 									"};\r",
 									"\r",
 									"// Save the batchData to environment for use in the request body\r",
@@ -556,7 +556,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchDescription\": \"Introduction to Programming Basics\",\r\n  \"batchName\": \"Programming101\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"batchStatus\": \"Active\",\r\n  \"programId\": 16740,\r\n  \"programName\": \"Computer Science Fundamentals\"\r\n}",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchData.batchDescription}}\",\r\n  \"batchName\": \"{{batchData.batchName}}\",\r\n  \"batchNoOfClasses\": \"{{batchData.batchNoOfClasses}}\",\r\n  \"batchStatus\": \"{{batchData.batchStatus}}\",\r\n  \"programId\": \"{{batchData.programId}}\",\r\n  \"programName\": \"{{batchData.programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
