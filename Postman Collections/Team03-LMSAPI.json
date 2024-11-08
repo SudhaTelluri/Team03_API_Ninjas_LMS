@@ -114,10 +114,13 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"const faker = require('faker');\r",
-									"const randomFirstName = faker.name.firstName();\r",
+									"const randomFirstName = pm.variables.replaceIn(\"{{$randomFirstName}}\");\r",
 									"\r",
-									"var randomProgramName = \"TeamAPINinjas\" + randomFirstName;\r",
+									"\r",
+									"const ProgramName = \"APINinjas\" + randomFirstName;\r",
+									"\r",
+									"\r",
+									"pm.environment.set(\"randomProgramName\", ProgramName);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -147,7 +150,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}saveprogram"
+						"url": "{{baseURL}}/saveprogram"
 					},
 					"response": []
 				},
