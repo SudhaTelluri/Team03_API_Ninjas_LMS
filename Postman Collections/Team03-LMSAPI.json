@@ -88,6 +88,8 @@
 									"var responseBody=pm.response.json();\r",
 									"var programId=responseBody.programId;\r",
 									"pm.globals.set(\"programId\",programId);\r",
+									"var programName=responseBody.programName;\r",
+									"pm.globals.set(\"programName\",programName);\r",
 									"console.log(\"Program ID set as global variable: \" + programId);\r",
 									""
 								],
