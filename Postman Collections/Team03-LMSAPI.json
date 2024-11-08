@@ -17,6 +17,12 @@
 								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
 								"exec": [
 									"//console.log(pm.variables.get(\"baseUrl\"));\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"OK\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
@@ -110,7 +116,15 @@
 									"pm.globals.set(\"programName\",programName);\r",
 									"console.log(\"ProgramId set as global variable: \" + programId);\r",
 									"console.log(\"programName set as global variable: \" + programId);\r",
-									""
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -558,14 +572,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7294d185-0ba5-4899-83e7-993dc90b18a5",
+								"id": "e91fe3ba-8281-4935-9036-e014a358cd6e",
 								"exec": [
-									"pm.test(\"Response status code is 200\", function () {",
-									"  pm.expect(pm.response.code).to.equal(200);",
-									"});",
-									"",
-									"",
-									""
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -580,12 +591,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTAzMjczMCwiZXhwIjoxNzMxMDYxNTMwfQ.HNwKQKLOqU6v5414wpAAHQGL4mg7ph12kXyipP6tG95QzSDh7Fdl4ns_gzDLZ8nmpJ-3K9ZdeQMUO6DCK7jBpQ"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms/userRoleProgramBatchMap"
+						"url": "{{baseURL}}/userRoleProgramBatchMap"
 					},
 					"response": []
 				}
