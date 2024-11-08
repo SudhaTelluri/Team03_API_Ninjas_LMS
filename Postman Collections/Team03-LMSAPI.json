@@ -239,10 +239,10 @@
 									"}\r",
 									"\r",
 									"// Generate the program name in the required format\r",
-									"const programName = \"APINinjas-\" + counterToLetters(counter);\r",
-									"\r",
+									"const uniqueProgramName = \"APINinjas-test-\" + counterToLetters(counter); \r",
+									"pm.environment.set(\"randomProgramName\", uniqueProgramName);\r",
 									"// Set the dynamic program name as an environment variable\r",
-									"pm.environment.set(\"randomProgramName\", programName);\r",
+									"pm.environment.set(\"randomProgramName\", uniqueProgramName);\r",
 									"\r",
 									"// Increment and store the counter for the next request\r",
 									"pm.environment.set(\"programCounter\", counter + 1);"
