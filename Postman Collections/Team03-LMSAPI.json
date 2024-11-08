@@ -69,6 +69,32 @@
 				},
 				{
 					"name": "User Login (Unauthorized)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ed4bcbea-d5b0-403d-a0b2-c5d04dd2d222",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "40a45021-ef2f-4de0-b67d-9c490d0b9d51",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "8b78e116-9005-4c92-a0f0-3aa350d9cc27",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -96,8 +122,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"url": "{{baseURL}}/login/"
 					},
 					"response": []
 				}
