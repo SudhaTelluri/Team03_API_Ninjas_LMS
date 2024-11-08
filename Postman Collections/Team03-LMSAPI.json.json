@@ -1,0 +1,1139 @@
+{
+	"info": {
+		"_postman_id": "a7b3e3d0-d5ca-46ac-b0c5-e8b49c60f278",
+		"name": "Team03-API-Ninjas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
+								"exec": [
+									"console.log(pm.variables.get(\"baseUrl\"));\r",
+									"\r",
+									"// Parse the response body to JSON\r",
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Set the token as a collection variable\r",
+									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "20dbbcc1-5438-4726-b580-fc11c0703873",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "56628f18-f1e0-45dd-9e94-38b11028e6ef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}login"
+					},
+					"response": []
+				}
+			],
+			"id": "2f24a59f-a25a-4f93-970a-7f46f3eb89b8",
+			"auth": {
+				"type": "bearer",
+				"bearer": {}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a5bcd333-07ae-4a44-91e7-51295397d31c",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "95bd3ee8-18b7-4542-b24d-9138b3013724",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Program",
+			"item": [
+				{
+					"name": "Add New Program1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the programId is present in the response\r",
+									"if (responseBody && responseBody.programId) {\r",
+									"    // Store the programId and programName in collection variables\r",
+									"    pm.collectionVariables.set(\"programId1\", responseBody.programId);\r",
+									"    pm.collectionVariables.set(\"programName1\", responseBody.programName);\r",
+									"    console.log(\"Program ID1: \" + responseBody.programId);\r",
+									"} else {\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let programName1 = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"programName1\", programName1);\r",
+									"\r",
+									"console.log(\"Generated Program Name 1: \" + programName1);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "5aae428f-f7c6-4f43-bfea-b83193cf6d23",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Program2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "884eef17-3d76-4ee9-a401-6ff843e4e438",
+								"exec": [
+									"// Function to generate a random 2-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let programName2 = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"programName2\", programName2);\r",
+									"\r",
+									"console.log(\"Generated Program Name 2: \" + programName2);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fdf72ea8-4ce4-4a56-bae6-2c98256fc252",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the programId is present in the response\r",
+									"if (responseBody && responseBody.programId) {\r",
+									"    // Store the programId and programName in collection variables\r",
+									"    pm.collectionVariables.set(\"programId2\", responseBody.programId);\r",
+									"    pm.collectionVariables.set(\"programName2\", responseBody.programName);\r",
+									"    console.log(\"Program ID2: \" + responseBody.programId);\r",
+									"} else {\r",
+									"    console.error(\"Failed to retrieve programId2 from the response.\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "f9082391-0355-4e88-9221-8b7f0b89b1d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"A team focused on automating the testing of APIs for performance and reliability.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Program",
+					"id": "c7c6e893-87c6-48c2-a4ca-e088219bd6f2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}allPrograms"
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Programs With Users",
+					"id": "8339c37b-0e23-4bec-8f00-eea7f83053a6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}allProgramsWithUsers"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Program By ProgramId",
+					"id": "554c59d0-ef09-43cb-ab6c-f3eef931ff82",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}programs/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ProgramName",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "b4e7fd1e-376b-4c0d-b40e-7a71682acf49",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing-Updated description using programName1\",\r\n  \"programName\": \"{{updatedProgramName}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}program/{{programName1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ProgramId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "f3904322-db09-4dd5-a0a4-af096cd0e4f4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing.-Updated by programId1\",\r\n  \"programId\": {{programId1}},\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}putprogram/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program By ProgramId",
+					"id": "91b03a05-11f9-4a95-b929-7cc8d5e2effe",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program By ProgramName",
+					"id": "497d48fe-ec2e-4e50-9d35-df335409cf11",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
+					},
+					"response": []
+				}
+			],
+			"id": "50e5aa73-ec90-45aa-b65e-c1f24e764694"
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "Create New Batch",
+					"id": "9420f6dc-9243-453f-9984-258415c5f01e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"Introduction to Programming Basics\",\r\n  \"batchName\": \"Programming101\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"batchStatus\": \"Active\",\r\n  \"programId\": 16740,\r\n  \"programName\": \"Computer Science Fundamentals\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Batch Copy",
+					"id": "9ae47849-dfdc-4976-b9cb-a76d9ff82ebf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "9ec9f80c-0c33-4540-9cc3-4c61a9fe4ef7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "ac9d7b66-d62c-4772-a62f-497227fb7256"
+		},
+		{
+			"name": "Class",
+			"item": [
+				{
+					"name": "Create Class",
+					"id": "83b4695e-eb34-46e8-9324-05cb4a4b98e6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchId}},\r\n  \"classComments\": \"Java Opps\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Java topics going on\",\r\n  \"classNo\": 2,\r\n  \"classNotes\": \"Java\",\r\n  \"classRecordingPath\": \"C:\\\\Recordings\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"Team03_API_Ninjas\",\r\n  \"classScheduledDates\": [\r\n    \"2024-11-25T15:11:08.750Z\",\r\n    \"2024-12-25T15:11:08.750Z\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/CreateClassSchedule"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Class List",
+					"id": "738b238e-fd61-46ab-b7e6-51da283f7f58",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Class List Copy",
+					"id": "cab75cd1-91dc-4ccc-89d7-be7c5c6f5841",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "792c9c6d-6a81-4009-b859-1f1de708fea8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
+		},
+		{
+			"name": "Logout",
+			"item": [],
+			"id": "df780670-4c95-435c-8bba-64d387768e74"
+		},
+		{
+			"name": "User Role Map",
+			"item": [],
+			"id": "72aec55b-921c-49c1-a09e-e97657823427"
+		},
+		{
+			"name": "Chaining-PositiveScenarios",
+			"item": [],
+			"id": "f52e8471-4ccb-4664-b502-a663870764aa"
+		},
+		{
+			"name": "Chaining-NegativeScenarios",
+			"item": [
+				{
+					"name": "Neg-Create Duplicate Program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the response indicates an error (success is false)\r",
+									"if (responseBody.success === false) {\r",
+									"    // Print the error message from the response\r",
+									"    console.error(\"Error: \" + responseBody.message);\r",
+									"} else if (responseBody && responseBody.programId) {\r",
+									"    // If the response contains programId and programName, print them\r",
+									"    console.log(\"Program ID: \" + responseBody.programId);\r",
+									"    console.log(\"Program Name: \" + responseBody.programName);\r",
+									"} else {\r",
+									"    // If neither condition is met, log a failure\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "54f08d5f-7917-407f-a621-005e7c873fb1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Create Program with Null Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"/*let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the response indicates an error (success is false)\r",
+									"if (responseBody.success === false) {\r",
+									"    // Print the error message from the response\r",
+									"    console.error(\"Error: \" + responseBody.message);\r",
+									"} else if (responseBody && responseBody.programId) {\r",
+									"    // If the response contains programId and programName, print them\r",
+									"    console.log(\"Program ID: \" + responseBody.programId);\r",
+									"    console.log(\"Program Name: \" + responseBody.programName);\r",
+									"} else {\r",
+									"    // If neither condition is met, log a failure\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}*/\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c281c49a-76c6-4540-9ec7-a8619a516b88",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A description of the program\",\r\n  \"programName\": \"New Program\",\r\n  \"programStatus\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Program with Incorrect Program ID",
+					"id": "6ba19cfc-80cc-4e7c-8def-c118db3ac205",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}programs/{{invalidProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Update Program with Invalid Program Name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "7090bef5-7fac-40b3-8c92-63d795fe12f0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing-Updated description\",\r\n  \"programName\": \"{{updatedProgramName}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}program/{{invalidProgramName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Update Program With Missing Field By Program Name",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "49c3da04-e2c8-4baf-bc51-d309f5666103",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing-Updated description\",\r\n  \"programName\": \"{{updatedProgramName}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}program/{{programName1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Update Program by Invalid ProgramId",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "6c943492-241a-48ca-bae4-47ce054c8ef4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing.-Updated by Invalid ProgramId\",\r\n  \"programId\": {{invalidProgramId}},\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}putprogram/{{invalidProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Update Program With Missing Field By Program Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "0a7fd0c9-2b0b-425b-9d37-803500d4ec59",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing.-Updated by Invalid ProgramId\",\r\n  \"programId\": {{invalidProgramId}},\r\n  \"programName\": \"{{programName1}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}program/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Delete Program with Deleted ProgramName",
+					"id": "7c3b9647-a9b2-4b0d-99e1-adc226de4132",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Delete Program with Deleted ProgramID",
+					"id": "a0f7cd17-e7bc-4172-91d4-1b246160d1b8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
+					},
+					"response": []
+				}
+			],
+			"id": "2bb4b8bf-ca08-4c8a-8830-ae9b9503323b"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5b1cae94-d391-4ce3-85db-38e72beb5aae",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a0c0b860-59c3-4301-a191-b7df726719bf",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"var commonTests =()=> {\r",
+					"//test header presence\r",
+					"     pm.test(\"Content-Type header is present\", function () {\r",
+					"        pm.response.to.have.header(\"Content-Type\");\r",
+					"    });\r",
+					"//test header content\r",
+					"  pm.test(\"Content-Type header is application/json\", function () {\r",
+					"        (pm.response.headers.get(\"Content-Type\")).to.include('application/json');\r",
+					"    });\r",
+					"    // test response time\r",
+					"    pm.test(\"Response time is less than 1000ms\", function () {\r",
+					"        pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+					"    });\r",
+					"\r",
+					"}\r",
+					"\r",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bearerToken",
+			"value": ""
+		},
+		{
+			"key": "programName1",
+			"value": ""
+		},
+		{
+			"key": "programName2",
+			"value": ""
+		},
+		{
+			"key": "programId1",
+			"value": ""
+		},
+		{
+			"key": "programId2",
+			"value": ""
+		},
+		{
+			"key": "invalidProgramId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "updatedProgramName",
+			"value": ""
+		},
+		{
+			"key": "invalidProgramName",
+			"value": "APINinjas",
+			"type": "string"
+		}
+	]
+}
