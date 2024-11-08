@@ -127,7 +127,7 @@
 									"const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];\r",
 									"\r",
 									"// Combine the team name with the random keyword\r",
-									"const programName = \"APINinjas\" + randomKeyword;\r",
+									"const programName = \"APINinjas-\" + randomKeyword;\r",
 									"\r",
 									"// Set this as an environment or global variable for use in the request body\r",
 									"pm.environment.set(\"randomProgramName\", programName);"
@@ -213,44 +213,6 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}/allProgramsWithUsers"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete program by programname",
-					"id": "3b997467-4b7a-498f-a6ec-852ae653a118",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearertoken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}/deletebyprogname/{{programName}}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete program by id",
-					"id": "0f774259-9010-411b-9eee-ebc719ac3a2b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}/deletebyprogid/{{programId}}"
 					},
 					"response": []
 				},
@@ -356,7 +318,22 @@
 					"response": []
 				},
 				{
-					"name": "New Request Copy 2",
+					"name": "Update program by programname",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d98b9a5a-601a-4ddf-ad76-5e42675a42dc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "74b304d5-07e8-4b4e-98ac-ae1e92c9d620",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -380,6 +357,44 @@
 							}
 						},
 						"url": "{{baseURL}}/putprogram/{{programName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete program by programname",
+					"id": "3b997467-4b7a-498f-a6ec-852ae653a118",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}/deletebyprogname/{{programName}}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete program by id",
+					"id": "0f774259-9010-411b-9eee-ebc719ac3a2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}/deletebyprogid/{{programId}}"
 					},
 					"response": []
 				}
