@@ -135,7 +135,7 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"const keywords = [\"sdet\", \"java\", \"da\"];\r",
+									"const keywords = [\"0ne\",\"sdet\", \"java\", \"da\"];\r",
 									"\r",
 									"// Pick a random keyword from the array\r",
 									"const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];\r",
@@ -479,14 +479,14 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"23km\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{baseURL}}/putprogram/{{programName}}"
+						"url": "{{baseURL}}/putprogram/{{programId}}"
 					},
 					"response": []
 				},
