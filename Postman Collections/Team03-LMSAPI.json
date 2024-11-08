@@ -580,7 +580,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}/saveprogram"
+						"url": "{{baseURL}}/batches/9178"
 					},
 					"response": []
 				}
