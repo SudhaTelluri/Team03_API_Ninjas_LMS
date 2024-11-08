@@ -179,6 +179,21 @@
 				},
 				{
 					"name": "Add New Program Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "ee66653c-a978-4070-b71f-8c5d8dbc57f8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -194,7 +209,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"001\",\r\n  \"programName\": \"apicdg\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": null,\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -494,7 +509,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}/deletebyprogid/16889"
+						"url": "{{baseURL}}/deletebyprogid/16896"
 					},
 					"response": []
 				}
