@@ -16,7 +16,11 @@
 							"script": {
 								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
 								"exec": [
-									"console.log(pm.variables.get(\"baseUrl\"));"
+									"console.log(pm.variables.get(\"baseUrl\"));\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"bearerToken\",responseBody.token);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -25,14 +29,8 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "23dd270f-a8a1-4c5e-9736-cc29420c4ba3",
-								"exec": [
-									"var responseBody=pm.response.json();\r",
-									"var token=responseBody.token;\r",
-									"pm.globals.set(\"bearertoken\", token);"
-								],
-								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -52,7 +50,7 @@
 								}
 							}
 						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/login"
+						"url": "{{baseURL}}login"
 					},
 					"response": []
 				}
@@ -135,7 +133,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "POST",
@@ -513,7 +511,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bb2d9a78-b4bc-47ea-bc07-d206ea014ed8",
+				"id": "f470b4a8-6eda-430d-a48b-d5edb2ab0ca7",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -524,7 +522,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0b281d9d-865b-44d2-9e3c-b32b5080318b",
+				"id": "5e58c4d1-bdca-4720-8efa-398b64345baa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -547,13 +545,6 @@
 					""
 				]
 			}
-		}
-	],
-	"variable": [
-		{
-			"key": "baseUrl",
-			"value": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/",
-			"type": "string"
 		}
 	]
 }
