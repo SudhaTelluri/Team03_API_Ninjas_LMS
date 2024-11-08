@@ -551,7 +551,45 @@
 		},
 		{
 			"name": "User Role Map",
-			"item": [],
+			"item": [
+				{
+					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7294d185-0ba5-4899-83e7-993dc90b18a5",
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {",
+									"  pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "68e3d0df-7651-4950-80c5-e23a387701dc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTAzMjczMCwiZXhwIjoxNzMxMDYxNTMwfQ.HNwKQKLOqU6v5414wpAAHQGL4mg7ph12kXyipP6tG95QzSDh7Fdl4ns_gzDLZ8nmpJ-3K9ZdeQMUO6DCK7jBpQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms/userRoleProgramBatchMap"
+					},
+					"response": []
+				}
+			],
 			"id": "755158a2-39da-4e90-a7b6-f21562828da3"
 		},
 		{
