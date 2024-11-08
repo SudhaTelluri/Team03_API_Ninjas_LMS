@@ -103,7 +103,7 @@
 									"pm.globals.set(\"programName\",programName);\r",
 									"console.log(\"ProgramId set as global variable: \" + programId);\r",
 									"console.log(\"programName set as global variable: \" + programId);\r",
-									""
+									"console.log('Generated Program Name: ' + randomProgramName);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -118,7 +118,7 @@
 									"const randomFirstName = faker.name.firstName();\r",
 									"\r",
 									"var randomProgramName = \"TeamAPINinjas\" + randomFirstName;\r",
-									"console.log('Generated Program Name: ' + randomProgramName);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
