@@ -83,71 +83,29 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c340750-a5e8-4b14-befa-62d0495e2dcf",
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
 								"exec": [
-									"const utilityPkg = pm.require('@team03lmsapi/utility-pkg');\r",
-									"const responseBody = pm.response.json();\r",
-									"const programId = responseBody.programId;\r",
-									"pm.globals.set(\"programId\", programId);\r",
-									"\r",
-									"const programName = responseBody.programName;\r",
-									"pm.globals.set(\"programName\", programName);\r",
-									"\r",
-									"pm.test(\"Status code is 201\", function () {\r",
-									"    pm.response.to.have.status(201);\r",
-									"pm.test(\"Content-Type is present\", function () {\r",
-									"    pm.response.to.have.header(\"Content-Type\");\r",
-									"});\r",
-									"});\r",
-									"pm.test(\"Successful POST request\", function () {\r",
-									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
-									"});\r",
+									"var responseBody=pm.response.json();\r",
+									"var programId=responseBody.programId;\r",
+									"pm.globals.set(\"programId\",programId);\r",
+									"var programName=responseBody.programName;\r",
+									"pm.globals.set(\"programName\",programName);\r",
+									"console.log(\"ProgramId set as global variable: \" + programId);\r",
+									"console.log(\"programName set as global variable: \" + programId);\r",
 									""
 								],
 								"type": "text/javascript",
-								"packages": {
-									"@team03lmsapi/utility-pkg": {
-										"id": "0192ff11-ef23-7186-96cb-b4d0992c81db"
-									}
-								}
+								"packages": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "fd022429-a8a3-4026-89c0-b811f4c3c4c9",
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"const teamName = \"APINinjas\";\r",
-									"\r",
-									"// Generate a random 4-letter suffix for uniqueness\r",
-									"const letters = \"SDET\";\r",
-									"let suffix1 = \"\", suffix2 = \"\";\r",
-									"for (let i = 0; i < 3; i++) {\r",
-									"    suffix1 += letters.charAt(Math.floor(Math.random() * letters.length));\r",
-									"    suffix2 += letters.charAt(Math.floor(Math.random() * letters.length));\r",
-									"}\r",
-									"\r",
-									"// Generate unique program names for two programs\r",
-									"const programName1 = `${teamName}-${suffix1}`; // e.g., APINinjas-ABCD\r",
-									"const programName2 = `${teamName}-${suffix2}`; // e.g., APINinjas-EFGH\r",
-									"\r",
-									"// Descriptions for each program\r",
-									"const programDescription1 = `Program ${programName1} for team ${teamName}`;\r",
-									"const programDescription2 = `Program ${programName2} for team ${teamName}`;\r",
-									"\r",
-									"// Set program status\r",
-									"const programStatus = \"Active\"; \r",
-									"\r",
-									"// Set values in environment variables for use in requests\r",
-									"pm.environment.set(\"programName1\", programName1);\r",
-									"pm.environment.set(\"programDescription1\", programDescription1);\r",
-									"pm.environment.set(\"programName2\", programName2);\r",
-									"pm.environment.set(\"programDescription2\", programDescription2);\r",
-									"pm.environment.set(\"programStatus\", programStatus);\r",
-									"\r",
-									"// Log generated values for verification\r",
-									"console.log(\"Generated Program 1 Name:\", programName1);\r",
-									"console.log(\"Generated Program 2 Name:\", programName2);"
+									"var randomProgramName = \"TeamAPINinjas-\" + Math.floor(Math.random() * 10000);\r",
+									"pm.globals.set('programName', randomProgramName);\r",
+									"console.log('Generated Program Name: ' + randomProgramName);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -162,21 +120,21 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{token}}"
 							}
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"api program for sdet dynamically generated \",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n  \r\n}",
+							"raw": "{\r\n  \r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"A QA team specializes in testing APIs to ensure reliability, performance, and functionality.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/saveprogram"
+						"url": "{{baseURL}}saveprogram"
 					},
 					"response": []
 				},
