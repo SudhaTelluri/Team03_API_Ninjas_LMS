@@ -508,6 +508,22 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fa427889-3590-452f-ac1c-24397d03f3bf",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"var responseBody=pm.response.json();\r",
+									"var batchId=responseBody.batchId;\r",
+									"pm.globals.set(\"batchId\",batchId);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "ee5c3612-cf48-4e0a-8472-2d308affe305",
@@ -518,7 +534,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "POST",
@@ -556,8 +572,15 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}/saveprogram"
 					},
 					"response": []
 				}
