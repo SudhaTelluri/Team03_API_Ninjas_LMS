@@ -217,7 +217,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Delete program by programname",
 					"id": "3b997467-4b7a-498f-a6ec-852ae653a118",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -231,7 +231,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{apininjas}"
+						"url": "{{baseURL}}/deletebyprogname/{{programName}}}"
 					},
 					"response": []
 				},
@@ -255,7 +255,22 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get progrm by programid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d84d3818-1393-43bc-91d0-bb8a05309b55",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "304852ef-e573-404d-affa-a6991833ddf5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -264,12 +279,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseUrl}}/programs/{programId}"
+						"url": "{{baseURL}}/programs/{programId}"
 					},
 					"response": []
 				},
@@ -350,7 +365,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "PUT",
@@ -364,7 +379,7 @@
 								}
 							}
 						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/putprogram/{{programId}}"
+						"url": "{{baseURL}}/putprogram/{{programName}}"
 					},
 					"response": []
 				}
