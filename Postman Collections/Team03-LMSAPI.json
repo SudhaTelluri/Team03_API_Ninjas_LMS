@@ -924,7 +924,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}/userRoleProgramBatchMap"
+						"url": "{{baseURL}}/userRoleProgramBatchMap/U73"
 					},
 					"response": []
 				},
