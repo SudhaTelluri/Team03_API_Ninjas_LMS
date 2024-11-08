@@ -178,6 +178,82 @@
 					"response": []
 				},
 				{
+					"name": "Add New Program Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"var responseBody=pm.response.json();\r",
+									"var programId=responseBody.programId;\r",
+									"pm.globals.set(\"programId\",programId);\r",
+									"var programName=responseBody.programName;\r",
+									"pm.globals.set(\"programName\",programName);\r",
+									"console.log(\"ProgramId set as global variable: \" + programId);\r",
+									"console.log(\"programName set as global variable: \" + programId);\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.response.to.have.status(\"Created\");\r",
+									"});\r",
+									"pm.test(\"Content-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\");\r",
+									"});\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									"const keywords = [\"sdet\", \"java\", \"da\"];\r",
+									"\r",
+									"// Pick a random keyword from the array\r",
+									"const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];\r",
+									"\r",
+									"// Combine the team name with the random keyword\r",
+									"const programName = \"APINinjas-\" + randomKeyword;\r",
+									"\r",
+									"// Set this as an environment or global variable for use in the request body\r",
+									"pm.environment.set(\"randomProgramName\", programName);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ee66653c-a978-4070-b71f-8c5d8dbc57f8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"programName\": \"{{randomProgramName}}\",\r\n  \"programDescription\": \"A QA team specializes in testing APIs to ensure reliability, performance, and functionality.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/saveprogram"
+					},
+					"response": []
+				},
+				{
 					"name": "Get all Program",
 					"event": [
 						{
