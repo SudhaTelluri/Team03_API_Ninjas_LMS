@@ -103,8 +103,10 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"var randomProgramName = \"TeamAPINinjas\" + $randomFirstName;\r",
-									"pm.globals.set('programName', randomProgramName);\r",
+									"const faker = require('faker');\r",
+									"const randomFirstName = faker.name.firstName();\r",
+									"\r",
+									"var randomProgramName = \"TeamAPINinjas\" + randomFirstName;\r",
 									"console.log('Generated Program Name: ' + randomProgramName);"
 								],
 								"type": "text/javascript",
