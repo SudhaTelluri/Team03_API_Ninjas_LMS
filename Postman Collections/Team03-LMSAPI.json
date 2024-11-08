@@ -121,14 +121,16 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"const randomFirstName = pm.variables.replaceIn(\"{{$randomFirstName}}\");\r",
+									"const keywords = [\"sdet\", \"java\", \"da\"];\r",
 									"\r",
+									"// Pick a random keyword from the array\r",
+									"const randomKeyword = keywords[Math.floor(Math.random() * keywords.length)];\r",
 									"\r",
-									"const ProgramName = \"APINinjas\" + randomFirstName;\r",
+									"// Combine the team name with the random keyword\r",
+									"const programName = \"APINinjas\" + randomKeyword;\r",
 									"\r",
-									"\r",
-									"pm.environment.set(\"randomProgramName\", ProgramName);\r",
-									""
+									"// Set this as an environment or global variable for use in the request body\r",
+									"pm.environment.set(\"randomProgramName\", programName);"
 								],
 								"type": "text/javascript",
 								"packages": {}
