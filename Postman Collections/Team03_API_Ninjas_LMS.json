@@ -78,7 +78,7 @@
 			"name": "Program",
 			"item": [
 				{
-					"name": "create program",
+					"name": "Add New Program",
 					"event": [
 						{
 							"listen": "test",
