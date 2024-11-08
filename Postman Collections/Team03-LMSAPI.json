@@ -335,7 +335,7 @@
 					"response": []
 				},
 				{
-					"name": "Get progrm by programid",
+					"name": "Get program by programid",
 					"event": [
 						{
 							"listen": "test",
