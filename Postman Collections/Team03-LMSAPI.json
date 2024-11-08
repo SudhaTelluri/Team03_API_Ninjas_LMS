@@ -90,7 +90,8 @@
 									"pm.globals.set(\"programId\",programId);\r",
 									"var programName=responseBody.programName;\r",
 									"pm.globals.set(\"programName\",programName);\r",
-									"console.log(\"Program ID set as global variable: \" + programId);\r",
+									"console.log(\"ProgramId set as global variable: \" + programId);\r",
+									"console.log(\"programName set as global variable: \" + programId);\r",
 									""
 								],
 								"type": "text/javascript",
