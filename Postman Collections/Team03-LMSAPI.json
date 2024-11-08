@@ -250,7 +250,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogid/16832"
+						"url": "{{baseURL}}/deletebyprogid/{{programId}}"
 					},
 					"response": []
 				},
@@ -274,7 +274,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request Copy",
+					"name": "Update Program with programid",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -305,6 +305,7 @@
 								"id": "03df07e7-0adf-40c7-864c-77795f84f699",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
+									"\r",
 									"    pm.response.to.have.status(200);\r",
 									"});"
 								],
@@ -321,7 +322,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "PUT",
@@ -335,7 +336,7 @@
 								}
 							}
 						},
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/program/{{programName}}"
+						"url": "{{baseURL}}/program/{{programName}}"
 					},
 					"response": []
 				},
