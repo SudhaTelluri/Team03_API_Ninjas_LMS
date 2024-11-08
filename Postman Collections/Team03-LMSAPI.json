@@ -152,7 +152,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"A QA team specializes in testing APIs to ensure reliability, performance, and functionality.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \r\n  \"programName\": \"{{randomProgramName}}\",\r\n  \"programDescription\": \"A QA team specializes in testing APIs to ensure reliability, performance, and functionality.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
