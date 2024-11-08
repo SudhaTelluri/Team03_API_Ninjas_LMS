@@ -7,15 +7,363 @@
 	"item": [
 		{
 			"name": "Login",
-			"item": [],
-			"id": "7e4608fb-b709-43eb-b667-95a6467e2e0d"
+			"item": [
+				{
+					"name": "User Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
+								"exec": [
+									"console.log(pm.variables.get(\"baseUrl\"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "51022c25-2583-4424-a087-51c627591440",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}login"
+					},
+					"response": []
+				}
+			],
+			"id": "7e4608fb-b709-43eb-b667-95a6467e2e0d",
+			"auth": {
+				"type": "bearer",
+				"bearer": {}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a5bcd333-07ae-4a44-91e7-51295397d31c",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "95bd3ee8-18b7-4542-b24d-9138b3013724",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		},
 		{
 			"name": "Program",
 			"item": [
 				{
+					"name": "create program",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"var responseBody=pm.response.json();\r",
+									"var programId=responseBody.programId;\r",
+									"pm.globals.set(\"programId\",programId);\r",
+									"var programName=responseBody.programName;\r",
+									"pm.globals.set(\"programName\",programName);\r",
+									"console.log(\"ProgramId set as global variable: \" + programId);\r",
+									"console.log(\"programName set as global variable: \" + programId);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "92d259e8-9ecc-440e-a58a-90ad962a8761",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n  \"programName\": \"TeamAPINinjas\",\r\n  \"programDescription\": \"A QA team specializes in testing APIs to ensure reliability, performance, and functionality.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Program",
+					"id": "fa28759d-1ffc-45c0-8ff9-2d0f2e9fc3f2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allPrograms"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Program with users",
+					"id": "2ff256fd-ec25-49e6-ac99-18eb284ff389",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allProgramsWithUsers"
+					},
+					"response": []
+				},
+				{
 					"name": "New Request",
-					"id": "a919e933-1a08-4aa9-9f51-0d33606a1946",
+					"id": "3b997467-4b7a-498f-a6ec-852ae653a118",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogname/{apininjas}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete program by id",
+					"id": "0f774259-9010-411b-9eee-ebc719ac3a2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogid/{16768}"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "304852ef-e573-404d-affa-a6991833ddf5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/programs/{programId}"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6a90a9e9-ba97-48f2-b7d0-6102c8f2d562",
+								"exec": [
+									"const teamName = \"APINinjas\"; // Base name of the team\r",
+									"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+									"let suffix = \"\";\r",
+									"for (let i = 0; i < 4; i++) {\r",
+									"    suffix += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+									"}\r",
+									"const updatedprogramName = `${teamName}-${suffix}`; \r",
+									"\r",
+									"// Set the program status\r",
+									"//const programStatus = \"Active\";\r",
+									"// Set new programName and any other parameters as environment variables\r",
+									"pm.environment.set(\"updatedprogramName\", updatedprogramName);\r",
+									"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "03df07e7-0adf-40c7-864c-77795f84f699",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "a55cd1e5-81d9-4c46-b194-3b4e5bca1f4d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/program/{{programName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request Copy 2",
+					"id": "74b304d5-07e8-4b4e-98ac-ae1e92c9d620",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearertoken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/putprogram/{{programId}}"
+					},
+					"response": []
+				}
+			],
+			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
+		},
+		{
+			"name": "Batch",
+			"item": [
+				{
+					"name": "Create New Batch",
+					"id": "ee5c3612-cf48-4e0a-8472-2d308affe305",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"Introduction to Programming Basics\",\r\n  \"batchName\": \"Programming101\",\r\n  \"batchNoOfClasses\": 10,\r\n  \"batchStatus\": \"Active\",\r\n  \"programId\": 16740,\r\n  \"programName\": \"Computer Science Fundamentals\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Batch Copy",
+					"id": "bad6b532-bad4-413c-9c4c-873dcbd62e52",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "e84c71cb-35cb-4823-9a8b-0b629d6288db",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -26,16 +374,90 @@
 					"response": []
 				}
 			],
-			"id": "15a4228e-04cb-4226-a142-c3c1f52014f0"
-		},
-		{
-			"name": "Batch",
-			"item": [],
 			"id": "8c0fb30a-fd51-4a34-83bd-f4ac6da1c23d"
 		},
 		{
 			"name": "Class",
-			"item": [],
+			"item": [
+				{
+					"name": "Create Class",
+					"id": "107df9b8-d531-4906-9b77-8101a11417ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchId}},\r\n  \"classComments\": \"Java Opps\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Java topics going on\",\r\n  \"classNo\": 2,\r\n  \"classNotes\": \"Java\",\r\n  \"classRecordingPath\": \"C:\\\\Recordings\",\r\n  \"classStaffId\": \"U49\",\r\n  \"classTopic\": \"Team03_API_Ninjas\",\r\n  \"classScheduledDates\": [\r\n    \"2024-11-25T15:11:08.750Z\",\r\n    \"2024-12-25T15:11:08.750Z\"\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/CreateClassSchedule"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Class List",
+					"id": "759bc2b3-33f9-43f2-a813-0784a727a834",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Class List Copy",
+					"id": "8b749874-3f03-467c-9b9f-397c5ac60e34",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "924ad9d5-9a37-422c-8f56-71e4b27016ff",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "92ba670a-f05d-4414-bea7-ff5fd0fb98f0"
 		},
 		{
@@ -63,7 +485,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "344f11f1-925f-4725-9d58-5bcfd09a0987",
+				"id": "bb2d9a78-b4bc-47ea-bc07-d206ea014ed8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -74,7 +496,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "73296dbb-c418-4277-aa07-7c672f681bbf",
+				"id": "0b281d9d-865b-44d2-9e3c-b32b5080318b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -101,18 +523,8 @@
 	],
 	"variable": [
 		{
-			"key": "baseURL",
+			"key": "baseUrl",
 			"value": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/",
-			"type": "string"
-		},
-		{
-			"key": "username",
-			"value": "sdet@gmail.com",
-			"type": "string"
-		},
-		{
-			"key": "password",
-			"value": "LmsHackathon@2024",
 			"type": "string"
 		}
 	]
