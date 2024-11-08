@@ -16,8 +16,6 @@
 							"script": {
 								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
 								"exec": [
-									"console.log(pm.variables.get(\"baseUrl\"));\r",
-									"\r",
 									"// Parse the response body to JSON\r",
 									"var responseBody = pm.response.json();\r",
 									"\r",
@@ -1058,6 +1056,16 @@
 				}
 			],
 			"id": "2bb4b8bf-ca08-4c8a-8830-ae9b9503323b"
+		},
+		{
+			"name": "Program",
+			"item": [],
+			"id": "f63d2f2a-5952-4fbb-92b7-f406dd1f60e4"
+		},
+		{
+			"name": "Chaining-NegativeScenarios",
+			"item": [],
+			"id": "745e681d-a5b5-4e38-aa5f-97d68c43567e"
 		}
 	],
 	"event": [
