@@ -16,7 +16,10 @@
 							"script": {
 								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
 								"exec": [
-									"console.log(pm.variables.get(\"baseUrl\"));\r",
+									"//console.log(pm.variables.get(\"baseUrl\"));\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
 									"\r",
 									"var responseBody=pm.response.json();\r",
 									"\r",
@@ -29,8 +32,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "2af2df29-bd34-425d-895b-c66ecb3b4b8e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -50,7 +57,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}login"
+						"url": "{{baseURL}}/login"
 					},
 					"response": []
 				}
@@ -221,12 +228,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogid/{16768}"
+						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/deletebyprogid/16832"
 					},
 					"response": []
 				},
