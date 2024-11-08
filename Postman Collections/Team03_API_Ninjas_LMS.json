@@ -103,7 +103,7 @@
 									"pm.globals.set(\"programName\",programName);\r",
 									"console.log(\"ProgramId set as global variable: \" + programId);\r",
 									"console.log(\"programName set as global variable: \" + programId);\r",
-									"console.log('Generated Program Name: ' + randomProgramName);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -164,12 +164,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allPrograms"
+						"url": "{{baseURL}}/allPrograms"
 					},
 					"response": []
 				},
