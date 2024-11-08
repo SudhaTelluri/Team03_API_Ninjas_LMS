@@ -776,7 +776,7 @@
 			"name": "User Role Map",
 			"item": [
 				{
-					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"name": "Get Assigned Program/Batch(es) of All Users",
 					"event": [
 						{
 							"listen": "test",
@@ -806,6 +806,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}/userRoleProgramBatchMap"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"id": "3c356080-aed2-46d0-8780-28bb3ae9b8a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/userRoleProgramBatchMap/{{UserId}}"
 					},
 					"response": []
 				}
