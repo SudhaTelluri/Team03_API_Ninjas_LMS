@@ -27,18 +27,6 @@
 							"script": {
 								"id": "23dd270f-a8a1-4c5e-9736-cc29420c4ba3",
 								"exec": [
-									"// Parse the response JSON\r",
-									"var responseBody = pm.response.json();\r",
-									"\r",
-									"// Check if the response body contains the \"token\" key\r",
-									"if (responseBody && responseBody.token) {\r",
-									"    var token = responseBody.token;\r",
-									"    // Set the token as a global variable\r",
-									"    pm.globals.set(\"bearertoken\", token);\r",
-									"    console.log(\"Token saved successfully:\", token);\r",
-									"} else {\r",
-									"    console.error(\"Token not found in response.\");\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -62,7 +50,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}login"
+						"url": "{{baseURL}}/login"
 					},
 					"response": []
 				}
