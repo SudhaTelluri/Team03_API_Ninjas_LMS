@@ -811,6 +811,21 @@
 				},
 				{
 					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5ef8ccba-9b57-4803-96da-481f67a0828b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "3c356080-aed2-46d0-8780-28bb3ae9b8a8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
