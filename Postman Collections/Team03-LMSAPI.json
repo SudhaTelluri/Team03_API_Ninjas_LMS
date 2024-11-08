@@ -261,6 +261,40 @@
 					"response": []
 				},
 				{
+					"name": "Get all Program Negative invalisapi",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "debb277b-59db-4043-873d-1515f186797b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "779f6219-4289-4a85-964a-b664750db4be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/allPrograms"
+					},
+					"response": []
+				},
+				{
 					"name": "Get all Program with users",
 					"event": [
 						{
