@@ -721,9 +721,15 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batches/batchId/{{batchId2}}"
+						"url": "{{baseURL}}batches/batchId/{{batchId1}}"
 					},
 					"response": []
 				},
@@ -734,8 +740,15 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}batches/batchName/{{batchName1}}"
 					},
 					"response": []
 				}
@@ -1322,7 +1335,7 @@
 					"response": []
 				},
 				{
-					"name": "Neg-Neg-GET Batch by Invalid BatchId",
+					"name": "Neg-GET Batch by Invalid BatchId",
 					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1331,6 +1344,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}batches/batchId/{{batchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-GET Batch By BatchName",
+					"id": "887f7573-bb70-4267-9de2-bc8697051dd7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batches/batchName/{{batchName1}}"
 					},
 					"response": []
 				},
