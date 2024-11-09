@@ -2214,7 +2214,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
+					"name": "Delete All Programs/Batches assigned to the User By InvalidUserId",
 					"id": "f73dff6c-5f17-4bb2-8490-e1b83897b626",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2222,7 +2222,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{sampleUserId}}"
+						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{sampleInvalidUserId}}"
 					},
 					"response": []
 				}
@@ -2240,7 +2240,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e22b92e9-393b-47ea-bfea-a2fdd09ed9ea",
+				"id": "af89aa39-56c7-45dd-824e-801d086ea708",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2251,7 +2251,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "fb9ecc4b-9847-44e2-afcd-f1a25a596bd0",
+				"id": "f5c1b005-c482-44f9-a1af-2c52255c46d5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2380,7 +2380,7 @@
 		},
 		{
 			"key": "sampleInvalidUserId",
-			"value": "U71",
+			"value": "U7",
 			"type": "string"
 		},
 		{
