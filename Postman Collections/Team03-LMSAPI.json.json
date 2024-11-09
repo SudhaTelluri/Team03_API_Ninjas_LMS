@@ -594,21 +594,21 @@
 							"script": {
 								"id": "004084cc-004e-4fc1-b382-8fbc528ced11",
 								"exec": [
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
-									"var programId1 = pm.collectionVariables.get(\"programId1\");\r",
+									"var programName2 = pm.collectionVariables.get(\"programName2\");\r",
+									"var programId2 = pm.collectionVariables.get(\"programId2\");\r",
 									"\r",
 									"function generateRandomNumber() {\r",
 									"    return Math.floor(100 + Math.random() * 900);  // Generates a 3-digit number between 100 and 999\r",
 									"}\r",
 									"\r",
 									"// Generate dynamic program name with random 3-digit number\r",
-									"var batchName1 = programName1 + generateRandomNumber();\r",
+									"var batchName2 = programName2 + generateRandomNumber();\r",
 									"\r",
 									"// Store batchName as a collection variable\r",
-									"pm.collectionVariables.set(\"batchName1\", batchName1);\r",
+									"pm.collectionVariables.set(\"batchName2\", batchName2);\r",
 									"\r",
 									"// Log the batchName for verification\r",
-									"console.log(\"Generated Batch Name:\", batchName1);\r",
+									"console.log(\"Generated Batch Name:\", batchName2);\r",
 									"\r",
 									"// Predefined storage for batch descriptions based on batch type\r",
 									"const batchDescriptions = {\r",
@@ -635,12 +635,12 @@
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
 									"const batchData = {\r",
-									"    batchName: batchName1,\r",
+									"    batchName: batchName2,\r",
 									"    batchDescription: selectedBatchDescription,\r",
 									"    batchNoOfClasses: selectedBatchClassCount, \r",
 									"    batchStatus: \"Active\",\r",
-									"    programId: programId1,\r",
-									"    programName: programName1\r",
+									"    programId: programId2,\r",
+									"    programName: programName2\r",
 									"};\r",
 									"\r",
 									"// Set the batchData as the request body\r",
@@ -722,7 +722,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}batches/batchId/{{batchId2}}"
 					},
 					"response": []
 				}
@@ -1447,6 +1448,14 @@
 		},
 		{
 			"key": "batchId",
+			"value": ""
+		},
+		{
+			"key": "batchName2",
+			"value": ""
+		},
+		{
+			"key": "batchId2",
 			"value": ""
 		}
 	]
