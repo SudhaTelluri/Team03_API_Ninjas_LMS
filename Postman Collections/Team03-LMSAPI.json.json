@@ -1271,7 +1271,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{ourUserId}}"
+						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{sampleUserId}}"
 					},
 					"response": []
 				}
@@ -2210,6 +2210,19 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
+					"id": "f73dff6c-5f17-4bb2-8490-e1b83897b626",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{sampleUserId}}"
 					},
 					"response": []
 				}
