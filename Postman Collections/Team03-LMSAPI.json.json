@@ -1135,6 +1135,19 @@
 						"url": "{{baseURL}}classRecordings/{{classId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Update Class",
+					"id": "90cc3418-16b5-4b98-851c-f3bc69bf7cb2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": "{{baseURL}}updateClass/{classId}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1965,7 +1978,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classRecordings/{{NoClassId}}"
+						"url": "{{baseURL}}classRecordings/{ClassId}"
 					},
 					"response": []
 				},
