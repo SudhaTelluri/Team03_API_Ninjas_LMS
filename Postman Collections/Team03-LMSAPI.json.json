@@ -1095,6 +1095,25 @@
 						"url": "{{baseURL}}classesByStaff/{{staffId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Recordings",
+					"id": "3683219a-ce66-428e-a502-1854038837eb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classrecordings"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1869,6 +1888,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}classesbyBatch/{{batchId3}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get All Classes By Invalid StaffId",
+					"id": "097eddc4-e570-4f7e-8506-d50e74a1dd99",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesByStaff/{staffId}"
 					},
 					"response": []
 				},
