@@ -564,7 +564,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchDescription\": \"{{batchData.batchDescription}}\",\r\n  \"batchName\": \"{{batchData.batchName}}\",\r\n  \"batchNoOfClasses\": \"{{batchData.batchNoOfClasses}}\",\r\n  \"batchStatus\": \"{{batchData.batchStatus}}\",\r\n  \"programId\": \"{{batchData.programId}}\",\r\n  \"programName\": \"{{batchData.programName}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchData.batchDescription}}\",\r\n  \"batchName\": \"{{batchData.batchName}}\",\r\n  \"batchNoOfClasses\": {{batchData.batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchData.batchStatus}}\",\r\n  \"programId\": \"{{batchData.programId}}\",\r\n  \"programName\": \"{{batchData.programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
