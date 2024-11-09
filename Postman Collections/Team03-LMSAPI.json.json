@@ -1191,6 +1191,32 @@
 						"url": "{{baseURL}}updateClassrecording/{{classId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Class By Class Id",
+					"id": "ff196d66-0d2a-43b2-a640-fc8640171819",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deleteByClass/{{classId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Class By Class Id Copy",
+					"id": "0e223b46-437b-426d-8b79-7f304bac9dea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deleteByClass/{{classId1}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
