@@ -1057,6 +1057,25 @@
 						"url": "{{baseURL}}classes/{{classTopic}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Classes By Batch Id",
+					"id": "112f60ef-260d-4e10-b7b9-5a4d9c3257a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1812,6 +1831,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}classes/{{classTopic}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Classes By Batch Id Copy",
+					"id": "419e8955-8918-4ed4-8d6d-606cb34f954d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
 					},
 					"response": []
 				},
