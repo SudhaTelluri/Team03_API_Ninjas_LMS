@@ -662,13 +662,13 @@
 								"id": "1e181056-b122-4292-b654-2e891600392b",
 								"exec": [
 									"// Get the batchId from the response body\r",
-									"const batchId1 = pm.response.json().batchId;\r",
+									"const batchId2 = pm.response.json().batchId;\r",
 									"\r",
 									"// Store the batchId as a collection variable\r",
-									"pm.collectionVariables.set(\"batchId1\", batchId1);\r",
+									"pm.collectionVariables.set(\"batchId2\", batchId2);\r",
 									"\r",
 									"// Log the batchId for verification\r",
-									"console.log(\"Stored batchId as collection variable:\", batchId1);"
+									"console.log(\"Stored batchId as collection variable:\", batchId2);"
 								],
 								"type": "text/javascript",
 								"packages": {}
