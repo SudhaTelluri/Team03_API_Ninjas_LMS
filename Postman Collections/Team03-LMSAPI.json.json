@@ -21,7 +21,7 @@
 									"\r",
 									"// Set the token as a collection variable\r",
 									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);\r",
-									"pm.collectionVariables.set(\"bearerToken\", responseBody.userId);"
+									"pm.collectionVariables.set(\"ROLE-ADMIN\", responseBody.userId);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1214,7 +1214,8 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}upcomingClasses/U54"
 					},
 					"response": []
 				}
@@ -2242,6 +2243,10 @@
 			"key": "NoClassId",
 			"value": "",
 			"type": "string"
+		},
+		{
+			"key": "AdminID",
+			"value": ""
 		}
 	]
 }
