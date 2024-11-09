@@ -992,7 +992,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Class List Copy",
+					"name": "Get All Class List",
 					"id": "cab75cd1-91dc-4ccc-89d7-be7c5c6f5841",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2061,7 +2061,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classRecordings/{ClassId}"
+						"url": "{{baseURL}}classRecordings/{{invalidClassId}}"
 					},
 					"response": []
 				},
