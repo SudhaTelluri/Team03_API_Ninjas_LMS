@@ -513,7 +513,7 @@
 									"};\r",
 									"\r",
 									"// Dynamic selection of batch type\r",
-									"const selectedBatchType = \"Advanced\"; // You can dynamically determine this based on your test setup\r",
+									"const selectedBatchType = \"Specialized\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
 									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
@@ -533,12 +533,6 @@
 									"\r",
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
-									"\r",
-									"// pm.collectionVariables.set(\"batchDescription\", selectedBatchDescription);\r",
-									"// pm.collectionVariables.set(\"batchNoOfClasses\", selectedBatchClassCount); // as integer\r",
-									"// pm.collectionVariables.set(\"programId\", programId1);\r",
-									"// pm.collectionVariables.set(\"programName\", programName1);\r",
-									"\r",
 									"\r",
 									"\r",
 									""
@@ -1153,7 +1147,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "9d31da1b-d006-44e8-a128-6adad9646a15",
+				"id": "9b7a9bc9-f1ec-4f91-beb3-d81e50928816",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1164,7 +1158,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "82ea9177-97cb-47ec-b22d-1808b0eb50aa",
+				"id": "0e3f2161-ea79-412c-bbd5-2ebf91832d8e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1226,22 +1220,6 @@
 		},
 		{
 			"key": "batchName1",
-			"value": ""
-		},
-		{
-			"key": "batchDescription",
-			"value": ""
-		},
-		{
-			"key": "batchNoOfClasses",
-			"value": ""
-		},
-		{
-			"key": "programId",
-			"value": ""
-		},
-		{
-			"key": "programName",
 			"value": ""
 		}
 	]
