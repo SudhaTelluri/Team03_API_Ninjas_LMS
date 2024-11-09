@@ -992,25 +992,6 @@
 					"response": []
 				},
 				{
-					"name": "Get All Class List",
-					"id": "cab75cd1-91dc-4ccc-89d7-be7c5c6f5841",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{token}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
-					},
-					"response": []
-				},
-				{
 					"name": "Get Class Recordings By BatchId",
 					"id": "792c9c6d-6a81-4009-b859-1f1de708fea8",
 					"protocolProfileBehavior": {
@@ -2175,7 +2156,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "853421dd-a9f5-40c9-9429-bf1bfe6471a6",
+				"id": "a54372fd-050d-4dd4-82c1-2ad32929680c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2186,7 +2167,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "190ad317-5678-443a-90c0-7ca93bc5167a",
+				"id": "0c767414-1ef9-489f-8450-7d6cd886d8a5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2301,6 +2282,11 @@
 		{
 			"key": "invalidBatchId",
 			"value": "30",
+			"type": "string"
+		},
+		{
+			"key": "invalidClassTopic",
+			"value": ".net introduction",
 			"type": "string"
 		}
 	]
