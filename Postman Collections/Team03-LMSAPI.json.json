@@ -2240,7 +2240,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "af89aa39-56c7-45dd-824e-801d086ea708",
+				"id": "6c1e8025-e4d3-45a1-9fbb-54d4caade8db",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2251,7 +2251,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f5c1b005-c482-44f9-a1af-2c52255c46d5",
+				"id": "b5346f9e-f56b-4fa9-9af5-10833efcb7db",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2390,7 +2390,12 @@
 		},
 		{
 			"key": "adminID",
-			"value": ""
+			"value": "U73"
+		},
+		{
+			"key": "sampleUserIdOfUser",
+			"value": "U57",
+			"type": "string"
 		}
 	]
 }
