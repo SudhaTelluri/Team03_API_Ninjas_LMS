@@ -21,7 +21,7 @@
 									"\r",
 									"// Set the token as a collection variable\r",
 									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);\r",
-									"pm.collectionVariables.set(\"ROLE-ADMIN\", responseBody.userId);"
+									"pm.collectionVariables.set(\"adminID\", responseBody.userId);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -2246,6 +2246,10 @@
 		},
 		{
 			"key": "AdminID",
+			"value": ""
+		},
+		{
+			"key": "adminID",
 			"value": ""
 		}
 	]
