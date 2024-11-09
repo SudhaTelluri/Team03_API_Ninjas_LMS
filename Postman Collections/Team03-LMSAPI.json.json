@@ -2327,6 +2327,10 @@
 			"key": "invalidClassTopic",
 			"value": ".net introduction",
 			"type": "string"
+		},
+		{
+			"key": "adminID",
+			"value": ""
 		}
 	]
 }
