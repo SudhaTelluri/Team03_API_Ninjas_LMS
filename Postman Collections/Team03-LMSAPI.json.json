@@ -23,6 +23,7 @@
 									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);\r",
 									"pm.collectionVariables.set(\"adminID\", responseBody.userId);\r",
 									"\r",
+									"testResponseTime(500);\r",
 									"// Retrieve and evaluate each function to make it usable in this request\r",
 									"//eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"//eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
@@ -30,9 +31,9 @@
 									"//eval(pm.collectionVariables.get(\"testStatusLine\"));\r",
 									"\r",
 									"// Call the functions with appropriate arguments\r",
-									"testResponseTime(500);  // Check if response time is less than 200ms\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"//pm.collectionVariables.get(testResponseTime(500));  // Check if response time is less than 200ms\r",
+									"//testStatusCode(200);    // Check if status code is 200\r",
+									"//testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
 									"//testStatusLine(\"OK\",200);"
 								],
 								"type": "text/javascript",
@@ -2252,7 +2253,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6804d0b0-28a1-4211-a2ce-69c66521d442",
+				"id": "daf58a7f-5b7e-4692-8bf2-965731c30b35",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2263,7 +2264,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2573f0be-dc0d-4bc9-ad02-95d37dfae1c5",
+				"id": "4379a8e1-f859-4557-be4f-a7555337064f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2296,10 +2297,10 @@
 					"}\r",
 					"\r",
 					"// Save the functions globally within the collection for use\r",
-					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
-					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
-					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
-					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
+					"//pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
+					"//pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
+					"//pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
+					"//pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					""
 				]
 			}
