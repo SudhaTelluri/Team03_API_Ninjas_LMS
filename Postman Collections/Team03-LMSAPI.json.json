@@ -2079,6 +2079,19 @@
 					"response": []
 				},
 				{
+					"name": "Neg-Get Class Recordings By Invalid Class Id",
+					"id": "73d3af1f-864a-4180-8af3-ad4de221b5c4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}download/{{classId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Delete Class By Invalid Class Id",
 					"id": "0e223b46-437b-426d-8b79-7f304bac9dea",
 					"protocolProfileBehavior": {
@@ -2162,7 +2175,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "23cf2b9f-2e38-48f1-a3c7-abf287e1ecb8",
+				"id": "078b7dcb-a66c-40dd-bc62-d1a8aa4d62b1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2173,7 +2186,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "98f19491-0425-4831-aef1-dd3b9bc95986",
+				"id": "aeeda67b-ac4a-434d-bfcc-4b69ec878548",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2268,6 +2281,11 @@
 		{
 			"key": "sampleStudentId",
 			"value": "U54",
+			"type": "string"
+		},
+		{
+			"key": "invalidClassId",
+			"value": "2000",
 			"type": "string"
 		}
 	]
