@@ -1322,7 +1322,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Batch By BatchId Copy",
+					"name": "Neg-Neg-GET Batch by Invalid BatchId",
 					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1330,7 +1330,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batches/batchId/{{batchId2}}"
+						"url": "{{baseURL}}batches/batchId/{{batchId}}"
 					},
 					"response": []
 				},
