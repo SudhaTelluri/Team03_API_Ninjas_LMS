@@ -1269,8 +1269,9 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{ourUserId}}"
 					},
 					"response": []
 				}
@@ -2226,7 +2227,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "500701de-aac0-454d-b74c-fe1162e71bca",
+				"id": "e22b92e9-393b-47ea-bfea-a2fdd09ed9ea",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2237,7 +2238,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "17897c71-c1e8-4e0f-8219-ba015e9b8ecb",
+				"id": "fb9ecc4b-9847-44e2-afcd-f1a25a596bd0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2367,6 +2368,11 @@
 		{
 			"key": "sampleInvalidUserId",
 			"value": "U71",
+			"type": "string"
+		},
+		{
+			"key": "ourUserId",
+			"value": "U73",
 			"type": "string"
 		}
 	]
