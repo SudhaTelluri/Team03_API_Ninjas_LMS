@@ -27,12 +27,13 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusLine\"));\r",
 									"\r",
 									"// Call the functions with appropriate arguments\r",
 									"testResponseTime(500);  // Check if response time is less than 200ms\r",
 									"testStatusCode(200);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									""
+									"testStatusLine(\"OK\",200);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -2435,6 +2436,10 @@
 		},
 		{
 			"key": "testHeader",
+			"value": ""
+		},
+		{
+			"key": "testStatusLine",
 			"value": ""
 		}
 	]
