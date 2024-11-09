@@ -1038,6 +1038,18 @@
 						"url": "{{baseURL}}class/{{classId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "a172bb1e-dced-4d19-896a-50b17047a83e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1746,7 +1758,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Class Recordings By Invalid BatchId",
+					"name": "Neg-Get Class Recordings By Invalid BatchId",
 					"id": "fac5cbf9-d108-44ad-bbb5-3e50bb8a193b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1755,6 +1767,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}batchRecordings/{{batchId3}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Class Details By Invalid Class Id",
+					"id": "82740fc7-8b4d-4d4a-9367-488732e0d626",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}class/{{classId1}}"
 					},
 					"response": []
 				},
