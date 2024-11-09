@@ -1141,14 +1141,15 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Neg-CreateBatch-BadRequest",
 					"id": "48f19c1a-f541-4115-9c35-a7c37ac7d680",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"method": "POST",
+						"header": [],
+						"url": "{{baseURL}}batches"
 					},
 					"response": []
 				}
