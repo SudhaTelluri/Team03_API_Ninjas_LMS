@@ -1250,8 +1250,15 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap/{userId}"
 					},
 					"response": []
 				}
