@@ -895,6 +895,30 @@
 			"item": [
 				{
 					"name": "Create Class",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
+								"exec": [
+									"// Retrieve the programName1 collection variable\r",
+									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"\r",
+									"// Generate a unique class topic by appending a random 4-digit number\r",
+									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000);\r",
+									"\r",
+									"// Store the generated classTopic as a collection variable\r",
+									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
+									"\r",
+									"// Log the classTopic for verification\r",
+									"console.log(\"Generated Class Topic:\", classTopic);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "83b4695e-eb34-46e8-9324-05cb4a4b98e6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -910,7 +934,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{programName1}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
+							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1773,6 +1797,10 @@
 		},
 		{
 			"key": "batchId1",
+			"value": ""
+		},
+		{
+			"key": "classTopic",
 			"value": ""
 		}
 	]
