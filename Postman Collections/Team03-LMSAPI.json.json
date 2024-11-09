@@ -770,6 +770,25 @@
 						"url": "{{baseURL}}batches/program/{{programId1}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Update By BatchId",
+					"id": "0473535b-7863-475f-8633-22901eb8ea68",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"url": "{{baseURL}}batches/{{batchId1}}"
+					},
+					"response": []
 				}
 			],
 			"id": "ac9d7b66-d62c-4772-a62f-497227fb7256"
@@ -1386,7 +1405,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Batch By ProgramId Copy",
+					"name": "Neg-GET Batch By InvalidProgramId",
 					"id": "c0c28988-035b-4d37-bf6a-f4122e7bfb85",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1400,7 +1419,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batches/program/{{programId1}}"
+						"url": "{{baseURL}}batches/program/{{programId3}}"
 					},
 					"response": []
 				},
@@ -1547,6 +1566,10 @@
 		},
 		{
 			"key": "batchId2",
+			"value": ""
+		},
+		{
+			"key": "batchId1",
 			"value": ""
 		}
 	]
