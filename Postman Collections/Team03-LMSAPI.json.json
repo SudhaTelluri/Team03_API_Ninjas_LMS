@@ -2254,7 +2254,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "86c569be-742e-4fd7-8fcc-71e1cf6c7049",
+				"id": "7e98ab85-3a65-4f86-a0a2-21b35f62fea1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2265,7 +2265,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d4b072de-4554-4133-b072-2f9eda472e70",
+				"id": "f52035c5-4a1d-411b-95a1-337d635b41e1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2291,9 +2291,12 @@
 					"// Define test function for Status Line\r",
 					"function testStatusLine(expectedStatusCode, expectedStatusMessage) {\r",
 					"    pm.test(`Status line is \"${expectedStatusCode} ${expectedStatusMessage}\"`, () => {\r",
-					"        const statusLine = pm.response.status;\r",
-					"        pm.expect(statusLine).to.include(expectedStatusCode);\r",
-					"        pm.expect(statusLine).to.include(expectedStatusMessage);\r",
+					"        const statusCode = pm.response.status;            // Gets the response status code\r",
+					"        const statusMessage = pm.response.statusText;     // Gets the response status message\r",
+					"        \r",
+					"        // Check if the status code and status message match the expected ones\r",
+					"        pm.expect(statusCode).to.eql(expectedStatusCode);        // Compare status code\r",
+					"        pm.expect(statusMessage).to.eql(expectedStatusMessage);\r",
 					"    });\r",
 					"}\r",
 					"\r",
@@ -2301,7 +2304,7 @@
 					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
 					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
 					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
-					"//pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
+					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					""
 				]
 			}
