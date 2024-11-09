@@ -726,6 +726,18 @@
 						"url": "{{baseURL}}batches/batchId/{{batchId2}}"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "0572519b-ff10-4c33-99f8-d34d8ce23375",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "ac9d7b66-d62c-4772-a62f-497227fb7256"
@@ -1220,44 +1232,6 @@
 					"response": []
 				},
 				{
-					"name": "Neg-Delete Program with Deleted ProgramName",
-					"id": "7c3b9647-a9b2-4b0d-99e1-adc226de4132",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Delete Program with Deleted ProgramID",
-					"id": "a0f7cd17-e7bc-4172-91d4-1b246160d1b8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Neg-CreateBatch-BadRequest",
 					"event": [
 						{
@@ -1344,6 +1318,57 @@
 							}
 						},
 						"url": "{{baseURL}}batches"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Batch By BatchId Copy",
+					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batches/batchId/{{batchId2}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Delete Program with Deleted ProgramName",
+					"id": "7c3b9647-a9b2-4b0d-99e1-adc226de4132",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Delete Program with Deleted ProgramID",
+					"id": "a0f7cd17-e7bc-4172-91d4-1b246160d1b8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
 					},
 					"response": []
 				}
@@ -1456,6 +1481,10 @@
 		},
 		{
 			"key": "batchId2",
+			"value": ""
+		},
+		{
+			"key": "batchId1",
 			"value": ""
 		}
 	]
