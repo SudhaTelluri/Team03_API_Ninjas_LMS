@@ -549,7 +549,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "POST",
@@ -1136,11 +1136,17 @@
 			"id": "745e681d-a5b5-4e38-aa5f-97d68c43567e"
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{bearerToken}}"
+		}
+	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5b1cae94-d391-4ce3-85db-38e72beb5aae",
+				"id": "9d31da1b-d006-44e8-a128-6adad9646a15",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1151,7 +1157,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a0c0b860-59c3-4301-a191-b7df726719bf",
+				"id": "82ea9177-97cb-47ec-b22d-1808b0eb50aa",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
