@@ -1258,7 +1258,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/{userId}"
+						"url": "{{baseURL}}userRoleProgramBatchMap/{{ourUserId}}"
 					},
 					"response": []
 				}
@@ -2195,7 +2195,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a54372fd-050d-4dd4-82c1-2ad32929680c",
+				"id": "a3a63add-70a8-48ea-bbbb-edcc1722adbf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2206,7 +2206,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0c767414-1ef9-489f-8450-7d6cd886d8a5",
+				"id": "5a1f5f26-77e6-4e56-91c8-2403008a0688",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2329,8 +2329,9 @@
 			"type": "string"
 		},
 		{
-			"key": "adminID",
-			"value": ""
+			"key": "ourUserId",
+			"value": "U73",
+			"type": "string"
 		}
 	]
 }
