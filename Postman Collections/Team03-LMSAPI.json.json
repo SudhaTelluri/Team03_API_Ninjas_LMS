@@ -1218,6 +1218,19 @@
 						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Get Class Recordings By Class Id",
+					"id": "68f9320e-7d0b-4f11-9396-74b7db036dba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}download/{{classId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
