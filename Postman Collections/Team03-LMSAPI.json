@@ -471,7 +471,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}/programs/{programId}"
+						"url": "{{baseURL}}/programs/{{programId}}"
 					},
 					"response": []
 				},
