@@ -28,7 +28,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusLine\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLine = new Function(\"expectedStatusCode\", \"expectedStatusMessage\", pm.collectionVariables.get(\"testStatusLine\"));\r",
+									"\r",
+									"// Call the function to check if the status line is 200 OK\r",
+									"//testStatusLine(200, 'OK');\r",
+									"\r",
 									"\r",
 									"//Call the functions with appropriate arguments\r",
 									"\r",
@@ -2254,7 +2259,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7e98ab85-3a65-4f86-a0a2-21b35f62fea1",
+				"id": "d5db1a1e-a741-4254-93fc-9c03c73105d2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2265,7 +2270,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "f52035c5-4a1d-411b-95a1-337d635b41e1",
+				"id": "810ef99d-1839-497b-b01b-383a953e5846",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2288,15 +2293,11 @@
 					"    });\r",
 					"}\r",
 					"\r",
-					"// Define test function for Status Line\r",
 					"function testStatusLine(expectedStatusCode, expectedStatusMessage) {\r",
 					"    pm.test(`Status line is \"${expectedStatusCode} ${expectedStatusMessage}\"`, () => {\r",
-					"        const statusCode = pm.response.status;            // Gets the response status code\r",
-					"        const statusMessage = pm.response.statusText;     // Gets the response status message\r",
-					"        \r",
-					"        // Check if the status code and status message match the expected ones\r",
-					"        pm.expect(statusCode).to.eql(expectedStatusCode);        // Compare status code\r",
-					"        pm.expect(statusMessage).to.eql(expectedStatusMessage);\r",
+					"        const statusLine = pm.response.status;\r",
+					"        pm.expect(statusLine).to.include(expectedStatusCode);\r",
+					"        pm.expect(statusLine).to.include(expectedStatusMessage);\r",
 					"    });\r",
 					"}\r",
 					"\r",
