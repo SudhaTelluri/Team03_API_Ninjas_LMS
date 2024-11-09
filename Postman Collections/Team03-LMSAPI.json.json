@@ -867,6 +867,25 @@
 						"url": "{{baseURL}}batches/{{batchId1}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete batch By BatchId",
+					"id": "20befc6a-1773-40a9-ac94-5fb26dc548b3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}batches/{{batchId1}}"
+					},
+					"response": []
 				}
 			],
 			"id": "ac9d7b66-d62c-4772-a62f-497227fb7256"
@@ -1542,7 +1561,7 @@
 									"};\r",
 									"\r",
 									"// Dynamic selection of batch type\r",
-									"const selectedBatchType = \"Intermediate\"; // You can dynamically determine this based on your test setup\r",
+									"const selectedBatchType = \"Advanced\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
 									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
@@ -1594,6 +1613,25 @@
 								}
 							}
 						},
+						"url": "{{baseURL}}batches/{{batchId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete batch By Deleted BatchId",
+					"id": "30378a49-05d6-471a-bd14-62253d30c6db",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
 						"url": "{{baseURL}}batches/{{batchId1}}"
 					},
 					"response": []
