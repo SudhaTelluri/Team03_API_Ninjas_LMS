@@ -1116,6 +1116,25 @@
 						"url": "{{baseURL}}classrecordings"
 					},
 					"response": []
+				},
+				{
+					"name": "Get Class Recordings By Class Id",
+					"id": "e6975f62-aa7d-4a6c-8a2c-142ba5b94d0e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classRecordings/{{classId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1928,6 +1947,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}{{classrecordings}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Class Recordings By Invalid Class Id",
+					"id": "5c124f53-d85a-4aea-889d-96322fa8e749",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classRecordings/{{classId1}}"
 					},
 					"response": []
 				},
