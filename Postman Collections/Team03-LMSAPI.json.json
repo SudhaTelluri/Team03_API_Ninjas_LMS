@@ -1965,7 +1965,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classRecordings/{{classId1}}"
+						"url": "{{baseURL}}classRecordings/{{NoClassId}}"
 					},
 					"response": []
 				},
@@ -2040,7 +2040,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "42750de8-2148-4aea-90db-3bed3f6dd7dd",
+				"id": "d445e254-46d5-41e7-806e-0fc3da9bae6f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2051,7 +2051,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "513ce959-e404-474e-a3ed-ba3734282693",
+				"id": "954f057e-95e1-4175-bdeb-c31b8ea0c796",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2142,6 +2142,11 @@
 		{
 			"key": "classrecordings",
 			"value": ""
+		},
+		{
+			"key": "NoClassId",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
