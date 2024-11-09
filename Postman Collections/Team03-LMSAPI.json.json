@@ -2053,6 +2053,19 @@
 					"response": []
 				},
 				{
+					"name": "Neg-GetUpcomingClasses_InvalidStudentID",
+					"id": "5fc32899-1312-472c-bffd-24b93f7f5fc8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Delete Class By Invalid Class Id",
 					"id": "0e223b46-437b-426d-8b79-7f304bac9dea",
 					"protocolProfileBehavior": {
