@@ -2195,7 +2195,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ec9d7e00-30f0-431a-80a4-a953d6afe8fb",
+				"id": "500701de-aac0-454d-b74c-fe1162e71bca",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2206,7 +2206,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5b4bbee7-83fa-4010-8d5b-0eb31e837904",
+				"id": "17897c71-c1e8-4e0f-8219-ba015e9b8ecb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2330,7 +2330,12 @@
 		},
 		{
 			"key": "sampleUserId",
-			"value": "U74",
+			"value": "U29",
+			"type": "string"
+		},
+		{
+			"key": "sampleInvalidUserId",
+			"value": "U71",
 			"type": "string"
 		}
 	]
