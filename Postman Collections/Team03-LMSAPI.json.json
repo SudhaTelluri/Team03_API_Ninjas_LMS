@@ -1261,6 +1261,18 @@
 						"url": "{{baseURL}}userRoleProgramBatchMap/{{sampleUserId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete All Programs/Batches assigned to the User By UserId",
+					"id": "a20c8240-4d46-41ed-bc42-42a44ce1859f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "72aec55b-921c-49c1-a09e-e97657823427"
@@ -2108,6 +2120,25 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}download/{{invalidClassId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned Program/Batch Of a User By Invalid User Id",
+					"id": "9c5d4a8e-5524-4421-967f-7d49aec5e373",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap/{{sampleInvalidUserId}}"
 					},
 					"response": []
 				},
