@@ -1076,6 +1076,25 @@
 						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Classes By StaffId",
+					"id": "f87e348a-9335-4e5e-a611-d71e4e6260cc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesByStaff/{{staffId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1849,7 +1868,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
+						"url": "{{baseURL}}classesbyBatch/{{batchId3}}"
 					},
 					"response": []
 				},
