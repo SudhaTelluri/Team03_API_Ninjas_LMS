@@ -527,15 +527,11 @@
 									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
 									"\r",
-									"// Dynamically created batch data\r",
-									"const batchData = {\r",
-									"    \"batchDescription\": selectedBatchDescription,\r",
-									"    \"batchName\": batchName1,  // Randomized batch name\r",
-									"    \"batchNoOfClasses\": selectedBatchClassCount,\r",
-									"    \"batchStatus\": \"Active\",\r",
-									"    \"programId\": programId1,  // You can dynamically set the Program ID\r",
-									"    \"programName\": programName1\r",
-									"};\r",
+									"pm.collectionVariables.set(\"batchDescription\", selectedBatchDescription);\r",
+									"pm.collectionVariables.set(\"batchNoOfClasses\", selectedBatchClassCount); // as integer\r",
+									"pm.collectionVariables.set(\"programId\", programId1);\r",
+									"pm.collectionVariables.set(\"programName\", programName1);\r",
+									"\r",
 									"\r",
 									"// Save the batchData to environment for use in the request body\r",
 									"pm.environment.set(\"batchData\", JSON.stringify(batchData));\r",
@@ -564,7 +560,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchDescription\": \"{{batchData.batchDescription}}\",\r\n  \"batchName\": \"{{batchData.batchName}}\",\r\n  \"batchNoOfClasses\": {{batchData.batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchData.batchStatus}}\",\r\n  \"programId\": \"{{batchData.programId}}\",\r\n  \"programName\": \"{{batchData.programName}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": {{batchNoOfClasses}},  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1227,6 +1223,22 @@
 		},
 		{
 			"key": "batchName1",
+			"value": ""
+		},
+		{
+			"key": "batchDescription",
+			"value": ""
+		},
+		{
+			"key": "batchNoOfClasses",
+			"value": ""
+		},
+		{
+			"key": "programId",
+			"value": ""
+		},
+		{
+			"key": "programName",
 			"value": ""
 		}
 	]
