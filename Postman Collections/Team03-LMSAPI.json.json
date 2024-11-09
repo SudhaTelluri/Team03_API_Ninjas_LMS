@@ -31,10 +31,11 @@
 									"eval(pm.collectionVariables.get(\"testStatusLine\"));\r",
 									"\r",
 									"//Call the functions with appropriate arguments\r",
-									"pm.collectionVariables.get(testResponseTime(500));  // Check if response time is less than 200ms\r",
+									"\r",
+									"testResponseTime(500)\r",
 									"testStatusCode(200);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(\"OK\",200);"
+									"testStatusLine(200,\"OK\");"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -2253,7 +2254,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c05592ef-ff22-449b-b69d-5e7f4bda0937",
+				"id": "86c569be-742e-4fd7-8fcc-71e1cf6c7049",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2264,7 +2265,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "67886941-3d88-41b8-9f23-57c7e9d57b39",
+				"id": "d4b072de-4554-4133-b072-2f9eda472e70",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2300,7 +2301,7 @@
 					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
 					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
 					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
-					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
+					"//pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					""
 				]
 			}
