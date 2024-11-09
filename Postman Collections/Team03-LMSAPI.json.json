@@ -728,7 +728,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "GET Batch By BatchName",
 					"id": "0572519b-ff10-4c33-99f8-d34d8ce23375",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
