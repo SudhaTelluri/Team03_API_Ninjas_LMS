@@ -2074,7 +2074,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}upcomingClasses/{sampleStudentId}"
+						"url": "{{baseURL}}upcomingClasses/{{invalidStudentId}}"
 					},
 					"response": []
 				},
@@ -2087,7 +2087,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}download/{{classId}}"
+						"url": "{{baseURL}}download/{{invalidClassId}}"
 					},
 					"response": []
 				},
@@ -2175,7 +2175,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "078b7dcb-a66c-40dd-bc62-d1a8aa4d62b1",
+				"id": "79515be9-9d5b-420e-8a2b-3056746ed0ea",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2186,7 +2186,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "aeeda67b-ac4a-434d-bfcc-4b69ec878548",
+				"id": "7936ba2a-9071-48d7-bd1e-5b3e4158e7ef",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2286,6 +2286,11 @@
 		{
 			"key": "invalidClassId",
 			"value": "2000",
+			"type": "string"
+		},
+		{
+			"key": "invalidStudentId",
+			"value": "U500",
 			"type": "string"
 		}
 	]
