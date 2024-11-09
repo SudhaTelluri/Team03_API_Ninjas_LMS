@@ -869,7 +869,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete batch By BatchId",
+					"name": "Delete Batch By BatchId",
 					"id": "20befc6a-1773-40a9-ac94-5fb26dc548b3",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1618,7 +1618,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete batch By Deleted BatchId",
+					"name": "Neg-Delete Batch with Non-Existing BatchId",
 					"id": "30378a49-05d6-471a-bd14-62253d30c6db",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
