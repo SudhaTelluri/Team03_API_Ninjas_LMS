@@ -1163,6 +1163,19 @@
 						"url": "{{baseURL}}updateClass/{{classId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Update Class Recording Path",
+					"id": "a4784699-07a9-45ae-b120-aed6bc4d1903",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}updateClassrecording/{{classId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
