@@ -1019,6 +1019,25 @@
 						"url": "{{baseURL}}batchRecordings/{{batchId1}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Get Class Details By Class Id",
+					"id": "aa31aed2-d987-4a7b-8037-7096088dd968",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}class/{{classId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "a5d70a42-b053-4510-a1f9-2c04eb14ff24"
@@ -1723,6 +1742,19 @@
 							}
 						},
 						"url": "{{baseURL}}CreateClassSchedule"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class Recordings By Invalid BatchId",
+					"id": "fac5cbf9-d108-44ad-bbb5-3e50bb8a193b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batchRecordings/{{batchId3}}"
 					},
 					"response": []
 				},
