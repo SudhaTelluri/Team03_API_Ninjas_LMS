@@ -928,10 +928,12 @@
 									"// Extract classId and staffId from the response\r",
 									"const classId = response.csId;\r",
 									"const staffId = response.classStaffId;  \r",
+									"const classrecordings=response.classRecordingPath;\r",
 									"\r",
 									"// Store classId and staffId in collection variables\r",
 									"pm.collectionVariables.set(\"classId\", classId);\r",
 									"pm.collectionVariables.set(\"staffId\", staffId);\r",
+									"pm.collectionVariables.set(\"classrecordings\", classrecordings);\r",
 									"\r",
 									"// Log for verification\r",
 									"console.log(\"Stored classId: \", classId);\r",
@@ -1911,6 +1913,25 @@
 					"response": []
 				},
 				{
+					"name": "Neg-Get All Recordings With Invalid Endpoint",
+					"id": "7d45c68f-de6e-4de1-a1d5-76742536539b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}{{classrecordings}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Delete Batch with Non-Existing BatchId",
 					"id": "30378a49-05d6-471a-bd14-62253d30c6db",
 					"protocolProfileBehavior": {
@@ -2078,6 +2099,10 @@
 		},
 		{
 			"key": "staffId",
+			"value": ""
+		},
+		{
+			"key": "classrecordings",
 			"value": ""
 		}
 	]
