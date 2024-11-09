@@ -2251,7 +2251,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7414f85c-99e6-4f3a-a29c-0a574db17552",
+				"id": "6804d0b0-28a1-4211-a2ce-69c66521d442",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2262,7 +2262,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "2ae3bf4e-b95e-4763-a36e-71349595cd5b",
+				"id": "2573f0be-dc0d-4bc9-ad02-95d37dfae1c5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2285,10 +2285,20 @@
 					"    });\r",
 					"}\r",
 					"\r",
+					"// Define test function for Status Line\r",
+					"function testStatusLine(expectedStatusCode, expectedStatusMessage) {\r",
+					"    pm.test(`Status line is \"${expectedStatusCode} ${expectedStatusMessage}\"`, () => {\r",
+					"        const statusLine = pm.response.status;\r",
+					"        pm.expect(statusLine).to.include(expectedStatusCode);\r",
+					"        pm.expect(statusLine).to.include(expectedStatusMessage);\r",
+					"    });\r",
+					"}\r",
+					"\r",
 					"// Save the functions globally within the collection for use\r",
 					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
 					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
 					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
+					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					""
 				]
 			}
