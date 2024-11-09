@@ -1206,7 +1206,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get All Upcoming Classes For particular Student",
 					"id": "98941056-483d-4f96-920e-b3dd4f4a8be1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
