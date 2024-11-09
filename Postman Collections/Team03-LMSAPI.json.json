@@ -1143,9 +1143,24 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
-						"url": "{{baseURL}}updateClass/{classId}"
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchId1}},                              \r\n  \"classNo\": 5,                                 \r\n  \"classDate\": \"2024-11-25T00:00:00.000+00:00\", \r\n  \"classTopic\": {{classTopic}},             \r\n  \"classStaffId\": \"U53\",                        \r\n  \"classDescription\": \"Every month going on welcome to join\",   \r\n  \"classComments\": \"API BOOTCAMP\",              \r\n  \"classNotes\": \"Gherkins\",                     \r\n  \"classRecordingPath\": \"recordings\"            \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}updateClass/{{classId}}"
 					},
 					"response": []
 				}
