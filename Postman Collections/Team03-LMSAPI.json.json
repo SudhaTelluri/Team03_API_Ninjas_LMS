@@ -20,7 +20,8 @@
 									"var responseBody = pm.response.json();\r",
 									"\r",
 									"// Set the token as a collection variable\r",
-									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);"
+									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);\r",
+									"pm.collectionVariables.set(\"bearerToken\", responseBody.userId);"
 								],
 								"type": "text/javascript",
 								"packages": {}
