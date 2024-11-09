@@ -1206,15 +1206,14 @@
 					"response": []
 				},
 				{
-					"name": "Delete Class By Class Id Copy",
-					"id": "0e223b46-437b-426d-8b79-7f304bac9dea",
+					"name": "New Request",
+					"id": "98941056-483d-4f96-920e-b3dd4f4a8be1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deleteByClass/{{classId1}}"
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
@@ -2048,6 +2047,19 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}classRecordings/{ClassId}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Delete Class By Invalid Class Id",
+					"id": "0e223b46-437b-426d-8b79-7f304bac9dea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deleteByClass/{{classId1}}"
 					},
 					"response": []
 				},
