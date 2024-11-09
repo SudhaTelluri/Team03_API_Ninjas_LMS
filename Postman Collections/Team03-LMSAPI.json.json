@@ -587,15 +587,15 @@
 					"response": []
 				},
 				{
-					"name": "Create New Batch Copy",
+					"name": "GET All Batches",
 					"id": "9ae47849-dfdc-4976-b9cb-a76d9ff82ebf",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/batches"
+						"url": "{{baseURL}}batches"
 					},
 					"response": []
 				},
