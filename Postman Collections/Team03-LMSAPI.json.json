@@ -1990,7 +1990,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Classes By Batch Id Copy",
+					"name": "GetClasses_WithNonExistingBatchID",
 					"id": "419e8955-8918-4ed4-8d6d-606cb34f954d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2004,7 +2004,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classesbyBatch/{{batchId3}}"
+						"url": "{{baseURL}}classesbyBatch/{{invalidBatchId}}"
 					},
 					"response": []
 				},
@@ -2175,7 +2175,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1725846c-36ff-4de2-ba28-1908d0a7b602",
+				"id": "853421dd-a9f5-40c9-9429-bf1bfe6471a6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2186,7 +2186,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "94335ac1-ce17-4484-b8b7-b4087c9c811e",
+				"id": "190ad317-5678-443a-90c0-7ca93bc5167a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2296,6 +2296,11 @@
 		{
 			"key": "invalidStaffId",
 			"value": "U1000",
+			"type": "string"
+		},
+		{
+			"key": "invalidBatchId",
+			"value": "30",
 			"type": "string"
 		}
 	]
