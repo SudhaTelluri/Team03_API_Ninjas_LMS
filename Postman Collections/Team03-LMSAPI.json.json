@@ -1223,7 +1223,20 @@
 		},
 		{
 			"name": "User Role Map",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "e8123d2e-a509-4628-ad60-7d9c0f68e8bd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "72aec55b-921c-49c1-a09e-e97657823427"
 		},
 		{
