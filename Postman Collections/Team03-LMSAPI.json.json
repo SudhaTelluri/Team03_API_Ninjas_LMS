@@ -1171,8 +1171,17 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
+						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"classRecordingPath\": \"recordingspath\",\r\n  \"csId\": {{classId}}\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseURL}}updateClassrecording/{{classId}}"
 					},
 					"response": []
