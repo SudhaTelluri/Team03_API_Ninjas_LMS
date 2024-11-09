@@ -1215,7 +1215,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}upcomingClasses/U54"
+						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
 					},
 					"response": []
 				}
@@ -2136,7 +2136,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d445e254-46d5-41e7-806e-0fc3da9bae6f",
+				"id": "23cf2b9f-2e38-48f1-a3c7-abf287e1ecb8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2147,7 +2147,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "954f057e-95e1-4175-bdeb-c31b8ea0c796",
+				"id": "98f19491-0425-4831-aef1-dd3b9bc95986",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2240,17 +2240,9 @@
 			"value": ""
 		},
 		{
-			"key": "NoClassId",
-			"value": "",
+			"key": "sampleStudentId",
+			"value": "U54",
 			"type": "string"
-		},
-		{
-			"key": "AdminID",
-			"value": ""
-		},
-		{
-			"key": "adminID",
-			"value": ""
 		}
 	]
 }
