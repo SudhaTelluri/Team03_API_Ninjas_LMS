@@ -2023,7 +2023,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classesByStaff/{staffId}"
+						"url": "{{baseURL}}classesByStaff/{{invalidStaffId}}"
 					},
 					"response": []
 				},
@@ -2175,7 +2175,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "79515be9-9d5b-420e-8a2b-3056746ed0ea",
+				"id": "1725846c-36ff-4de2-ba28-1908d0a7b602",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2186,7 +2186,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7936ba2a-9071-48d7-bd1e-5b3e4158e7ef",
+				"id": "94335ac1-ce17-4484-b8b7-b4087c9c811e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2290,7 +2290,12 @@
 		},
 		{
 			"key": "invalidStudentId",
-			"value": "U500",
+			"value": "U5000",
+			"type": "string"
+		},
+		{
+			"key": "invalidStaffId",
+			"value": "U1000",
 			"type": "string"
 		}
 	]
