@@ -1040,14 +1040,21 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get All Classes By Class Topic",
 					"id": "a172bb1e-dced-4d19-896a-50b17047a83e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}classes/{{classTopic}}"
 					},
 					"response": []
 				}
@@ -1766,7 +1773,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batchRecordings/{{batchId3}}"
+						"url": "{{baseURL}}batchRecordings/{batchId}"
 					},
 					"response": []
 				},
@@ -1785,7 +1792,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}class/{{classId1}}"
+						"url": "{{baseURL}}class/{classId}"
 					},
 					"response": []
 				},
