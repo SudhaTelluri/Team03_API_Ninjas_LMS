@@ -1225,8 +1225,27 @@
 			"name": "User Role Map",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "Get Assigned Program/Batch(es)  Of All Users",
 					"id": "e8123d2e-a509-4628-ad60-7d9c0f68e8bd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned Program/Batch Of a User By User Id",
+					"id": "e6e71188-509f-4089-99b2-86c3fb3a443f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
