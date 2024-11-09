@@ -1258,7 +1258,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/{{sampleUserId}}"
+						"url": "{{baseURL}}userRoleProgramBatchMap/U19"
 					},
 					"response": []
 				},
