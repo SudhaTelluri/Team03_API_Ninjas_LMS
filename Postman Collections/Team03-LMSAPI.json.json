@@ -1207,7 +1207,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Upcoming Classes For particular Student",
+					"name": "Get All Upcoming Classes For Particular Student",
 					"id": "98941056-483d-4f96-920e-b3dd4f4a8be1",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2061,7 +2061,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
+						"url": "{{baseURL}}upcomingClasses/{sampleStudentId}"
 					},
 					"response": []
 				},
