@@ -979,12 +979,12 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "GET",
 						"header": [],
-						"url": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/allClasses"
+						"url": "{{baseURL}}allClasses"
 					},
 					"response": []
 				},
@@ -1008,14 +1008,15 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get Class Recordings By BatchId",
 					"id": "792c9c6d-6a81-4009-b859-1f1de708fea8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}batchRecordings/{{batchId1}}"
 					},
 					"response": []
 				}
