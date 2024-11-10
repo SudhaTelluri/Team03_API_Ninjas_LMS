@@ -5025,7 +5025,7 @@
 									"var responseBody = pm.response.json();\r",
 									"\r",
 									"// Retrieve the invalid batch ID from the collection or environment variables\r",
-									"const batchId = pm.variables.get(\"invalidBatchId\");\r",
+									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
 									"\r",
 									"// Construct the expected error message\r",
 									"const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
