@@ -5010,7 +5010,7 @@
 									"const batchId = pm.variables.get(\"invalidBatchId\");\r",
 									"\r",
 									"// Construct the expected error message\r",
-									"const expectedMessage = \"Batch not found with id : \" + batchId;\r",
+									"const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
 									"\r",
 									"// Single test for both conditions (message and success flag)\r",
 									"pm.test(\"Error message is as expected and success is false\", function () {\r",
