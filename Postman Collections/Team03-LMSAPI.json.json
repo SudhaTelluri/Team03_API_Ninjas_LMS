@@ -5109,7 +5109,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
+						"url": "{{baseURL}}deletebyprogid/{{programId2}}"
 					},
 					"response": []
 				},
