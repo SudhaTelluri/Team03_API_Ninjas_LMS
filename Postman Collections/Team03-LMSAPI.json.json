@@ -23,20 +23,13 @@
 									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);\r",
 									"pm.collectionVariables.set(\"adminID\", responseBody.userId);\r",
 									"\r",
-									"\r",
-									"// Retrieve and evaluate each function to make it usable in this request\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
 									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"// Call the function to check if the status line is 200 OK\r",
-									"//testStatusLine(200, 'OK');\r",
-									"\r",
-									"\r",
-									"//Call the functions with appropriate arguments\r",
 									"\r",
 									"testResponseTime(500)\r",
 									"testStatusCode(200);    // Check if status code is 200\r",
@@ -348,6 +341,31 @@
 				},
 				{
 					"name": "GET All Programs With Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6c40ddc-4d79-4228-82dc-73a13f089bf4",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "8339c37b-0e23-4bec-8f00-eea7f83053a6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -367,6 +385,31 @@
 				},
 				{
 					"name": "GET Program By ProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "22187431-85ed-4455-a2e0-a9abe2deb6a3",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "554c59d0-ef09-43cb-ab6c-f3eef931ff82",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -410,6 +453,29 @@
 									"\r",
 									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
 									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8dc157f9-39f4-43d3-b9cc-acae027abf3f",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -474,6 +540,29 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d8a9ea2d-3f51-425d-bb0f-4577a3ede583",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "f3904322-db09-4dd5-a0a4-af096cd0e4f4",
@@ -504,6 +593,31 @@
 				},
 				{
 					"name": "Delete Program By ProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "860bebf4-6cd0-4b3c-8f2c-2e4f444d0744",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "91b03a05-11f9-4a95-b929-7cc8d5e2effe",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
