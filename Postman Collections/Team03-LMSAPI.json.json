@@ -4211,31 +4211,9 @@
 					"name": "Create Class To Test Neg Scenarios",
 					"event": [
 						{
-							"listen": "prerequest",
-							"script": {
-								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
-								"exec": [
-									"// Retrieve the programName2 collection variable\r",
-									"var programName1 = pm.collectionVariables.get(\"programName2\");\r",
-									"\r",
-									"// Generate a unique class topic by appending a random 4-digit number\r",
-									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000)+\"An introduction to AI\";\r",
-									"\r",
-									"// Store the generated classTopic as a collection variable\r",
-									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
-									"\r",
-									"// Log the classTopic for verification\r",
-									"console.log(\"Generated Class Topic:\", classTopic);\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
 							"listen": "test",
 							"script": {
-								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
+								"id": "a00af8e9-6620-4cba-8bb0-9bd144e02160",
 								"exec": [
 									"const response = pm.response.json();  \r",
 									"\r",
@@ -4257,7 +4235,6 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
@@ -4266,6 +4243,28 @@
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
 									"testStatusLine(201,\"Created\");\r",
 									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "76ea4d3f-0c55-419e-840f-a0525bd7fab8",
+								"exec": [
+									"// Retrieve the programName2 collection variable\r",
+									"var programName1 = pm.collectionVariables.get(\"programName2\");\r",
+									"\r",
+									"// Generate a unique class topic by appending a random 4-digit number\r",
+									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000)+\"An introduction to AI\";\r",
+									"\r",
+									"// Store the generated classTopic as a collection variable\r",
+									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
+									"\r",
+									"// Log the classTopic for verification\r",
+									"console.log(\"Generated Class Topic:\", classTopic);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4766,7 +4765,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "57026417-3795-4318-bddd-ea9c8072f0b1",
+								"id": "89c5702b-33c6-42bb-bbb7-7d9a9038f3ba",
 								"exec": [
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
@@ -4785,7 +4784,6 @@
 									"\r",
 									"var responseBody=pm.response.json();\r",
 									"assertMessageAndSuccess(responseBody);\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
