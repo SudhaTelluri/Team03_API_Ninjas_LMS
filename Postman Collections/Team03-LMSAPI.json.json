@@ -2816,7 +2816,7 @@
 					"response": []
 				},
 				{
-					"name": "Create New Batch2 Copy",
+					"name": "Create New Batch2",
 					"event": [
 						{
 							"listen": "prerequest",
