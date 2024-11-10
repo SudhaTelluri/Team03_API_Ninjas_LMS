@@ -384,50 +384,6 @@
 					"response": []
 				},
 				{
-					"name": "GET All Programs With Users Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d6c40ddc-4d79-4228-82dc-73a13f089bf4",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "c97ba19a-eda4-41f0-add4-043f02cf7f82",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}allProgramsWithUsers"
-					},
-					"response": []
-				},
-				{
 					"name": "GET Program By ProgramId",
 					"event": [
 						{
@@ -2385,6 +2341,432 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}allPrograms"
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Programs With Users Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6c40ddc-4d79-4228-82dc-73a13f089bf4",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c97ba19a-eda4-41f0-add4-043f02cf7f82",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}allProgramsWithUsers"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Program By ProgramId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "22187431-85ed-4455-a2e0-a9abe2deb6a3",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "67430532-8760-4e67-93ff-97d64b35251b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}programs/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ProgramName Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8dc157f9-39f4-43d3-b9cc-acae027abf3f",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "92e6a024-09fd-49a2-b797-64f1d65eb42b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing-Updated description using programName1\",\r\n  \"programName\": \"{{updatedProgramName}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}program/{{programName1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Program By ProgramId Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
+									"\r",
+									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
+									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d8a9ea2d-3f51-425d-bb0f-4577a3ede583",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "59a59a9f-fcfd-4a4a-9c22-131dae50fff9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing.-Updated by programId1\",\r\n  \"programId\": {{programId1}},\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}putprogram/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program By ProgramId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "860bebf4-6cd0-4b3c-8f2c-2e4f444d0744",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "f8c99c08-4c2b-4360-994f-18deaffd4781",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Batch Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "004084cc-004e-4fc1-b382-8fbc528ced11",
+								"exec": [
+									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"var programId1 = pm.collectionVariables.get(\"programId1\");\r",
+									"\r",
+									"function generateRandomNumber() {\r",
+									"    return Math.floor(100 + Math.random() * 900);  // Generates a 3-digit number between 100 and 999\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name with random 3-digit number\r",
+									"var batchName1 = programName1 + generateRandomNumber();\r",
+									"\r",
+									"// Store batchName as a collection variable\r",
+									"pm.collectionVariables.set(\"batchName1\", batchName1);\r",
+									"\r",
+									"// Log the batchName for verification\r",
+									"console.log(\"Generated Batch Name:\", batchName1);\r",
+									"\r",
+									"// Predefined storage for batch descriptions based on batch type\r",
+									"const batchDescriptions = {\r",
+									"    \"Beginner\": \"An API testing course designed for beginners.\",\r",
+									"    \"Intermediate\": \"A workshop on advanced API testing, focusing on automation.\",\r",
+									"    \"Advanced\": \"A course in API security testing and vulnerability scanning.\",\r",
+									"    \"Specialized\": \"An in-depth program designed for specialized topics in API.\"\r",
+									"};\r",
+									"\r",
+									"// Predefined storage for the number of classes based on batch type\r",
+									"const batchClassCounts = {\r",
+									"    \"Beginner\": 5,\r",
+									"    \"Intermediate\": 10,\r",
+									"    \"Advanced\": 15,\r",
+									"    \"Specialized\": 20\r",
+									"};\r",
+									"\r",
+									"// Dynamic selection of batch type\r",
+									"const selectedBatchType = \"Beginner\"; // You can dynamically determine this based on your test setup\r",
+									"\r",
+									"// Retrieve batch description and number of classes based on the selected batch type\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
+									"// const selectedBatchClassCount = Number(batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]); // Default to \"Beginner\" if type not found\r",
+									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
+									"\r",
+									"const batchData = {\r",
+									"    batchName: batchName1,\r",
+									"    batchDescription: selectedBatchDescription,\r",
+									"    batchNoOfClasses: selectedBatchClassCount, \r",
+									"    batchStatus: \"Active\",\r",
+									"    programId: programId1,\r",
+									"    programName: programName1\r",
+									"};\r",
+									"\r",
+									"// Set the batchData as the request body\r",
+									"pm.request.body.raw = JSON.stringify(batchData);\r",
+									"\r",
+									"// Log for verification\r",
+									"console.log(\"Request Body:\", batchData);\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "1e181056-b122-4292-b654-2e891600392b",
+								"exec": [
+									"// Get the batchId from the response body\r",
+									"const batchId1 = pm.response.json().batchId;\r",
+									"\r",
+									"// Store the batchId as a collection variable\r",
+									"pm.collectionVariables.set(\"batchId1\", batchId1);\r",
+									"\r",
+									"// Log the batchId for verification\r",
+									"console.log(\"Stored batchId as collection variable:\", batchId1);\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(201);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "b10311c7-e5c9-4d9d-98d5-ca6503da3cef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}batches"
 					},
 					"response": []
 				}
