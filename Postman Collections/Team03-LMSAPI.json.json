@@ -5001,7 +5001,23 @@
 									"testResponseTime(1000)\r",
 									"testStatusCode(404);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(404,\"Bad Request\");\r",
+									"testStatusLine(404,\"Not Found\");\r",
+									"\r",
+									"// Parse the response body\r",
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Retrieve the invalid batch ID from the environment/collection variables\r",
+									"const batchId = pm.variables.get(\"invalidBatchId\");\r",
+									"\r",
+									"// Construct the expected error message\r",
+									"const expectedMessage = \"Batch not found with id : \" + batchId;\r",
+									"\r",
+									"// Single test for both conditions (message and success flag)\r",
+									"pm.test(\"Error message is as expected and success is false\", function () {\r",
+									"    pm.expect(responseBody.message).to.eql(expectedMessage) &&\r",
+									"    pm.expect(responseBody.success).to.be.false;\r",
+									"});\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -5428,7 +5444,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e3f34a37-3e48-4735-acb5-00a7ecc6bfe6",
+				"id": "05ff7c52-51c0-4bf1-a66d-9a3879bc487e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5439,7 +5455,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6dee4e52-c57d-4b55-9995-3b3c75234288",
+				"id": "c2157efd-3c0d-40d8-a688-a5400a77e93f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5474,7 +5490,7 @@
 					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
 					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
 					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
-					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError);\r",
+					"\r",
 					""
 				]
 			}
