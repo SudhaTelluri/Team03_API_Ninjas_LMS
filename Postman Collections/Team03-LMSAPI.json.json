@@ -5438,7 +5438,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "6ead6eb4-8c95-4400-bbbd-05628cbf387f",
+				"id": "4a551e93-c44c-43ac-b520-2c9b9c27f2ad",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5449,7 +5449,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c79dfb04-2877-4c8e-8a33-7f8502ac756a",
+				"id": "3addc153-4c63-4e49-a43d-c6f0d4e8a8fe",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5483,11 +5483,11 @@
 					"    const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
 					"\r",
 					"    pm.test(\"Error message is as expected\", function () {\r",
-					"        pm.expect(response.message).to.eql(expectedMessage);\r",
+					"        pm.expect(responseBody.message).to.eql(expectedMessage);\r",
 					"    });\r",
 					"\r",
 					"    pm.test(\"Success is false\", function () {\r",
-					"        pm.expect(response.success).to.be.false;\r",
+					"        pm.expect(responseBody.success).to.be.false;\r",
 					"    });\r",
 					"}\r",
 					"\r",
