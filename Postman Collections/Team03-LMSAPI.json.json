@@ -5052,7 +5052,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}deleteByClass/{{classId1}}"
+						"url": "{{baseURL}}deleteByClass/{{invalidClassId}}"
 					},
 					"response": []
 				},
@@ -5071,7 +5071,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}batches/{{batchId1}}"
+						"url": "{{baseURL}}batches/{{invalidBatchId}}"
 					},
 					"response": []
 				},
