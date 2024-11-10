@@ -4565,8 +4565,8 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(404);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(404,\"Not Found\");\r",
 									"\r",
 									""
