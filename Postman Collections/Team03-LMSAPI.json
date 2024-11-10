@@ -961,6 +961,25 @@
 						"url": "{{baseURL}}/userRoleProgramBatchMap/{{UserId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
+					"id": "a3c05586-67af-44fb-bdee-ee428107623f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{UserId}}"
+					},
+					"response": []
 				}
 			],
 			"id": "755158a2-39da-4e90-a7b6-f21562828da3"
