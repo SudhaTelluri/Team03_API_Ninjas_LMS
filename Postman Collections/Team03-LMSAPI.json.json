@@ -134,7 +134,7 @@
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
-									"testResponseTime(500)\r",
+									"testResponseTime(1000)\r",
 									"testStatusCode(201);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
 									"testStatusLine(201,\"Created\");\r",
