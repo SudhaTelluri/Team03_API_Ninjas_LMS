@@ -5000,10 +5000,12 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"var assertNotFoundError = pm.collectionVariables.get(\"assertNotFoundError\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"//eval(pm.collectionVariables.get(\"assertNotFoundError\"));\r",
 									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
-									"assertNotFoundError(responseBody, batchId);\r",
 									"\r",
+									"// Call the functions\r",
+									"assertNotFoundError(responseBody, batchId);\r",
 									"\r",
 									"testResponseTime(1000)\r",
 									"testStatusCode(404);    // Check if status code is 200\r",
@@ -5435,7 +5437,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8e94a277-f9af-4143-a519-16792408d7ca",
+				"id": "6ead6eb4-8c95-4400-bbbd-05628cbf387f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5446,7 +5448,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "547124b7-2084-4351-8454-545497dc02b3",
+				"id": "c79dfb04-2877-4c8e-8a33-7f8502ac756a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5476,7 +5478,7 @@
 					"    });\r",
 					"};\r",
 					"\r",
-					"function assertNotFoundError(response, batchId) {\r",
+					"function assertNotFoundError(responseBody, batchId) {\r",
 					"    const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
 					"\r",
 					"    pm.test(\"Error message is as expected\", function () {\r",
