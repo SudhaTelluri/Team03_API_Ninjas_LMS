@@ -5438,7 +5438,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "4a551e93-c44c-43ac-b520-2c9b9c27f2ad",
+				"id": "e3f34a37-3e48-4735-acb5-00a7ecc6bfe6",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5449,7 +5449,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "3addc153-4c63-4e49-a43d-c6f0d4e8a8fe",
+				"id": "6dee4e52-c57d-4b55-9995-3b3c75234288",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5478,20 +5478,6 @@
 					"        pm.expect(pm.response.status).to.eql(expectedStatusMessage);\r",
 					"    });\r",
 					"};\r",
-					"\r",
-					"function assertNotFoundError(responseBody, batchId) {\r",
-					"    const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
-					"\r",
-					"    pm.test(\"Error message is as expected\", function () {\r",
-					"        pm.expect(responseBody.message).to.eql(expectedMessage);\r",
-					"    });\r",
-					"\r",
-					"    pm.test(\"Success is false\", function () {\r",
-					"        pm.expect(responseBody.success).to.be.false;\r",
-					"    });\r",
-					"}\r",
-					"\r",
-					"\r",
 					"\r",
 					"//Save the functions globally within the collection for use\r",
 					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
