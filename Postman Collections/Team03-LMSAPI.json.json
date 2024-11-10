@@ -2946,6 +2946,31 @@
 				},
 				{
 					"name": "GET All Batches",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "588e8edd-6225-451d-8fc1-82b6eed3ffa6",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "56d32474-f3fc-4714-a4e8-411b6452685e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2958,7 +2983,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Batch By BatchId Copy",
+					"name": "GET Batch By BatchId",
 					"id": "e933760d-2638-43b6-b420-fe826bb3d1fd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2977,7 +3002,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Batch By BatchName Copy",
+					"name": "GET Batch By BatchName",
 					"event": [
 						{
 							"listen": "test",
@@ -3021,7 +3046,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Batch By ProgramId Copy",
+					"name": "GET Batch By ProgramId",
 					"event": [
 						{
 							"listen": "test",
@@ -3060,27 +3085,27 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batches/program/{{programId1}}"
+						"url": "{{baseURL}}batches/program/{{programId2}}"
 					},
 					"response": []
 				},
 				{
-					"name": "Update By BatchId Copy",
+					"name": "Update By BatchId",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "5db35245-07ef-43bb-bb1b-9812d6ff3da7",
 								"exec": [
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
-									"var programId1 = pm.collectionVariables.get(\"programId1\");\r",
+									"var programName1 = pm.collectionVariables.get(\"programName2\");\r",
+									"var programId1 = pm.collectionVariables.get(\"programId2\");\r",
 									"\r",
 									"function generateRandomNumber() {\r",
 									"    return Math.floor(100 + Math.random() * 900);  // Generates a 3-digit number between 100 and 999\r",
 									"}\r",
 									"\r",
 									"// Generate dynamic program name with random 3-digit number\r",
-									"var batchName1 = programName1 + generateRandomNumber();\r",
+									"var batchName1 = programName2 + generateRandomNumber();\r",
 									"\r",
 									"// Store batchName as a collection variable\r",
 									"pm.collectionVariables.set(\"batchName1\", batchName1);\r",
@@ -3117,8 +3142,8 @@
 									"    batchDescription: selectedBatchDescription,\r",
 									"    batchNoOfClasses: selectedBatchClassCount, \r",
 									"    batchStatus: \"Active\",\r",
-									"    programId: programId1,\r",
-									"    programName: programName1\r",
+									"    programId: programId2,\r",
+									"    programName: programName2\r",
 									"};\r",
 									"\r",
 									"// Set the batchData as the request body\r",
@@ -3173,7 +3198,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{              \r\n    \"batchDescription\": \"{{batchDescription}}\", \r\n    \"batchName\": \"{{batchName1}}\",           \r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",                 \r\n    \"programId\": \"{{programId}}\",            \r\n    \"programName\": \"{{programName}}\"         \r\n}\r\n",
+							"raw": "{              \r\n    \"batchDescription\": \"{{batchDescription}}\", \r\n    \"batchName\": \"{{batchName1}}\",           \r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",                 \r\n    \"programId\": \"{{programId2}}\",            \r\n    \"programName\": \"{{programName2}}\"         \r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
