@@ -2933,7 +2933,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName2}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2945,7 +2945,7 @@
 					"response": []
 				},
 				{
-					"name": "GET All Batches Copy",
+					"name": "GET All Batches",
 					"id": "56d32474-f3fc-4714-a4e8-411b6452685e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
