@@ -1591,50 +1591,6 @@
 					"response": []
 				},
 				{
-					"name": "Get All Classes By Batch Id Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "9044f468-2f8c-4e58-8a9d-4d9ecee67bd5",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "0a8f778b-c67a-4bbe-86a7-bd20d9b61cc8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Get All Classes By StaffId",
 					"event": [
 						{
@@ -1679,50 +1635,6 @@
 					"response": []
 				},
 				{
-					"name": "Get All Classes By StaffId Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "4281ba45-9621-46a7-b158-51d49a9ac790",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "0070f064-cf2f-4a1c-8d11-4466be528735",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classesByStaff/{{staffId}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Get All Recordings",
 					"event": [
 						{
@@ -1750,50 +1662,6 @@
 						}
 					],
 					"id": "3683219a-ce66-428e-a502-1854038837eb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classrecordings"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Recordings Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "fd1ad205-c1bd-4e97-b677-b9df2979b299",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "ee58ebac-439e-44f1-8b12-461d1d61c7fa",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3648,12 +3516,12 @@
 					"response": []
 				},
 				{
-					"name": "Get All Upcoming Classes For Particular Student",
+					"name": "Get All Classes By Batch Id Copy",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "d5c0eecc-70cd-4a58-a593-1c39c1e159e9",
+								"id": "9044f468-2f8c-4e58-8a9d-4d9ecee67bd5",
 								"exec": [
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
@@ -3674,14 +3542,108 @@
 							}
 						}
 					],
-					"id": "8afc4efc-87d1-4d43-9331-0bcb0218b8c8",
+					"id": "0a8f778b-c67a-4bbe-86a7-bd20d9b61cc8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
+						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Classes By StaffId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4281ba45-9621-46a7-b158-51d49a9ac790",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "0070f064-cf2f-4a1c-8d11-4466be528735",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesByStaff/{{staffId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Recordings Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fd1ad205-c1bd-4e97-b677-b9df2979b299",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ee58ebac-439e-44f1-8b12-461d1d61c7fa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classrecordings"
 					},
 					"response": []
 				},
@@ -3720,6 +3682,44 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}download/{{classId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Upcoming Classes For Particular Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5c0eecc-70cd-4a58-a593-1c39c1e159e9",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "8afc4efc-87d1-4d43-9331-0bcb0218b8c8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
 					},
 					"response": []
 				},
