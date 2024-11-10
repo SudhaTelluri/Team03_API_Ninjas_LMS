@@ -4452,6 +4452,37 @@
 				},
 				{
 					"name": "Neg-GET Batch By InvalidProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "57026417-3795-4318-bddd-ea9c8072f0b1",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\");\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "c0c28988-035b-4d37-bf6a-f4122e7bfb85",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
