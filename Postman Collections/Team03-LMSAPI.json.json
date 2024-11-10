@@ -4300,6 +4300,348 @@
 					"response": []
 				},
 				{
+					"name": "Neg-Get Program with Invalid Program ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "74323826-886a-4628-90c4-8137d66a8cf0",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the response indicates an error (success is false)\r",
+									"if (responseBody.success === false) {\r",
+									"    // Print the error message from the response\r",
+									"    console.error(\"Error: \" + responseBody.message);\r",
+									"} else if (responseBody && responseBody.programId) {\r",
+									"    // If the response contains programId and programName, print them\r",
+									"    console.log(\"Program ID: \" + responseBody.programId);\r",
+									"    console.log(\"Program Name: \" + responseBody.programName);\r",
+									"} else {\r",
+									"    // If neither condition is met, log a failure\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(404,\"Not Found\");\r",
+									"\r",
+									"// Retrieve the invalid batch ID from the collection or environment variables\r",
+									"const programId = pm.collectionVariables.get(\"invalidProgramId\");\r",
+									"\r",
+									"// Construct the expected error message\r",
+									"const expectedMessage = \"program with this: \"+ programId +\"not found\";\r",
+									"\r",
+									"// Call the function to assert the error message and success flag\r",
+									"assertNotFoundError(responseBody, expectedMessage);\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "6ba19cfc-80cc-4e7c-8def-c118db3ac205",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}programs/{{invalidProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-GET Batch by Invalid BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a242a103-894b-43fb-a67a-2ae0a54fd652",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(404,\"Not Found\");\r",
+									"\r",
+									"// Retrieve the response body from the request\r",
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Retrieve the invalid batch ID from the collection or environment variables\r",
+									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
+									"\r",
+									"// Construct the expected error message\r",
+									"const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
+									"\r",
+									"\r",
+									"// Call the function to assert the error message and success flag\r",
+									"assertNotFoundError(responseBody, expectedMessage);\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batches/batchId/{{invalidBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-GET Batch By InvalidBatchName",
+					"id": "887f7573-bb70-4267-9de2-bc8697051dd7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batches/batchName/{{invalidBatchName}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-GET Batch By InvalidProgramId",
+					"id": "c0c28988-035b-4d37-bf6a-f4122e7bfb85",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batches/program/{{invalidProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Class Recordings By Invalid BatchId",
+					"id": "fac5cbf9-d108-44ad-bbb5-3e50bb8a193b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batchRecordings/{{invalidBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Class Details By Invalid Class Id",
+					"id": "82740fc7-8b4d-4d4a-9367-488732e0d626",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}class/{{invalidClassId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Classes By Invalid Class Topic",
+					"id": "2158a825-64eb-4689-b442-6d6d7bdbf2fb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classes/{{invalidClassTopic}}"
+					},
+					"response": []
+				},
+				{
+					"name": "GetClasses_WithNonExistingBatchID",
+					"id": "419e8955-8918-4ed4-8d6d-606cb34f954d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesbyBatch/{{invalidBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get All Classes By Invalid StaffId",
+					"id": "097eddc4-e570-4f7e-8506-d50e74a1dd99",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classesByStaff/{{invalidStaffId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get All Recordings With Invalid Endpoint",
+					"id": "7d45c68f-de6e-4de1-a1d5-76742536539b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}{{classrecordings}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Class Recordings By Invalid Class Id",
+					"id": "5c124f53-d85a-4aea-889d-96322fa8e749",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}classRecordings/{{invalidClassId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-GetUpcomingClasses_InvalidStudentID",
+					"id": "5fc32899-1312-472c-bffd-24b93f7f5fc8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}upcomingClasses/{{invalidStudentId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Get Class Recordings By Invalid Class Id",
+					"id": "73d3af1f-864a-4180-8af3-ad4de221b5c4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}download/{{invalidClassId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned Program/Batch Of a User By Invalid User Id",
+					"id": "9c5d4a8e-5524-4421-967f-7d49aec5e373",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}userRoleProgramBatchMap/{{sampleInvalidUserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Create Duplicate ProgramName",
 					"event": [
 						{
@@ -4461,56 +4803,36 @@
 					"response": []
 				},
 				{
-					"name": "Neg-Get Program with Invalid Program ID",
+					"name": "Neg-CreateBatch-BadRequest",
 					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
 						{
 							"listen": "test",
 							"script": {
-								"id": "74323826-886a-4628-90c4-8137d66a8cf0",
+								"id": "fe3f0d1f-50b9-4d9f-8828-1905f489ba45",
 								"exec": [
-									"let responseBody = pm.response.json();\r",
-									"\r",
-									"// Check if the response indicates an error (success is false)\r",
-									"if (responseBody.success === false) {\r",
-									"    // Print the error message from the response\r",
-									"    console.error(\"Error: \" + responseBody.message);\r",
-									"} else if (responseBody && responseBody.programId) {\r",
-									"    // If the response contains programId and programName, print them\r",
-									"    console.log(\"Program ID: \" + responseBody.programId);\r",
-									"    console.log(\"Program Name: \" + responseBody.programName);\r",
-									"} else {\r",
-									"    // If neither condition is met, log a failure\r",
-									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
-									"}\r",
-									"\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
 									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
-									"\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(404);    // Check if status code is 200\r",
+									"testStatusCode(400);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(404,\"Not Found\");\r",
-									"\r",
-									"// Retrieve the invalid batch ID from the collection or environment variables\r",
-									"const programId = pm.collectionVariables.get(\"invalidProgramId\");\r",
-									"\r",
-									"// Construct the expected error message\r",
-									"const expectedMessage = \"program with this: \"+ programId +\"not found\";\r",
-									"\r",
-									"// Call the function to assert the error message and success flag\r",
-									"assertNotFoundError(responseBody, expectedMessage);\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
+									"testStatusLine(400,\"Bad Request\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4518,7 +4840,61 @@
 							}
 						}
 					],
-					"id": "6ba19cfc-80cc-4e7c-8def-c118db3ac205",
+					"id": "48f19c1a-f541-4115-9c35-a7c37ac7d680",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Duplicate Class Topic",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
+								"exec": [
+									"// Retrieve the programName1 collection variable\r",
+									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"\r",
+									"// Store the generated classTopic as a collection variable\r",
+									"var classTopic=pm.collectionVariables.get(classTopic);\r",
+									"\r",
+									"// Log the classTopic for verification\r",
+									"console.log(\"Class Topic \", classTopic);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "e0c6fbd2-a1b8-46b2-9a93-01b84635ff9c",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -4529,9 +4905,18 @@
 								"token": "{{bearerToken}}"
 							}
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
-						"url": "{{baseURL}}programs/{{invalidProgramId}}"
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"Active\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}CreateClassSchedule"
 					},
 					"response": []
 				},
@@ -4874,6 +5259,47 @@
 					"response": []
 				},
 				{
+					"name": "Neg-Update Batch By Bad Request",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5db35245-07ef-43bb-bb1b-9812d6ff3da7",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ad8e4606-3dd9-4352-9716-4373b5cbe43a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}batches/{{batchId1}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Program By ProgramId",
 					"event": [
 						{
@@ -4958,432 +5384,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{baseURL}}deletebyprogname/{{invalidProgramId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-CreateBatch-BadRequest",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "fe3f0d1f-50b9-4d9f-8828-1905f489ba45",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(400);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(400,\"Bad Request\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "48f19c1a-f541-4115-9c35-a7c37ac7d680",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}batches"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-GET Batch by Invalid BatchId",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "a242a103-894b-43fb-a67a-2ae0a54fd652",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
-									"\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(404);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(404,\"Not Found\");\r",
-									"\r",
-									"// Retrieve the response body from the request\r",
-									"var responseBody = pm.response.json();\r",
-									"\r",
-									"// Retrieve the invalid batch ID from the collection or environment variables\r",
-									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
-									"\r",
-									"// Construct the expected error message\r",
-									"const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
-									"\r",
-									"\r",
-									"// Call the function to assert the error message and success flag\r",
-									"assertNotFoundError(responseBody, expectedMessage);\r",
-									"\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}batches/batchId/{{invalidBatchId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-GET Batch By InvalidBatchName",
-					"id": "887f7573-bb70-4267-9de2-bc8697051dd7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}batches/batchName/{{invalidBatchName}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-GET Batch By InvalidProgramId",
-					"id": "c0c28988-035b-4d37-bf6a-f4122e7bfb85",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}batches/program/{{invalidProgramId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Update Batch By Bad Request",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "5db35245-07ef-43bb-bb1b-9812d6ff3da7",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "ad8e4606-3dd9-4352-9716-4373b5cbe43a",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}batches/{{batchId1}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Duplicate Class Topic",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
-								"exec": [
-									"// Retrieve the programName1 collection variable\r",
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
-									"\r",
-									"// Store the generated classTopic as a collection variable\r",
-									"var classTopic=pm.collectionVariables.get(classTopic);\r",
-									"\r",
-									"// Log the classTopic for verification\r",
-									"console.log(\"Class Topic \", classTopic);\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "e0c6fbd2-a1b8-46b2-9a93-01b84635ff9c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"Active\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}CreateClassSchedule"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get Class Recordings By Invalid BatchId",
-					"id": "fac5cbf9-d108-44ad-bbb5-3e50bb8a193b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}batchRecordings/{{invalidBatchId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get Class Details By Invalid Class Id",
-					"id": "82740fc7-8b4d-4d4a-9367-488732e0d626",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}class/{{invalidClassId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Classes By Invalid Class Topic",
-					"id": "2158a825-64eb-4689-b442-6d6d7bdbf2fb",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classes/{{invalidClassTopic}}"
-					},
-					"response": []
-				},
-				{
-					"name": "GetClasses_WithNonExistingBatchID",
-					"id": "419e8955-8918-4ed4-8d6d-606cb34f954d",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classesbyBatch/{{invalidBatchId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get All Classes By Invalid StaffId",
-					"id": "097eddc4-e570-4f7e-8506-d50e74a1dd99",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classesByStaff/{{invalidStaffId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get All Recordings With Invalid Endpoint",
-					"id": "7d45c68f-de6e-4de1-a1d5-76742536539b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}{{classrecordings}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get Class Recordings By Invalid Class Id",
-					"id": "5c124f53-d85a-4aea-889d-96322fa8e749",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classRecordings/{{invalidClassId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-GetUpcomingClasses_InvalidStudentID",
-					"id": "5fc32899-1312-472c-bffd-24b93f7f5fc8",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}upcomingClasses/{{invalidStudentId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get Class Recordings By Invalid Class Id",
-					"id": "73d3af1f-864a-4180-8af3-ad4de221b5c4",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}download/{{invalidClassId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Assigned Program/Batch Of a User By Invalid User Id",
-					"id": "9c5d4a8e-5524-4421-967f-7d49aec5e373",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/{{sampleInvalidUserId}}"
 					},
 					"response": []
 				},
