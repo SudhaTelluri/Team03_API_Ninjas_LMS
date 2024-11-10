@@ -3942,7 +3942,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/U57"
+						"url": "{{baseURL}}userRoleProgramBatchMap/{{userIdForProgramBatchMap}}"
 					},
 					"response": []
 				},
