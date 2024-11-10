@@ -4626,30 +4626,6 @@
 									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
 									"}\r",
 									"\r",
-									"// // Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"// eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"// eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"// eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"// var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
-									"\r",
-									"// var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"// var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
-									"\r",
-									"// testResponseTime(1000)\r",
-									"// testStatusCode(404);   \r",
-									"// testHeader(\"Content-Type\"); \r",
-									"// testStatusLine(404,\"Not Found\");\r",
-									"\r",
-									"// // Retrieve the invalid batch ID from the collection or environment variables\r",
-									"// const programId = pm.collectionVariables.get(\"invalidProgramId\");\r",
-									"\r",
-									"// // Construct the expected error message\r",
-									"// const expectedMessage = \"program with this: \"+ programId +\"not found\";\r",
-									"\r",
-									"// // Call the function to assert the error message and success flag\r",
-									"// assertNotFoundError(responseBody, expectedMessage);\r",
-									"\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
@@ -4665,14 +4641,7 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(404,\"Not Found\")\r",
 									"\r",
-									"var responseBody=pm.response.json();\r",
 									"assertMessageAndSuccess(responseBody);\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4704,6 +4673,50 @@
 							"listen": "test",
 							"script": {
 								"id": "a242a103-894b-43fb-a67a-2ae0a54fd652",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}batches/batchId/{{invalidBatchId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-GET Batch By InvalidBatchName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f2ae2a58-59e0-4162-a82a-3500508bc9d0",
 								"exec": [
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
@@ -4743,19 +4756,6 @@
 							}
 						}
 					],
-					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}batches/batchId/{{invalidBatchId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-GET Batch By InvalidBatchName",
 					"id": "887f7573-bb70-4267-9de2-bc8697051dd7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
