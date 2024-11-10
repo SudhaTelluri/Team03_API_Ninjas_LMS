@@ -384,6 +384,50 @@
 					"response": []
 				},
 				{
+					"name": "GET All Programs With Users Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d6c40ddc-4d79-4228-82dc-73a13f089bf4",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c97ba19a-eda4-41f0-add4-043f02cf7f82",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}allProgramsWithUsers"
+					},
+					"response": []
+				},
+				{
 					"name": "GET Program By ProgramId",
 					"event": [
 						{
@@ -1246,7 +1290,7 @@
 									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
 									"\r",
 									"// Generate a unique class topic by appending a random 4-digit number\r",
-									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000);\r",
+									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000)+\"An introduction to AI\";\r",
 									"\r",
 									"// Store the generated classTopic as a collection variable\r",
 									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
@@ -2046,7 +2090,305 @@
 		},
 		{
 			"name": "Chaining-PositiveScenarios",
-			"item": [],
+			"item": [
+				{
+					"name": "User Login Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78e01d26-338f-43a0-9c2f-db7e48529da5",
+								"exec": [
+									"// Parse the response body to JSON\r",
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Set the token as a collection variable\r",
+									"pm.collectionVariables.set(\"bearerToken\", responseBody.token);\r",
+									"pm.collectionVariables.set(\"adminID\", responseBody.userId);\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "20dbbcc1-5438-4726-b580-fc11c0703873",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ff988ff5-d13a-4dfe-af33-d3dc230a6068",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}login"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Program1 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the programId is present in the response\r",
+									"if (responseBody && responseBody.programId) {\r",
+									"    // Store the programId and programName in collection variables\r",
+									"    pm.collectionVariables.set(\"programId1\", responseBody.programId);\r",
+									"    pm.collectionVariables.set(\"programName1\", responseBody.programName);\r",
+									"    console.log(\"Program ID1: \" + responseBody.programId);\r",
+									"} else {\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(201);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let programName1 = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"programName1\", programName1);\r",
+									"\r",
+									"console.log(\"Generated Program Name 1: \" + programName1);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c62a52f5-316a-4cef-b2fd-1529338a6499",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Program2 Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "884eef17-3d76-4ee9-a401-6ff843e4e438",
+								"exec": [
+									"// Function to generate a random 2-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    let result = '';\r",
+									"    for (let i = 0; i < 2; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"let programName2 = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"programName2\", programName2);\r",
+									"\r",
+									"console.log(\"Generated Program Name 2: \" + programName2);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fdf72ea8-4ce4-4a56-bae6-2c98256fc252",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the programId is present in the response\r",
+									"if (responseBody && responseBody.programId) {\r",
+									"    // Store the programId and programName in collection variables\r",
+									"    pm.collectionVariables.set(\"programId2\", responseBody.programId);\r",
+									"    pm.collectionVariables.set(\"programName2\", responseBody.programName);\r",
+									"    console.log(\"Program ID2: \" + responseBody.programId);\r",
+									"} else {\r",
+									"    console.error(\"Failed to retrieve programId2 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(201);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "bdded5fd-23b0-4cf2-bae3-f39411328e4e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"A team focused on automating the testing of APIs for performance and reliability.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Program Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "994720d9-1a5b-468a-baf7-1f1516663ec0",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "3b9ce035-29aa-4490-9d54-d1dc0b09b438",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}allPrograms"
+					},
+					"response": []
+				}
+			],
 			"id": "f52e8471-4ccb-4664-b502-a663870764aa"
 		},
 		{
