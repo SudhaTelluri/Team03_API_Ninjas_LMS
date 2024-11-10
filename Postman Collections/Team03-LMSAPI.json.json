@@ -1279,6 +1279,20 @@
 									"// Log for verification\r",
 									"console.log(\"Stored classId: \", classId);\r",
 									"console.log(\"Stored staffId: \", staffId);\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(201);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1314,6 +1328,31 @@
 				},
 				{
 					"name": "Get All Class List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85db0f1d-1503-4219-9134-4df1ca519f5d",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "738b238e-fd61-46ab-b7e6-51da283f7f58",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1333,6 +1372,31 @@
 				},
 				{
 					"name": "Get Class Recordings By BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f18104ec-cf13-4a15-a65f-de245a60b040",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "792c9c6d-6a81-4009-b859-1f1de708fea8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1346,6 +1410,31 @@
 				},
 				{
 					"name": "Get Class Details By Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "109ea8c3-788a-4ca1-bcc1-4f394824479e",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "aa31aed2-d987-4a7b-8037-7096088dd968",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1365,6 +1454,31 @@
 				},
 				{
 					"name": "Get All Classes By Class Topic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7d4a4b8-f64c-417f-8163-bca2d1c902b2",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a172bb1e-dced-4d19-896a-50b17047a83e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1384,6 +1498,31 @@
 				},
 				{
 					"name": "Get All Classes By Batch Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9044f468-2f8c-4e58-8a9d-4d9ecee67bd5",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "112f60ef-260d-4e10-b7b9-5a4d9c3257a4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1403,6 +1542,31 @@
 				},
 				{
 					"name": "Get All Classes By StaffId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4281ba45-9621-46a7-b158-51d49a9ac790",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "f87e348a-9335-4e5e-a611-d71e4e6260cc",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1422,6 +1586,31 @@
 				},
 				{
 					"name": "Get All Recordings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fd1ad205-c1bd-4e97-b677-b9df2979b299",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "3683219a-ce66-428e-a502-1854038837eb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1441,6 +1630,31 @@
 				},
 				{
 					"name": "Get Class Recordings By Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "04e11127-7827-40f1-9969-655095a5c4ab",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "e6975f62-aa7d-4a6c-8a2c-142ba5b94d0e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1460,6 +1674,31 @@
 				},
 				{
 					"name": "Update Class",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ccd7857-fdef-4ea2-9f38-5a9d6622db23",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "90cc3418-16b5-4b98-851c-f3bc69bf7cb2",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
