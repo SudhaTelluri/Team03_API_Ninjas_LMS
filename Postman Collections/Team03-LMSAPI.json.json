@@ -2260,7 +2260,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d5db1a1e-a741-4254-93fc-9c03c73105d2",
+				"id": "579fe188-9a96-4ef5-b1c5-d13e277fb760",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2271,7 +2271,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "810ef99d-1839-497b-b01b-383a953e5846",
+				"id": "25d6338e-8bfb-402b-8a3d-93dec9948106",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2294,13 +2294,12 @@
 					"    });\r",
 					"}\r",
 					"\r",
-					"function testStatusLine(expectedStatusCode, expectedStatusMessage) {\r",
-					"    pm.test(`Status line is \"${expectedStatusCode} ${expectedStatusMessage}\"`, () => {\r",
-					"        const statusLine = pm.response.status;\r",
-					"        pm.expect(statusLine).to.include(expectedStatusCode);\r",
-					"        pm.expect(statusLine).to.include(expectedStatusMessage);\r",
+					"var testStatusLine = function(expectedStatusCode, expectedStatusMessage) {\r",
+					"    pm.test(`Status line should be \"${expectedStatusCode} ${expectedStatusMessage}\"`, function () {\r",
+					"        pm.expect(pm.response.code).to.eql(expectedStatusCode);\r",
+					"        pm.expect(pm.response.status).to.eql(expectedStatusMessage);\r",
 					"    });\r",
-					"}\r",
+					"};\r",
 					"\r",
 					"//Save the functions globally within the collection for use\r",
 					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
