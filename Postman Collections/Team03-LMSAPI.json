@@ -144,7 +144,22 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "User Login (500 Internal Server Error)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e78e8db9-61df-45fe-9f0c-23f5be0aa8c0",
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {",
+									"    pm.response.to.have.status(500);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "d8a38b86-7cf8-449e-8bce-81c4afcd2b0a",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
