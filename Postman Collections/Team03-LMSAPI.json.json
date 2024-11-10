@@ -4300,7 +4300,7 @@
 					"response": []
 				},
 				{
-					"name": "Neg-Create Duplicate Program",
+					"name": "Neg-Create Duplicate ProgramName",
 					"event": [
 						{
 							"listen": "test",
