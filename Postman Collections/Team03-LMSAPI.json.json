@@ -5196,7 +5196,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c6844203-7a48-4edb-9673-30ad256dafc5",
+				"id": "dfb250b5-81cd-4d63-987d-32673c2caa75",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5207,7 +5207,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "9ef88771-5d84-4858-99be-7798086396ed",
+				"id": "eb0d8129-7007-440e-8781-7c28699be23f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5382,6 +5382,16 @@
 		{
 			"key": "invalidBatchName",
 			"value": "samplebatch",
+			"type": "string"
+		},
+		{
+			"key": "invalidProgramId",
+			"value": "55",
+			"type": "string"
+		},
+		{
+			"key": "invalidProgramName",
+			"value": "APINinjas",
 			"type": "string"
 		}
 	]
