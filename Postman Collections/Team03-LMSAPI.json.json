@@ -4300,6 +4300,285 @@
 					"response": []
 				},
 				{
+					"name": "Neg-Create Duplicate ProgramName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the response indicates an error (success is false)\r",
+									"if (responseBody.success === false) {\r",
+									"    // Print the error message from the response\r",
+									"    console.error(\"Error: \" + responseBody.message);\r",
+									"} else if (responseBody && responseBody.programId) {\r",
+									"    // If the response contains programId and programName, print them\r",
+									"    console.log(\"Program ID: \" + responseBody.programId);\r",
+									"    console.log(\"Program Name: \" + responseBody.programName);\r",
+									"} else {\r",
+									"    // If neither condition is met, log a failure\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
+									"\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(400);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(400,\"Bad Request\");\r",
+									"\r",
+									"// Construct the expected error message\r",
+									"const expectedMessage = \"cannot create program , since already exists\";\r",
+									"\r",
+									"// Check if the response body contains the expected message and status is false\r",
+									"pm.test(\"Response contains expected message and status is false\", function() {\r",
+									"    pm.expect(responseBody).to.have.property(\"message\", expectedMessage);\r",
+									"    pm.expect(responseBody).to.have.property(\"success\", false);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "54f08d5f-7917-407f-a621-005e7c873fb1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Create Program with Null Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(500);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "c281c49a-76c6-4540-9ec7-a8619a516b88",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programDescription\": \"A description of the program\",\r\n  \"programName\": \"New Program\",\r\n  \"programStatus\": null\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-CreateBatch-BadRequest",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe3f0d1f-50b9-4d9f-8828-1905f489ba45",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(400);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(400,\"Bad Request\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "48f19c1a-f541-4115-9c35-a7c37ac7d680",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Duplicate Class Topic",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
+								"exec": [
+									"// Retrieve the programName1 collection variable\r",
+									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"\r",
+									"// Store the generated classTopic as a collection variable\r",
+									"var classTopic=pm.collectionVariables.get(classTopic);\r",
+									"\r",
+									"// Log the classTopic for verification\r",
+									"console.log(\"Class Topic \", classTopic);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "e0c6fbd2-a1b8-46b2-9a93-01b84635ff9c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"Active\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}CreateClassSchedule"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Get Program with Invalid Program ID",
 					"event": [
 						{
@@ -4669,285 +4948,6 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}userRoleProgramBatchMap/{{sampleInvalidUserId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Create Duplicate ProgramName",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
-								"exec": [
-									"let responseBody = pm.response.json();\r",
-									"\r",
-									"// Check if the response indicates an error (success is false)\r",
-									"if (responseBody.success === false) {\r",
-									"    // Print the error message from the response\r",
-									"    console.error(\"Error: \" + responseBody.message);\r",
-									"} else if (responseBody && responseBody.programId) {\r",
-									"    // If the response contains programId and programName, print them\r",
-									"    console.log(\"Program ID: \" + responseBody.programId);\r",
-									"    console.log(\"Program Name: \" + responseBody.programName);\r",
-									"} else {\r",
-									"    // If neither condition is met, log a failure\r",
-									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
-									"}\r",
-									"\r",
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
-									"\r",
-									"\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(400);    \r",
-									"testHeader(\"Content-Type\"); \r",
-									"testStatusLine(400,\"Bad Request\");\r",
-									"\r",
-									"// Construct the expected error message\r",
-									"const expectedMessage = \"cannot create program , since already exists\";\r",
-									"\r",
-									"// Check if the response body contains the expected message and status is false\r",
-									"pm.test(\"Response contains expected message and status is false\", function() {\r",
-									"    pm.expect(responseBody).to.have.property(\"message\", expectedMessage);\r",
-									"    pm.expect(responseBody).to.have.property(\"success\", false);\r",
-									"});\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "54f08d5f-7917-407f-a621-005e7c873fb1",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}saveprogram"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Create Program with Null Status",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
-									"\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(500);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"\r",
-									"var responseBody=pm.response.json();\r",
-									"assertMessageAndSuccess(responseBody);\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "c281c49a-76c6-4540-9ec7-a8619a516b88",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"A description of the program\",\r\n  \"programName\": \"New Program\",\r\n  \"programStatus\": null\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}saveprogram"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-CreateBatch-BadRequest",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "fe3f0d1f-50b9-4d9f-8828-1905f489ba45",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(400);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(400,\"Bad Request\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "48f19c1a-f541-4115-9c35-a7c37ac7d680",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}batches"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Duplicate Class Topic",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
-								"exec": [
-									"// Retrieve the programName1 collection variable\r",
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
-									"\r",
-									"// Store the generated classTopic as a collection variable\r",
-									"var classTopic=pm.collectionVariables.get(classTopic);\r",
-									"\r",
-									"// Log the classTopic for verification\r",
-									"console.log(\"Class Topic \", classTopic);\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
-								"exec": [
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "e0c6fbd2-a1b8-46b2-9a93-01b84635ff9c",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"Active\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{baseURL}}CreateClassSchedule"
 					},
 					"response": []
 				},
