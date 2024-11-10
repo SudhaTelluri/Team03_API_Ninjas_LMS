@@ -5206,7 +5206,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "83ec4636-0a1b-45b8-b941-56faeb3e9a70",
+				"id": "fc86efbc-dd60-4ba8-a605-c088ae9a2e84",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5217,7 +5217,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "03cb8b51-b716-4402-9ed5-fd4ea2960b28",
+				"id": "22852496-a148-4267-922b-24fa496326e8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5347,7 +5347,8 @@
 		{
 			"key": "invalidBatchId",
 			"value": "30",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "invalidClassTopic",
@@ -5409,6 +5410,14 @@
 			"key": "invalidbatchName",
 			"value": "",
 			"disabled": true
+		},
+		{
+			"key": "invalidBatchId",
+			"value": ""
+		},
+		{
+			"key": "invalidBatchName",
+			"value": ""
 		}
 	]
 }
