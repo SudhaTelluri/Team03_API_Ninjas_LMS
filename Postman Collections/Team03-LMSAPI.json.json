@@ -4905,7 +4905,38 @@
 					"response": []
 				},
 				{
-					"name": "Get All Classes By Invalid Class Topic",
+					"name": "Neg-Get All Classes By Invalid Class Topic",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8aecf30b-d5fd-4108-b3d4-383d0986fb08",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "2158a825-64eb-4689-b442-6d6d7bdbf2fb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4924,7 +4955,38 @@
 					"response": []
 				},
 				{
-					"name": "GetClasses_WithNonExistingBatchID",
+					"name": "Neg-GetClasses_WithNonExistingBatchID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2d0d74f4-e189-47b7-a349-a7493698443f",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "419e8955-8918-4ed4-8d6d-606cb34f954d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4944,6 +5006,37 @@
 				},
 				{
 					"name": "Neg-Get All Classes By Invalid StaffId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc46e915-6e63-493a-b1c5-3c9a71412446",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "097eddc4-e570-4f7e-8506-d50e74a1dd99",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -4963,6 +5056,19 @@
 				},
 				{
 					"name": "Neg-Get All Recordings With Invalid Endpoint",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8a9b6a91-2e2a-4664-a07b-a3a5ae61b839",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "7d45c68f-de6e-4de1-a1d5-76742536539b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
