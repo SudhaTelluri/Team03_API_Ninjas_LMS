@@ -3598,7 +3598,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Class Recordings By Class Id Copy",
+					"name": "Get Class Recordings By Class Id",
 					"event": [
 						{
 							"listen": "test",
@@ -3636,83 +3636,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Upcoming Classes For Particular Student Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d5c0eecc-70cd-4a58-a593-1c39c1e159e9",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "66a66463-4114-4542-b090-b1abc4f7dc11",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Class Recordings By Class Id Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "309d90a9-8650-4076-b02f-8eb87db5ea4f",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "42496c4d-f7cd-4248-8b94-10b434c4dcf5",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}download/{{classId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Class Copy",
+					"name": "Update Class",
 					"event": [
 						{
 							"listen": "test",
@@ -3736,6 +3660,13 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
+							}
 						}
 					],
 					"id": "9e3cb8ad-b309-4e5c-90ff-c16551de7285",
@@ -3753,7 +3684,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId1}},                \r\n  \"classNo\": 6,                   \r\n  \"classDate\": \"2024-11-25T00:00:00.000+00:00\",  \r\n  \"classTopic\": \"{{classTopic}}\",  \r\n  \"classStaffId\": \"{{staffId}}\",             \r\n  \"classDescription\": \"Every month going on can join depends on availability\",  \r\n  \"classComments\": \"API BOOTCAMP\",    \r\n  \"classNotes\": \"Gherkins\",           \r\n  \"classRecordingPath\": \"recordings\",  \r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750+00:00\",  \r\n    \"2025-01-15T15:11:08.750+00:00\",\r\n    \"2025-02-15T15:11:08.750+00:00\",\r\n    \"2025-03-15T15:11:08.750+00:00\",\r\n    \"2025-04-15T15:11:08.750+00:00\",\r\n    \"2025-05-15T15:11:08.750+00:00\"\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"batchId\": {{batchId2}},                \r\n  \"classNo\": 6,                   \r\n  \"classDate\": \"2024-11-25T00:00:00.000+00:00\",  \r\n  \"classTopic\": \"{{classTopic}}\",  \r\n  \"classStaffId\": \"{{staffId}}\",             \r\n  \"classDescription\": \"Every month going on can join depends on availability\",  \r\n  \"classComments\": \"API BOOTCAMP\",    \r\n  \"classNotes\": \"Gherkins\",           \r\n  \"classRecordingPath\": \"recordings\",  \r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750+00:00\",  \r\n    \"2025-01-15T15:11:08.750+00:00\",\r\n    \"2025-02-15T15:11:08.750+00:00\",\r\n    \"2025-03-15T15:11:08.750+00:00\",\r\n    \"2025-04-15T15:11:08.750+00:00\",\r\n    \"2025-05-15T15:11:08.750+00:00\"\r\n  ]\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3765,7 +3696,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Class Recording Path Copy",
+					"name": "Update Class Recording Path",
 					"event": [
 						{
 							"listen": "test",
@@ -3818,7 +3749,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Class By Class Id Copy",
+					"name": "Delete Class By Class Id",
 					"event": [
 						{
 							"listen": "test",
