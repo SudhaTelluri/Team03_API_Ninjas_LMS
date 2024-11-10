@@ -4837,6 +4837,94 @@
 					"response": []
 				},
 				{
+					"name": "Delete Program By ProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "860bebf4-6cd0-4b3c-8f2c-2e4f444d0744",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "ea91d0e5-965e-4f8f-9745-8b841e399421",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogid/{{invalidProgramId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program By ProgramName Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c9aa0c4-6460-46ed-80e4-3e51b390f74e",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "80bd28df-ad9c-460d-a496-490f765b7ca2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-CreateBatch-BadRequest",
 					"event": [
 						{
