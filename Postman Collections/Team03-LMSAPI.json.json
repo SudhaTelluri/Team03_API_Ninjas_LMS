@@ -4960,7 +4960,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
+							"raw": "{\r\n    \"batchDescription\": \"Learnings and Challenges\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"Project Session\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
