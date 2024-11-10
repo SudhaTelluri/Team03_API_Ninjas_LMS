@@ -2728,6 +2728,7 @@
 							"script": {
 								"id": "1e181056-b122-4292-b654-2e891600392b",
 								"exec": [
+									"var responseBody=pm.response.json();\r",
 									"// Get the batchId from the response body\r",
 									"const batchId1 = pm.response.json().batchId;\r",
 									"\r",
