@@ -3981,7 +3981,7 @@
 			"name": "Chaining-NegativeScenarios-sudha",
 			"item": [
 				{
-					"name": "Add New Program1 Copy",
+					"name": "Add New Program1 To Test Neg Scenarios",
 					"event": [
 						{
 							"listen": "test",
@@ -4076,7 +4076,7 @@
 					"response": []
 				},
 				{
-					"name": "Create New Batch Copy",
+					"name": "Create New Batch To Test Neg Scenarios",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4202,6 +4202,98 @@
 							}
 						},
 						"url": "{{baseURL}}batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Class To Test Neg Scenarios",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
+								"exec": [
+									"// Retrieve the programName2 collection variable\r",
+									"var programName1 = pm.collectionVariables.get(\"programName2\");\r",
+									"\r",
+									"// Generate a unique class topic by appending a random 4-digit number\r",
+									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000)+\"An introduction to AI\";\r",
+									"\r",
+									"// Store the generated classTopic as a collection variable\r",
+									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
+									"\r",
+									"// Log the classTopic for verification\r",
+									"console.log(\"Generated Class Topic:\", classTopic);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
+								"exec": [
+									"const response = pm.response.json();  \r",
+									"\r",
+									"// Extract classId and staffId from the response\r",
+									"const classId = response.csId;\r",
+									"const staffId = response.classStaffId;  \r",
+									"const classrecordings=response.classRecordingPath;\r",
+									"\r",
+									"// Store classId and staffId in collection variables\r",
+									"pm.collectionVariables.set(\"classId\", classId);\r",
+									"pm.collectionVariables.set(\"staffId\", staffId);\r",
+									"pm.collectionVariables.set(\"classrecordings\", classrecordings);\r",
+									"\r",
+									"// Log for verification\r",
+									"console.log(\"Stored classId: \", classId);\r",
+									"console.log(\"Stored staffId: \", staffId);\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(201);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "cf029b0f-d3a3-4f1b-aceb-866dceba5d71",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchId\": {{batchId2}},\r\n  \"classComments\": \"API BOOTCAMP\",\r\n  \"classDate\": \"2024-11-25\",\r\n  \"classDescription\": \"Every month going on\",\r\n  \"classNo\": 5,\r\n  \"classNotes\": \"Gherkins\",\r\n  \"classRecordingPath\": \"recordings\",\r\n  \"classStaffId\": \"U53\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"Active\",\r\n  \"batchName\": \"{{batchName2}}\",\r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750Z\",\r\n    \"2025-01-15T15:11:08.750Z\",\r\n    \"2025-02-15T15:11:08.750Z\",\r\n    \"2025-03-15T15:11:08.750Z\",\r\n    \"2025-04-15T15:11:08.750Z\"\r\n  ]\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}CreateClassSchedule"
 					},
 					"response": []
 				},
