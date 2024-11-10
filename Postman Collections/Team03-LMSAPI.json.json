@@ -4999,7 +4999,8 @@
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
-									"eval(pm.collectionVariables.get(\"assertNotFoundError\"));\r",
+									"var assertNotFoundError = pm.collectionVariables.get(\"assertNotFoundError\");\r",
+									"//eval(pm.collectionVariables.get(\"assertNotFoundError\"));\r",
 									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
 									"assertNotFoundError(responseBody, batchId);\r",
 									"\r",
@@ -5646,6 +5647,10 @@
 			"key": "invalidProgramName",
 			"value": "APINinjas",
 			"type": "string"
+		},
+		{
+			"key": "assertNotFoundError",
+			"value": ""
 		}
 	]
 }
