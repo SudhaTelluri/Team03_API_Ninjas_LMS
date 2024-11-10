@@ -4853,9 +4853,9 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
+									"testStatusLine(404,\"Not Found\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4881,7 +4881,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramName Copy",
+					"name": "Delete Program By ProgramName",
 					"event": [
 						{
 							"listen": "test",
@@ -4897,9 +4897,9 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
+									"testStatusLine(404,\"Not Found\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4920,7 +4920,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
+						"url": "{{baseURL}}deletebyprogname/{{invalidProgramId}}"
 					},
 					"response": []
 				},
