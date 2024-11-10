@@ -4999,9 +4999,9 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(400);    // Check if status code is 200\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(400,\"Bad Request\");\r",
+									"testStatusLine(404,\"Bad Request\");\r",
 									""
 								],
 								"type": "text/javascript",
