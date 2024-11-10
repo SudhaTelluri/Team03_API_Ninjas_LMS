@@ -5474,7 +5474,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e4ccba40-1360-4960-9d66-7b54297f1080",
+				"id": "06a59f42-7b62-44ce-b572-852ea0257259",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5485,7 +5485,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a92b541b-87c8-4473-ac7f-5f396ed31c30",
+				"id": "becfaec1-789b-48ad-bcf2-62b2a68d7239",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5515,13 +5515,6 @@
 					"    });\r",
 					"};\r",
 					"\r",
-					"//Save the functions globally within the collection for use\r",
-					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
-					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
-					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
-					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
-					"\r",
-					"\r",
 					"function assertNotFoundError(responseBody, expectedMessage) {\r",
 					"    pm.test(\"Error message is as expected\", function () {\r",
 					"        pm.expect(responseBody.message.trim()).to.eql(expectedMessage.trim());\r",
@@ -5532,7 +5525,27 @@
 					"    });\r",
 					"}\r",
 					"\r",
-					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError.toString());"
+					"function assertMessageAndSuccess(responseBody,) {\r",
+					"    pm.test(\"Response contains a message and success is false\", function() {\r",
+					"        // Ensure that the response contains the 'message' property\r",
+					"        pm.expect(responseBody).to.have.property(\"message\");\r",
+					"        \r",
+					"        // Ensure that the 'success' field is false\r",
+					"        pm.expect(responseBody).to.have.property(\"success\", false);\r",
+					"    });\r",
+					"}\r",
+					"\r",
+					"//Save the functions globally within the collection for use\r",
+					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
+					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
+					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
+					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
+					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError.toString());\r",
+					"pm.collectionVariables.set(\"assertMessageAndSuccess\", assertMessageAndSuccess.toString());\r",
+					"\r",
+					"\r",
+					"\r",
+					""
 				]
 			}
 		}
