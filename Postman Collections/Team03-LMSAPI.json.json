@@ -5434,7 +5434,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ab0a66de-7f16-4ad9-afe9-48c9ac227e40",
+				"id": "8e94a277-f9af-4143-a519-16792408d7ca",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5445,7 +5445,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "730bb0e0-4a36-44a6-95ef-02d4497f8774",
+				"id": "547124b7-2084-4351-8454-545497dc02b3",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5494,6 +5494,7 @@
 					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
 					"pm.collectionVariables.set(\"testHeader\", testHeader.toString());\r",
 					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
+					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError);\r",
 					""
 				]
 			}
