@@ -4880,7 +4880,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batchRecordings/{{batchId}}"
+						"url": "{{baseURL}}batchRecordings/{{invalidBatchId}}"
 					},
 					"response": []
 				},
@@ -4899,7 +4899,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}class/{{csid}}"
+						"url": "{{baseURL}}class/{{invalidClassId}}"
 					},
 					"response": []
 				},
@@ -4918,7 +4918,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classes/{{classTopic}}"
+						"url": "{{baseURL}}classes/{{invalidClassTopic}}"
 					},
 					"response": []
 				},
