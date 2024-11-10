@@ -5608,7 +5608,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "06a59f42-7b62-44ce-b572-852ea0257259",
+				"id": "7f307f9c-2bbd-4e01-9173-bf4944a2a065",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5619,7 +5619,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "becfaec1-789b-48ad-bcf2-62b2a68d7239",
+				"id": "32316b53-df76-405e-b9d4-00af2a4192df",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5663,7 +5663,9 @@
 					"    pm.test(\"Response contains a message and success is false\", function() {\r",
 					"        // Ensure that the response contains the 'message' property\r",
 					"        pm.expect(responseBody).to.have.property(\"message\");\r",
-					"        \r",
+					"        // Logs the message to console\r",
+					"                 console.log(\"Message content:\", responseBody.message); \r",
+					"                      \r",
 					"        // Ensure that the 'success' field is false\r",
 					"        pm.expect(responseBody).to.have.property(\"success\", false);\r",
 					"    });\r",
