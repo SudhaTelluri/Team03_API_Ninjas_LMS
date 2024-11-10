@@ -1761,44 +1761,6 @@
 					"response": []
 				},
 				{
-					"name": "Get Class Recordings By Class Id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "309d90a9-8650-4076-b02f-8eb87db5ea4f",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "68f9320e-7d0b-4f11-9396-74b7db036dba",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}download/{{classId}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Update Class",
 					"event": [
 						{
@@ -3516,7 +3478,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Classes By Batch Id Copy",
+					"name": "Get All Classes By Batch Id",
 					"event": [
 						{
 							"listen": "test",
@@ -3555,12 +3517,12 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}classesbyBatch/{{batchId1}}"
+						"url": "{{baseURL}}classesbyBatch/{{batchId2}}"
 					},
 					"response": []
 				},
 				{
-					"name": "Get All Classes By StaffId Copy",
+					"name": "Get All Classes By StaffId",
 					"event": [
 						{
 							"listen": "test",
@@ -3604,7 +3566,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Recordings Copy",
+					"name": "Get All Recordings",
 					"event": [
 						{
 							"listen": "test",
