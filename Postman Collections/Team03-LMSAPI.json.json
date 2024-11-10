@@ -4403,14 +4403,18 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
 									"testStatusCode(500);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
 									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
 									"\r",
 									""
 								],
@@ -5699,6 +5703,10 @@
 		},
 		{
 			"key": "assertNotFoundError",
+			"value": ""
+		},
+		{
+			"key": "assertMessageAndSuccess",
 			"value": ""
 		}
 	]
