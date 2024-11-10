@@ -4747,7 +4747,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}batches/batchName/{{batchName}}"
+						"url": "{{baseURL}}batches/batchName/{{invalidBatchName}}"
 					},
 					"response": []
 				},
@@ -5196,7 +5196,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "df1bcdee-f9fc-4ff6-8e62-79a65093dfd2",
+				"id": "3967d661-47de-46d4-b290-3c87b0ebacd2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5207,7 +5207,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a8ab0790-ee31-4a39-8575-729c6f6dffca",
+				"id": "a8e06d1a-73b6-49b8-ab26-a83dc8a97464",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5387,6 +5387,11 @@
 		{
 			"key": "userIdForProgramBatchMap",
 			"value": "U57",
+			"type": "string"
+		},
+		{
+			"key": "invalidBatchName",
+			"value": "samplebatch",
 			"type": "string"
 		}
 	]
