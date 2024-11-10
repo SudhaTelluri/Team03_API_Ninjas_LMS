@@ -6016,7 +6016,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "7f307f9c-2bbd-4e01-9173-bf4944a2a065",
+				"id": "27e80292-60fb-4c45-a3b3-5591ae525a40",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6027,7 +6027,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "32316b53-df76-405e-b9d4-00af2a4192df",
+				"id": "09954e76-ce37-4d90-96dd-93930980c06f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6248,6 +6248,11 @@
 		{
 			"key": "assertMessageAndSuccess",
 			"value": ""
+		},
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
