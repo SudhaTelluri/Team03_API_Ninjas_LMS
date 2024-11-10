@@ -4971,7 +4971,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"Learnings and Challenges\",\r\n    \"batchName\": \"SDET128\",\r\n    \"batchNoOfClasses\": 12,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"4010\",\r\n    \"programName\": \"Project Session\"\r\n}",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4984,6 +4984,31 @@
 				},
 				{
 					"name": "Neg-GET Batch by Invalid BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a242a103-894b-43fb-a67a-2ae0a54fd652",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(404,\"Not Found\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "3ba8b48e-9abf-4111-9177-b05967897199",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
