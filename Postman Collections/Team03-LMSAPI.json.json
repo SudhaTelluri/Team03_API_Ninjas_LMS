@@ -3072,8 +3072,8 @@
 							"script": {
 								"id": "5db35245-07ef-43bb-bb1b-9812d6ff3da7",
 								"exec": [
-									"var programName1 = pm.collectionVariables.get(\"programName2\");\r",
-									"var programId1 = pm.collectionVariables.get(\"programId2\");\r",
+									"var programName2 = pm.collectionVariables.get(\"programName2\");\r",
+									"var programId2 = pm.collectionVariables.get(\"programId2\");\r",
 									"\r",
 									"function generateRandomNumber() {\r",
 									"    return Math.floor(100 + Math.random() * 900);  // Generates a 3-digit number between 100 and 999\r",
