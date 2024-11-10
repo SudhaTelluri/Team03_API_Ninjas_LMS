@@ -2157,7 +2157,7 @@
 					"response": []
 				},
 				{
-					"name": "Add New Program1 Copy",
+					"name": "Add New Program1",
 					"event": [
 						{
 							"listen": "test",
@@ -2252,7 +2252,7 @@
 					"response": []
 				},
 				{
-					"name": "Add New Program2 Copy",
+					"name": "Add New Program2",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2346,7 +2346,7 @@
 					"response": []
 				},
 				{
-					"name": "Get All Program Copy",
+					"name": "Get All Program",
 					"event": [
 						{
 							"listen": "test",
@@ -2390,7 +2390,7 @@
 					"response": []
 				},
 				{
-					"name": "GET All Programs With Users Copy",
+					"name": "GET All Programs With Users",
 					"event": [
 						{
 							"listen": "test",
@@ -2434,7 +2434,7 @@
 					"response": []
 				},
 				{
-					"name": "GET Program By ProgramId Copy",
+					"name": "GET Program By ProgramId",
 					"event": [
 						{
 							"listen": "test",
@@ -2478,7 +2478,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Program By ProgramName Copy",
+					"name": "Update Program By ProgramName",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2560,7 +2560,7 @@
 					"response": []
 				},
 				{
-					"name": "Update Program By ProgramId Copy",
+					"name": "Update Program By ProgramId",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2642,7 +2642,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramId Copy",
+					"name": "Delete Program By ProgramId",
 					"event": [
 						{
 							"listen": "test",
@@ -2686,7 +2686,7 @@
 					"response": []
 				},
 				{
-					"name": "Create New Batch Copy",
+					"name": "Create New Batch",
 					"event": [
 						{
 							"listen": "prerequest",
