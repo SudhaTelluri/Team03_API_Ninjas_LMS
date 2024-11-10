@@ -944,7 +944,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"name": "Get Assigned Program/(404)Batch(es) of All Users",
 					"event": [
 						{
 							"listen": "test",
@@ -978,21 +978,41 @@
 					"response": []
 				},
 				{
+					"name": "New Request",
+					"id": "165bc52e-10bf-40ad-84e0-2e082d5eea5b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
 					"id": "a3c05586-67af-44fb-bdee-ee428107623f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{UserId}}"
+						"url": "{{baseURL}}/"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "fc46ed86-9817-42e4-8e05-86a0fb93b73b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}"
 					},
 					"response": []
 				}
