@@ -2133,11 +2133,6 @@
 									"    // Store the programId and programName in collection variables\r",
 									"    pm.collectionVariables.set(\"programId1\", responseBody.programId);\r",
 									"    pm.collectionVariables.set(\"programName1\", responseBody.programName);\r",
-									"    \r",
-									"// The variables programId and programName are automatically marked inactive once deleted. Loading these variables for negative scenario testing.\r",
-									"\r",
-									"    pm.collectionVariables.set(\"invalidProgramId\", responseBody.programId);\r",
-									"    pm.collectionVariables.set(\"invalidProgramName\", responseBody.programName);\r",
 									"\r",
 									"    console.log(\"Program ID1: \" + responseBody.programId);\r",
 									"} else {\r",
@@ -2737,12 +2732,6 @@
 									"\r",
 									"// Log the batchId for verification\r",
 									"console.log(\"Stored batchId as collection variable:\", batchId1);\r",
-									"\r",
-									"// The variables batchId and batchName are automatically marked inactive once deleted. Loading these variables for negative scenario testing.\r",
-									"\r",
-									"    pm.collectionVariables.set(\"invalidBatchId\", responseBody.batchId);\r",
-									"    pm.collectionVariables.set(\"invalidBatchName\", responseBody.batchName);\r",
-									"\r",
 									"\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
@@ -5207,7 +5196,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "fc86efbc-dd60-4ba8-a605-c088ae9a2e84",
+				"id": "c6844203-7a48-4edb-9673-30ad256dafc5",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5218,7 +5207,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "22852496-a148-4267-922b-24fa496326e8",
+				"id": "9ef88771-5d84-4858-99be-7798086396ed",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5280,18 +5269,8 @@
 			"value": ""
 		},
 		{
-			"key": "invalidProgramId",
-			"value": "",
-			"type": "string"
-		},
-		{
 			"key": "updatedProgramName",
 			"value": ""
-		},
-		{
-			"key": "invalidProgramName",
-			"value": "APINinjas",
-			"type": "string"
 		},
 		{
 			"key": "batchName1",
@@ -5348,8 +5327,7 @@
 		{
 			"key": "invalidBatchId",
 			"value": "30",
-			"type": "string",
-			"disabled": true
+			"type": "string"
 		},
 		{
 			"key": "invalidClassTopic",
@@ -5404,21 +5382,7 @@
 		{
 			"key": "invalidBatchName",
 			"value": "samplebatch",
-			"type": "string",
-			"disabled": true
-		},
-		{
-			"key": "invalidbatchName",
-			"value": "",
-			"disabled": true
-		},
-		{
-			"key": "invalidBatchId",
-			"value": ""
-		},
-		{
-			"key": "invalidBatchName",
-			"value": ""
+			"type": "string"
 		}
 	]
 }
