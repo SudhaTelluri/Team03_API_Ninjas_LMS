@@ -4490,7 +4490,7 @@
 									"const expectedMessage = \"program with this: \"+ programId +\"not found\";\r",
 									"\r",
 									"// Call the function to assert the error message and success flag\r",
-									"assertNotFoundError(responseBody, programId, expectedMessage);\r",
+									"assertNotFoundError(responseBody, expectedMessage);\r",
 									"\r",
 									"\r",
 									"\r",
@@ -5033,7 +5033,7 @@
 									"\r",
 									"\r",
 									"// Call the function to assert the error message and success flag\r",
-									"assertNotFoundError(responseBody, batchId, expectedMessage);\r",
+									"assertNotFoundError(responseBody, expectedMessage);\r",
 									"\r",
 									"\r",
 									""
@@ -5462,7 +5462,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8c46d129-71ed-4c7c-8161-9a1a12217d8b",
+				"id": "e4ccba40-1360-4960-9d66-7b54297f1080",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5473,7 +5473,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e749097d-9213-4ed1-aadc-8a530a12fabd",
+				"id": "a92b541b-87c8-4473-ac7f-5f396ed31c30",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5510,7 +5510,7 @@
 					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					"\r",
 					"\r",
-					"function assertNotFoundError(responseBody, batchId, expectedMessage) {\r",
+					"function assertNotFoundError(responseBody, expectedMessage) {\r",
 					"    pm.test(\"Error message is as expected\", function () {\r",
 					"        pm.expect(responseBody.message.trim()).to.eql(expectedMessage.trim());\r",
 					"    });\r",
