@@ -4445,7 +4445,7 @@
 					"response": []
 				},
 				{
-					"name": "Neg-Get Program with Incorrect Program ID",
+					"name": "Neg-Get Program with Invalid Program ID",
 					"event": [
 						{
 							"listen": "test",
