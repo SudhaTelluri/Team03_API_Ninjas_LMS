@@ -5726,14 +5726,20 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(404);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(404,\"Not Found\");\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -5760,6 +5766,37 @@
 				},
 				{
 					"name": "Neg-Delete Class By Invalid Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ee23d99d-b549-4c02-96a2-5c65b9ae7ee8",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "0e223b46-437b-426d-8b79-7f304bac9dea",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5773,6 +5810,37 @@
 				},
 				{
 					"name": "Neg-Delete Batch with Non-Existing BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "00535da0-446b-42ce-9d97-db64e70c84f6",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "30378a49-05d6-471a-bd14-62253d30c6db",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5792,6 +5860,37 @@
 				},
 				{
 					"name": "Neg-Delete Program with Deleted ProgramName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cc55c52f-a8ef-43e9-936b-06e2a53a7d16",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "7c3b9647-a9b2-4b0d-99e1-adc226de4132",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -5811,6 +5910,37 @@
 				},
 				{
 					"name": "Neg-Delete Program with Deleted ProgramID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5583272a-9001-4b10-8535-475b798f1309",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(404,\"Not Found\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a0f7cd17-e7bc-4172-91d4-1b246160d1b8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
