@@ -4444,6 +4444,47 @@
 				},
 				{
 					"name": "Neg-Get Program with Incorrect Program ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "74323826-886a-4628-90c4-8137d66a8cf0",
+								"exec": [
+									"let responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the response indicates an error (success is false)\r",
+									"if (responseBody.success === false) {\r",
+									"    // Print the error message from the response\r",
+									"    console.error(\"Error: \" + responseBody.message);\r",
+									"} else if (responseBody && responseBody.programId) {\r",
+									"    // If the response contains programId and programName, print them\r",
+									"    console.log(\"Program ID: \" + responseBody.programId);\r",
+									"    console.log(\"Program Name: \" + responseBody.programName);\r",
+									"} else {\r",
+									"    // If neither condition is met, log a failure\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(404);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(404,\"Not Found\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "6ba19cfc-80cc-4e7c-8def-c118db3ac205",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
