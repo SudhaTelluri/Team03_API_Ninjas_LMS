@@ -5055,12 +5055,12 @@
 					"response": []
 				},
 				{
-					"name": "Neg-Get All Recordings With Invalid Endpoint",
+					"name": "Neg-Get Class Recordings By Invalid Class Id",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "8a9b6a91-2e2a-4664-a07b-a3a5ae61b839",
+								"id": "820a181e-5f07-470a-b098-69e1b5949f02",
 								"exec": [
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
@@ -5087,25 +5087,6 @@
 							}
 						}
 					],
-					"id": "7d45c68f-de6e-4de1-a1d5-76742536539b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}classrecordings"
-					},
-					"response": []
-				},
-				{
-					"name": "Neg-Get Class Recordings By Invalid Class Id",
 					"id": "5c124f53-d85a-4aea-889d-96322fa8e749",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
