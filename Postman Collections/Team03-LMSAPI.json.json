@@ -1862,7 +1862,6 @@
 							"script": {
 								"id": "d696b33b-f8d0-43cf-948c-c58d65f7401e",
 								"exec": [
-									"var responseBody=pm.response.json();\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
@@ -1904,6 +1903,34 @@
 			"item": [
 				{
 					"name": "Get Assigned Program/Batch(es)  Of All Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "54d7d250-cff6-4d15-9273-b71cf97d3ce3",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "e8123d2e-a509-4628-ad60-7d9c0f68e8bd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1923,6 +1950,34 @@
 				},
 				{
 					"name": "Get Assigned Program/Batch Of a User By User Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2a554c77-0b2e-4bc5-abe2-7bb19d25f4a0",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "e6e71188-509f-4089-99b2-86c3fb3a443f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1942,6 +1997,34 @@
 				},
 				{
 					"name": "Delete All Programs/Batches assigned to the User By UserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b69a247-3934-47f1-88cd-3fff2ef13901",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a20c8240-4d46-41ed-bc42-42a44ce1859f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
