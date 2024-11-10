@@ -626,6 +626,25 @@
 					"response": []
 				},
 				{
+					"name": "Delete program by programname Copy",
+					"id": "bbfa6005-13a1-463e-b63b-91a470d9224a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}/deletebyprogname/apininjas"
+					},
+					"response": []
+				},
+				{
 					"name": "Delete program by id",
 					"event": [
 						{
