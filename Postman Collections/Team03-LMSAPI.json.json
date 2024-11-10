@@ -5001,7 +5001,7 @@
 									"\r",
 									"eval(pm.collectionVariables.get(\"assertNotFoundError\"));\r",
 									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
-									"assertNotFoundError(pm.responseBody, batchId);\r",
+									"assertNotFoundError(responseBody, batchId);\r",
 									"\r",
 									"\r",
 									"testResponseTime(1000)\r",
@@ -5434,7 +5434,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "67c98e68-7f36-4015-8e81-7088d9b0b4ff",
+				"id": "ab0a66de-7f16-4ad9-afe9-48c9ac227e40",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5445,7 +5445,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "25d1c6f3-5bbd-4d0e-bb88-2dbf22de5f96",
+				"id": "730bb0e0-4a36-44a6-95ef-02d4497f8774",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5475,21 +5475,18 @@
 					"    });\r",
 					"};\r",
 					"\r",
-					"// Collection-level function to assert a specific 404 error message and success field\r",
 					"function assertNotFoundError(response, batchId) {\r",
-					"    // Define the expected error message format\r",
-					"    const expectedMessage = `Batch not found with Id : ${batchId}`;\r",
+					"    const expectedMessage = \"Batch not found with Id : \" + batchId;\r",
 					"\r",
-					"    // Check the error message\r",
 					"    pm.test(\"Error message is as expected\", function () {\r",
-					"        pm.expect(response.json().message).to.eql(expectedMessage);\r",
+					"        pm.expect(response.message).to.eql(expectedMessage);\r",
 					"    });\r",
 					"\r",
-					"    // Check that success is false\r",
 					"    pm.test(\"Success is false\", function () {\r",
-					"        pm.expect(response.json().success).to.be.false;\r",
+					"        pm.expect(response.success).to.be.false;\r",
 					"    });\r",
 					"}\r",
+					"\r",
 					"\r",
 					"\r",
 					"//Save the functions globally within the collection for use\r",
