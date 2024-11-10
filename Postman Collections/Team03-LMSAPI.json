@@ -616,7 +616,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearertoken}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "DELETE",
