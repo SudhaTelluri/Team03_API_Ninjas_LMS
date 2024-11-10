@@ -4990,6 +4990,7 @@
 							"script": {
 								"id": "a242a103-894b-43fb-a67a-2ae0a54fd652",
 								"exec": [
+									"var responseBody=pm.response.json();\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
@@ -4998,8 +4999,9 @@
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
+									"eval(pm.collectionVariables.get(\"assertNotFoundError\"));\r",
 									"const batchId = pm.collectionVariables.get(\"invalidBatchId\");\r",
-									"assertNotFoundError(pm.response, batchId);\r",
+									"assertNotFoundError(pm.responseBody, batchId);\r",
 									"\r",
 									"\r",
 									"testResponseTime(1000)\r",
