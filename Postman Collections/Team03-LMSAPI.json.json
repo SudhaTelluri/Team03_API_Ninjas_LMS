@@ -1673,6 +1673,82 @@
 					"response": []
 				},
 				{
+					"name": "Get All Upcoming Classes For Particular Student",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5c0eecc-70cd-4a58-a593-1c39c1e159e9",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "98941056-483d-4f96-920e-b3dd4f4a8be1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Class Recordings By Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "309d90a9-8650-4076-b02f-8eb87db5ea4f",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "68f9320e-7d0b-4f11-9396-74b7db036dba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}download/{{classId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Update Class",
 					"event": [
 						{
@@ -1727,6 +1803,31 @@
 				},
 				{
 					"name": "Update Class Recording Path",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eee8f240-7518-4336-9f1c-ca8353563680",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a4784699-07a9-45ae-b120-aed6bc4d1903",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1755,6 +1856,31 @@
 				},
 				{
 					"name": "Delete Class By Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d696b33b-f8d0-43cf-948c-c58d65f7401e",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "ff196d66-0d2a-43b2-a640-fc8640171819",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1762,33 +1888,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}deleteByClass/{{classId1}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Get All Upcoming Classes For Particular Student",
-					"id": "98941056-483d-4f96-920e-b3dd4f4a8be1",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}upcomingClasses/{{sampleStudentId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Class Recordings By Class Id",
-					"id": "68f9320e-7d0b-4f11-9396-74b7db036dba",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}download/{{classId}}"
+						"url": "{{baseURL}}deleteByClass/{{classId}}"
 					},
 					"response": []
 				}
