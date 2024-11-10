@@ -2740,8 +2740,7 @@
 									"// The variables batchId and batchName are automatically marked inactive once deleted. Loading these variables for negative scenario testing.\r",
 									"\r",
 									"    pm.collectionVariables.set(\"invalidBatchId\", responseBody.batchId);\r",
-									"    pm.collectionVariables.set(\"invalidbatchName\", responseBody.batchName);\r",
-									"\r",
+									"    pm.collectionVariables.set(\"invalidBatchName\", responseBody.batchName);\r",
 									"\r",
 									"\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
@@ -5207,7 +5206,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "3967d661-47de-46d4-b290-3c87b0ebacd2",
+				"id": "83ec4636-0a1b-45b8-b941-56faeb3e9a70",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5218,7 +5217,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a8e06d1a-73b6-49b8-ab26-a83dc8a97464",
+				"id": "03cb8b51-b716-4402-9ed5-fd4ea2960b28",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5403,11 +5402,13 @@
 		{
 			"key": "invalidBatchName",
 			"value": "samplebatch",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "invalidbatchName",
-			"value": ""
+			"value": "",
+			"disabled": true
 		}
 	]
 }
