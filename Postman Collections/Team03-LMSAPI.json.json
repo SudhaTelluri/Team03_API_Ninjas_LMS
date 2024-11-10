@@ -4934,7 +4934,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "579fe188-9a96-4ef5-b1c5-d13e277fb760",
+				"id": "df1bcdee-f9fc-4ff6-8e62-79a65093dfd2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -4945,7 +4945,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "25d6338e-8bfb-402b-8a3d-93dec9948106",
+				"id": "a8ab0790-ee31-4a39-8575-729c6f6dffca",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -5121,6 +5121,11 @@
 		{
 			"key": "testStatusLine",
 			"value": ""
+		},
+		{
+			"key": "userIdForProgramBatchMap",
+			"value": "U57",
+			"type": "string"
 		}
 	]
 }
