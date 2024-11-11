@@ -133,8 +133,8 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(201);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(201);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(201,\"Created\");\r",
 									"\r",
 									""
@@ -308,13 +308,20 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
 								"type": "text/javascript",
 								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -351,13 +358,20 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
 								"type": "text/javascript",
 								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -394,13 +408,20 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
 								"type": "text/javascript",
 								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -462,13 +483,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -514,7 +534,7 @@
 									"// Function to generate a random 3-letter string\r",
 									"function generateRandomLetters() {\r",
 									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
-									"    let result = '';\r",
+									"    var result = '';\r",
 									"    for (let i = 0; i < 2; i++) {\r",
 									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
 									"    }\r",
@@ -522,7 +542,7 @@
 									"}\r",
 									"\r",
 									"// Generate dynamic program name\r",
-									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
+									"var updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
 									"\r",
 									"// Set the program name as collection variables\r",
 									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
@@ -544,7 +564,6 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
