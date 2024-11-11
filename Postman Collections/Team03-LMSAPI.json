@@ -1605,7 +1605,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}/putprogram/1720"
+								"url": "{{baseURL}}/putprogram/{{programId1}}"
 							},
 							"response": []
 						},
