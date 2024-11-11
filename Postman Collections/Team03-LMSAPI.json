@@ -1637,7 +1637,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Delete All Programs/Batches assigned to the User By UserId",
 					"id": "fc46ed86-9817-42e4-8e05-86a0fb93b73b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1645,7 +1645,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}"
+						"url": "{{baseURL}}/U"
 					},
 					"response": []
 				}
