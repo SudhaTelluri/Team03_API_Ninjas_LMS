@@ -2877,7 +2877,7 @@
 							"script": {
 								"id": "526a9a11-54ac-469f-a315-bc445994d9b2",
 								"exec": [
-									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"Downloads\";\r",
+									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"C:\\Users\\sudha\\Desktop\\lms-api-octMath.floor(1000 + Math.random() * 9000)\";\r",
 									"\r",
 									"pm.variables.set(\"classRecordingPath\", classRecordingPath);"
 								],
