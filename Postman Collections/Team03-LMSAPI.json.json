@@ -103,7 +103,7 @@
 			]
 		},
 		{
-			"name": "Program-sudha",
+			"name": "Program",
 			"item": [
 				{
 					"name": "Add New Program1",
@@ -267,6 +267,99 @@
 						}
 					],
 					"id": "f9082391-0355-4e88-9221-8b7f0b89b1d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"A team focused on automating the testing of APIs for performance and reliability.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Program2 Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "884eef17-3d76-4ee9-a401-6ff843e4e438",
+								"exec": [
+									"// Function to generate a random 2-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    var result = '';\r",
+									"    for (var i = 0; i < 4; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"var programName2 = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"programName2\", programName2);\r",
+									"\r",
+									"console.log(\"Generated Program Name 2: \" + programName2);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fdf72ea8-4ce4-4a56-bae6-2c98256fc252",
+								"exec": [
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the programId is present in the response\r",
+									"if (responseBody && responseBody.programId) {\r",
+									"    // Store the programId and programName in collection variables\r",
+									"    pm.collectionVariables.set(\"programId2\", responseBody.programId);\r",
+									"    pm.collectionVariables.set(\"programName2\", responseBody.programName);\r",
+									"    console.log(\"Program ID2: \" + responseBody.programId);\r",
+									"} else {\r",
+									"    console.error(\"Failed to retrieve programId2 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(201);   \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "18915788-7f45-4bff-9d22-f56ea146b0be",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -697,6 +790,100 @@
 		{
 			"name": "Batch",
 			"item": [
+				{
+					"name": "Add New Program1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the programId is present in the response\r",
+									"if (responseBody && responseBody.programId) {\r",
+									"    // Store the programId and programName in collection variables\r",
+									"    pm.collectionVariables.set(\"programId1\", responseBody.programId);\r",
+									"    pm.collectionVariables.set(\"programName1\", responseBody.programName);\r",
+									"    console.log(\"Program ID1: \" + responseBody.programId);\r",
+									"} else {\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(201);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(201,\"Created\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									"// Function to generate a random 3-letter string\r",
+									"function generateRandomLetters() {\r",
+									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+									"    var result = '';\r",
+									"    for (var i = 0; i < 4; i++) {\r",
+									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
+									"    }\r",
+									"    return result;\r",
+									"}\r",
+									"\r",
+									"// Generate dynamic program name\r",
+									"var programName1 = \"APINinjas-\" + generateRandomLetters();\r",
+									"\r",
+									"// Set the program name as collection variables\r",
+									"pm.collectionVariables.set(\"programName1\", programName1);\r",
+									"\r",
+									"console.log(\"Generated Program Name 1: \" + programName1);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "0966d6c3-b935-4641-8021-fa8ef5f549eb",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
 				{
 					"name": "Create New Batch",
 					"event": [
