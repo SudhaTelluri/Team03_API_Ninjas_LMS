@@ -27,13 +27,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(500)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");"
 								],
 								"type": "text/javascript",
@@ -114,7 +113,7 @@
 							"script": {
 								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
 								"exec": [
-									"let responseBody = pm.response.json();\r",
+									"var responseBody = pm.response.json();\r",
 									"\r",
 									"// Check if the programId is present in the response\r",
 									"if (responseBody && responseBody.programId) {\r",
@@ -130,7 +129,6 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
@@ -237,7 +235,7 @@
 							"script": {
 								"id": "fdf72ea8-4ce4-4a56-bae6-2c98256fc252",
 								"exec": [
-									"let responseBody = pm.response.json();\r",
+									"var responseBody = pm.response.json();\r",
 									"\r",
 									"// Check if the programId is present in the response\r",
 									"if (responseBody && responseBody.programId) {\r",
@@ -253,7 +251,6 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
