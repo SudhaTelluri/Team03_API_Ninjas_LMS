@@ -4593,7 +4593,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": 12345,\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId1}}\",\r\n    \"programName\": \"{{programName1}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4690,7 +4690,7 @@
 							"script": {
 								"id": "74323826-886a-4628-90c4-8137d66a8cf0",
 								"exec": [
-									"let responseBody = pm.response.json();\r",
+									"var responseBody = pm.response.json();\r",
 									"\r",
 									"// Check if the response indicates an error (success is false)\r",
 									"if (responseBody.success === false) {\r",
