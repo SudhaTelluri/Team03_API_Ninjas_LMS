@@ -270,7 +270,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}login"
+						"url": "{{baseURL}}/login "
 					},
 					"response": []
 				}
