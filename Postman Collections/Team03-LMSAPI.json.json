@@ -605,7 +605,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramId",
+					"name": "Delete Program By First ProgramId",
 					"event": [
 						{
 							"listen": "test",
@@ -648,7 +648,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramName",
+					"name": "Delete Program By Second ProgramName",
 					"event": [
 						{
 							"listen": "test",
@@ -1241,7 +1241,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Batch By BatchId",
+					"name": "Delete Batch By First BatchId",
 					"event": [
 						{
 							"listen": "test",
@@ -1267,6 +1267,49 @@
 						}
 					],
 					"id": "20befc6a-1773-40a9-ac94-5fb26dc548b3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}batches/{{batchId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Batch By Second BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f16ea2b-5d12-4004-949e-e63aea62e5a6",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "246c7a69-1883-401f-b526-2d2edb4752b7",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
