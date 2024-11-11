@@ -97,9 +97,7 @@
 									"// Set as environment variables\r",
 									"var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
 									"var password = pm.collectionVariables.get(\"password\");\r",
-									"\r",
-									"console.log(\"User Email: \" + userLoginEmailId);\r",
-									"console.log(\"Password: \" + password);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
