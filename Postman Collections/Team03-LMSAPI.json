@@ -1625,6 +1625,21 @@
 				},
 				{
 					"name": "Delete All Programs/Batches assigned to the User By UserId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "099c9ffb-7f3d-4850-a1d8-bef2bcb20236",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "a3c05586-67af-44fb-bdee-ee428107623f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1637,7 +1652,34 @@
 					"response": []
 				},
 				{
-					"name": "Delete All Programs/Batches assigned to the User By UserId",
+					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aee98b77-dd85-4154-8669-6848462a15e5",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "2bf62c9e-ad0d-4108-a966-8a5420e356fd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Programs/Batches assigned to the User By UserId(Unauthorized)",
 					"id": "fc46ed86-9817-42e4-8e05-86a0fb93b73b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
