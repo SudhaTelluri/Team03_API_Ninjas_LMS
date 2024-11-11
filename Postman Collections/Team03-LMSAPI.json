@@ -139,6 +139,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userLoginEmailId\": \"sde@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseURL}}/login/"
 					},
 					"response": []
@@ -167,6 +176,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userLoginEmailId\": \"sde@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseURL}}/login"
 					},
 					"response": []
