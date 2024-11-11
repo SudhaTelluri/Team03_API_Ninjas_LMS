@@ -3261,6 +3261,13 @@
 							"script": {
 								"id": "20dbbcc1-5438-4726-b580-fc11c0703873",
 								"exec": [
+									"// Access data from CSV file\r",
+									"var userLoginEmailId = pm.iterationData.get(\"userLoginEmailId\");\r",
+									"var password = pm.iterationData.get(\"password\");\r",
+									"\r",
+									"// Set as environment variables\r",
+									"var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
+									"var password = pm.collectionVariables.get(\"password\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -7598,7 +7605,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "d443beae-5777-417e-b6c9-c41669a93a07",
+				"id": "0af56736-972d-4384-9d23-03fdb0d9d091",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7609,7 +7616,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "a79ac07b-a560-49d7-a225-1ded7968586a",
+				"id": "8315994b-6a0a-4453-84d9-1376f8d1245a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
