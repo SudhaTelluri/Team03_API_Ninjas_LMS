@@ -2593,49 +2593,6 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramId",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "860bebf4-6cd0-4b3c-8f2c-2e4f444d0744",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);   \r",
-									"testHeader(\"Content-Type\"); \r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "f8c99c08-4c2b-4360-994f-18deaffd4781",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Create New Batch",
 					"event": [
 						{
@@ -2985,13 +2942,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\");\r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -3177,50 +3133,6 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}batches/{{batchId1}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Batch By BatchId",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "1f16ea2b-5d12-4004-949e-e63aea62e5a6",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "30fcb60b-e15c-444f-a1bf-3d0f731444a9",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "DELETE",
-						"header": [],
 						"url": "{{baseURL}}batches/{{batchId1}}"
 					},
 					"response": []
@@ -3809,47 +3721,6 @@
 					"response": []
 				},
 				{
-					"name": "Delete Class By Class Id",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "d696b33b-f8d0-43cf-948c-c58d65f7401e",
-								"exec": [
-									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
-									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
-									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
-									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
-									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
-									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"\r",
-									"testResponseTime(500)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
-									"testStatusLine(200,\"OK\");\r",
-									"\r",
-									"\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "3d829228-d4b3-4da5-82db-3d243b782f0b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "{{baseURL}}deleteByClass/{{classId}}"
-					},
-					"response": []
-				},
-				{
 					"name": "Get Assigned Program/Batch(es)  Of All Users",
 					"event": [
 						{
@@ -3940,6 +3811,134 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}userRoleProgramBatchMap/{{userIdForProgramBatchMap}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Class By Class Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d696b33b-f8d0-43cf-948c-c58d65f7401e",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "3d829228-d4b3-4da5-82db-3d243b782f0b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deleteByClass/{{classId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Batch By BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f16ea2b-5d12-4004-949e-e63aea62e5a6",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"// Retrieve the function from collection variables\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    // Check if status code is 200\r",
+									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "30fcb60b-e15c-444f-a1bf-3d0f731444a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}batches/{{batchId1}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program By ProgramId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "860bebf4-6cd0-4b3c-8f2c-2e4f444d0744",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "f8c99c08-4c2b-4360-994f-18deaffd4781",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}deletebyprogid/{{programId1}}"
 					},
 					"response": []
 				},
