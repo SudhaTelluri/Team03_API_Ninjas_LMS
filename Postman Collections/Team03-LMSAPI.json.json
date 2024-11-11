@@ -5161,6 +5161,50 @@
 							"script": {
 								"id": "6d24a30e-54f9-4c4f-b177-a69768135b19",
 								"exec": [
+									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"\r",
+									"var classTopic = programName1 + Math.floor(1000 + Math.random() * 9000) + \" An introduction to AI\";\r",
+									"\r",
+									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
+									"\r",
+									"console.log(\"Generated Class Topic:\", classTopic);\r",
+									"\r",
+									"var updatedClassComments = pm.iterationData.get(\"updatedClassComments\") || \"Updated API BOOTCAMP\";\r",
+									"var updatedClassDate = pm.iterationData.get(\"updatedClassDate\") || \"2024-11-25\";\r",
+									"var updatedClassDescription = pm.iterationData.get(\"updatedClassDescription\") || \"Updated description for every month going on\";\r",
+									"var updatedClassNotes = pm.iterationData.get(\"updatedClassNotes\") || \"Updated Gherkins\";\r",
+									"var updatedClassRecordingPath = pm.iterationData.get(\"updatedClassRecordingPath\") || \"updated_recordings\";\r",
+									"var classStaffId = pm.iterationData.get(\"classStaffId\") || \"U53\";\r",
+									"var classStatus = pm.iterationData.get(\"classStatus\") || \"Active\";\r",
+									"\r",
+									"var updatedClassScheduledDates = pm.iterationData.get(\"updatedClassScheduledDates\") || \"2024-12-15T15:11:08.750Z,2025-01-15T15:11:08.750Z,2025-02-15T15:11:08.750Z,2025-03-15T15:11:08.750Z,2025-04-15T15:11:08.750Z\";\r",
+									"\r",
+									"var updatedDateArray = updatedClassScheduledDates.split(',');\r",
+									"\r",
+									"var formattedUpdatedDates = updatedDateArray.map(dateStr => {\r",
+									"    let dateObj = new Date(dateStr);\r",
+									"    if (isNaN(dateObj)) {\r",
+									"        return null;\r",
+									"    }\r",
+									"    return dateObj.toISOString();\r",
+									"});\r",
+									"\r",
+									"var formattedUpdatedClassScheduledDates = formattedUpdatedDates.filter(date => date !== null);\r",
+									"\r",
+									"console.log(\"Formatted updated classScheduledDates:\", formattedUpdatedClassScheduledDates);\r",
+									"\r",
+									"pm.variables.set(\"updatedClassScheduledDates\", JSON.stringify(formattedUpdatedClassScheduledDates));\r",
+									"\r",
+									"var updatedClassNo = formattedUpdatedClassScheduledDates.length;\r",
+									"\r",
+									"pm.variables.set(\"updatedClassComments\", updatedClassComments);\r",
+									"pm.variables.set(\"updatedClassDate\", updatedClassDate);\r",
+									"pm.variables.set(\"updatedClassDescription\", updatedClassDescription);\r",
+									"pm.variables.set(\"updatedClassNo\", updatedClassNo);\r",
+									"pm.variables.set(\"updatedClassNotes\", updatedClassNotes);\r",
+									"pm.variables.set(\"updatedClassRecordingPath\", updatedClassRecordingPath);\r",
+									"pm.variables.set(\"classStaffId\", classStaffId);\r",
+									"pm.variables.set(\"classStatus\", classStatus);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -5218,6 +5262,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "fa0c176c-fbdc-497a-81e9-f87a427501e1",
+								"exec": [
+									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"https://www.google.com/\";\r",
+									"\r",
+									"pm.variables.set(\"classRecordingPath\", classRecordingPath);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "192217de-6232-402d-a489-7206f3164c9f",
@@ -5235,7 +5292,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"classRecordingPath\": \"recordingspath\",\r\n  \"csId\": {{classId}}\r\n}\r\n",
+							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{classId}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
