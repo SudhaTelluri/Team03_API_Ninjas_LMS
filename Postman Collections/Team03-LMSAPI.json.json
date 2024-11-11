@@ -3891,7 +3891,50 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramId",
+					"name": "Delete Batch By Second BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f16ea2b-5d12-4004-949e-e63aea62e5a6",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);  \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "46a67ce9-ca56-4840-88a0-805604d5c830",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseURL}}batches/{{batchId2}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Program By ProgramId1",
 					"event": [
 						{
 							"listen": "test",
@@ -3934,7 +3977,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete Program By ProgramName",
+					"name": "Delete Program By ProgramName1",
 					"event": [
 						{
 							"listen": "test",
