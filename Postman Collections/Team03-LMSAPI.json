@@ -245,8 +245,8 @@
 							"script": {
 								"id": "e78e8db9-61df-45fe-9f0c-23f5be0aa8c0",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {",
-									"    pm.response.to.have.status(400);",
+									"pm.test(\"Status code is 501\", function () {",
+									"    pm.response.to.have.status(501);",
 									"});"
 								],
 								"type": "text/javascript",
@@ -270,7 +270,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}/llogin"
+						"url": "{{baseURL}}login"
 					},
 					"response": []
 				}
