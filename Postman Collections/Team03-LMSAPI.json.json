@@ -6121,11 +6121,11 @@
 								"exec": [
 									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A new Program teaching is mandatory is launched\";\r",
 									"var programName = pm.iterationData.get(\"programName\") || \"New Program\";\r",
-									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
+									"var invalidProgramStatus = pm.iterationData.get(\"invalidProgramStatus\");\r",
 									"\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programName\", programName);\r",
-									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"pm.variables.set(\"invalidProgramStatus\", invalidProgramStatus);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -6148,7 +6148,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{invalidProgramStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
