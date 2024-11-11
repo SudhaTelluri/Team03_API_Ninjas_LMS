@@ -1142,7 +1142,7 @@
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
 									"var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
-									"//pm.variables.set(\"batchStatus\", programStatus);\r",
+									"\r",
 									"\r",
 									"var batchData = {\r",
 									"    batchName: batchName1,\r",
