@@ -1138,8 +1138,7 @@
 									"const selectedBatchType = \"Beginner\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
-									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
-									"// const selectedBatchClassCount = Number(batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]); // Default to \"Beginner\" if type not found\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; \r",
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
 									"const batchData = {\r",
@@ -1254,7 +1253,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
