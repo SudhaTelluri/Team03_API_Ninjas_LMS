@@ -1135,7 +1135,7 @@
 									"};\r",
 									"\r",
 									"// Dynamic selection of batch type\r",
-									"const selectedBatchType = \"Beginner\"; // You can dynamically determine this based on your test setup\r",
+									"const selectedBatchType = \"Intermediate\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
 									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; \r",
@@ -1311,8 +1311,7 @@
 									"const selectedBatchType = \"Beginner\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
-									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
-									"// const selectedBatchClassCount = Number(batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]); // Default to \"Beginner\" if type not found\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"];\r",
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
 									"var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
@@ -1387,7 +1386,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  // No quotes around integer\r\n    \"batchStatus\": \"Active\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1605,7 +1604,7 @@
 									"};\r",
 									"\r",
 									"// Dynamic selection of batch type\r",
-									"const selectedBatchType = \"Intermediate\"; // You can dynamically determine this based on your test setup\r",
+									"const selectedBatchType = \"Advanced\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
 									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; \r",
@@ -1725,7 +1724,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{              \r\n    \"batchDescription\": \"{{batchDescription}}\", \r\n    \"batchName\": \"{{batchName1}}\",           \r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",                 \r\n    \"programId\": \"{{programId}}\",            \r\n    \"programName\": \"{{programName}}\"         \r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1911,7 +1910,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
