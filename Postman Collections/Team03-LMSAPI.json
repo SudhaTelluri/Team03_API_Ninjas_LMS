@@ -1596,7 +1596,62 @@
 								},
 								"method": "PUT",
 								"header": [],
-								"url": "{{baseURL}}/putprogram/16890"
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/putprogram/{{programId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Update program by programId with missing mandatory field",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9d1b22fd-36db-4ae0-880f-fd6147cfa1a2",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "4ebc6b94-baf8-4192-8d24-350bff0d7be6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/putprogram/{{programId1}}"
 							},
 							"response": []
 						},
