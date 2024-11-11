@@ -95,8 +95,8 @@
 									"var password = pm.iterationData.get(\"password\");\r",
 									"\r",
 									"// Set as environment variables\r",
-									"pm.collectionVariables.set(\"userLoginEmailId\", userLoginEmailId);\r",
-									"pm.collectionVariables.set(\"password\", password);\r",
+									"pm.collectionVariables.get(\"userLoginEmailId\");\r",
+									"pm.collectionVariables.get(\"password\");\r",
 									""
 								],
 								"type": "text/javascript",
@@ -7393,7 +7393,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "71c2a957-d3ac-4f35-b68a-59e77fd3e679",
+				"id": "5a72c1df-9fa6-48f6-a0e9-7b58ca6a03e9",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7404,7 +7404,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b0f8ebef-209c-4390-b0ac-37330460c669",
+				"id": "934fd3b1-6142-4540-888a-712fbaf3b5bf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7495,7 +7495,7 @@
 	"variable": [
 		{
 			"key": "bearerToken",
-			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTMxOTc4MSwiZXhwIjoxNzMxMzQ4NTgxfQ.AJA_2TlBDSHBt9NW79jUwcCx878iK2vfDSu3yWeLqIo7HPO0Vj8bZT8p1RVfZ4mav5kWzwuCGalKpNo5YeeGIQ"
+			"value": null
 		},
 		{
 			"key": "password",
@@ -7509,47 +7509,47 @@
 		},
 		{
 			"key": "programName1",
-			"value": "APINinjas-iF"
+			"value": "APINinjas-UTea"
 		},
 		{
 			"key": "programName2",
-			"value": "APINinjas-tEnY"
+			"value": "APINinjas-Vaef"
 		},
 		{
 			"key": "programId1",
-			"value": 17267
+			"value": 17307
 		},
 		{
 			"key": "programId2",
-			"value": 17262
+			"value": 17308
 		},
 		{
 			"key": "updatedProgramName",
-			"value": "APINinjas-nB"
+			"value": "APINinjas-tipF"
 		},
 		{
 			"key": "batchName1",
-			"value": "APINinjas-iF411"
+			"value": "APINinjas-Vaef209"
 		},
 		{
 			"key": "batchName2",
-			"value": "APINinjas-tEnY190"
+			"value": "APINinjas-Vaef479"
 		},
 		{
 			"key": "batchId2",
-			"value": 9404
+			"value": 9437
 		},
 		{
 			"key": "batchId1",
-			"value": 9406
+			"value": 9436
 		},
 		{
 			"key": "classTopic",
-			"value": "APINinjas-iF7204An introduction to AI"
+			"value": "APINinjas-Vaef6283An introduction to AI"
 		},
 		{
 			"key": "classId",
-			"value": 679
+			"value": 716
 		},
 		{
 			"key": "staffId",
@@ -7606,7 +7606,7 @@
 		},
 		{
 			"key": "adminID",
-			"value": "U73"
+			"value": null
 		},
 		{
 			"key": "sampleUserIdOfUser",
@@ -7664,7 +7664,7 @@
 		},
 		{
 			"key": "validateSchema",
-			"value": ""
+			"value": "function validateSchema(data, schema, testName) {\r\n    var Ajv = require('ajv');\r\n    var ajv = new Ajv();\r\n\r\n    // Compile the schema with AJV\r\n    var validate = ajv.compile(schema);\r\n    var isValid = validate(data);\r\n\r\n    // Postman test for schema validation\r\n    pm.test(testName + \" Schema validation\", function () {\r\n        pm.expect(isValid).to.be.true;\r\n    });\r\n\r\n    // If validation fails, log errors\r\n    if (!isValid) {\r\n        console.log(testName + \" Schema validation error:\", validate.errors);\r\n    }\r\n}"
 		}
 	]
 }
