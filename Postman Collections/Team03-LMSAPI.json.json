@@ -1552,6 +1552,7 @@
 							"script": {
 								"id": "99e56636-6743-48c3-971e-777e584be0cf",
 								"exec": [
+									"var responseBody=pm.response.json();\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
@@ -1612,7 +1613,7 @@
 									"console.log(\"Response Body:\", responseBody);\r",
 									"console.log(\"Schema:\", schema);\r",
 									"\r",
-									"validateSchema(responseBody, schema,\"Post Program Creation\");\r",
+									"validateSchema(responseBody, schema,\"PUT Update Batch\");\r",
 									"\r",
 									"\r",
 									""
