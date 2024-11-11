@@ -68,6 +68,54 @@
 					"response": []
 				},
 				{
+					"name": "User Login Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "23c864c6-393b-4664-8cf8-385dc8093ba1",
+								"exec": [
+									"//console.log(pm.variables.get(\"baseUrl\"));",
+									"pm.test(\"Status code name has string\", function () {",
+									"    pm.response.to.have.status(\"OK\");",
+									"});",
+									"pm.test(\"Content-Type is present\", function () {",
+									"    pm.response.to.have.header(\"Content-Type\");",
+									"});",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var responseBody=pm.response.json();",
+									"",
+									"pm.globals.set(\"bearerToken\",responseBody.token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "cff55127-8daf-4826-a1e9-a4c420cd56a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userLoginEmailId\": \"sdet@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}/login"
+					},
+					"response": []
+				},
+				{
 					"name": "User Login (Unauthorized)",
 					"event": [
 						{
