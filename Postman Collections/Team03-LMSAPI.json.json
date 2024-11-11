@@ -5019,15 +5019,15 @@
 							"script": {
 								"id": "5db35245-07ef-43bb-bb1b-9812d6ff3da7",
 								"exec": [
-									"var programName2 = pm.collectionVariables.get(\"programName2\");\r",
-									"var programId2 = pm.collectionVariables.get(\"programId2\");\r",
+									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"var programId1 = pm.collectionVariables.get(\"programId1\");\r",
 									"\r",
 									"function generateRandomNumber() {\r",
 									"    return Math.floor(100 + Math.random() * 900);  // Generates a 3-digit number between 100 and 999\r",
 									"}\r",
 									"\r",
 									"// Generate dynamic program name with random 3-digit number\r",
-									"var batchName1 = programName2 + generateRandomNumber();\r",
+									"var batchName1 = programName1 + generateRandomNumber();\r",
 									"\r",
 									"// Store batchName as a collection variable\r",
 									"pm.collectionVariables.set(\"batchName1\", batchName1);\r",
@@ -5052,19 +5052,21 @@
 									"};\r",
 									"\r",
 									"// Dynamic selection of batch type\r",
-									"const selectedBatchType = \"Intermediate\"; // You can dynamically determine this based on your test setup\r",
+									"const selectedBatchType = \"Advanced\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
-									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"];\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; \r",
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
+									"\r",
+									"var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
 									"\r",
 									"const batchData = {\r",
 									"    batchName: batchName1,\r",
 									"    batchDescription: selectedBatchDescription,\r",
 									"    batchNoOfClasses: selectedBatchClassCount, \r",
-									"    batchStatus: \"Active\",\r",
-									"    programId: programId2,\r",
-									"    programName: programName2\r",
+									"    batchStatus: batchStatus,\r",
+									"    programId: programId1,\r",
+									"    programName: programName1\r",
 									"};\r",
 									"\r",
 									"// Set the batchData as the request body\r",
@@ -5118,7 +5120,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{              \r\n    \"batchDescription\": \"{{batchDescription}}\", \r\n    \"batchName\": \"{{batchName1}}\",           \r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",  \r\n    \"batchStatus\": \"Active\",                 \r\n    \"programId\": \"{{programId2}}\",            \r\n    \"programName\": \"{{programName2}}\"         \r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -5181,7 +5183,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId2}},                \r\n  \"classNo\": 6,                   \r\n  \"classDate\": \"2024-11-25T00:00:00.000+00:00\",  \r\n  \"classTopic\": \"{{classTopic}}\",  \r\n  \"classStaffId\": \"{{staffId}}\",             \r\n  \"classDescription\": \"Every month going on can join depends on availability\",  \r\n  \"classComments\": \"API BOOTCAMP\",    \r\n  \"classNotes\": \"Gherkins\",           \r\n  \"classRecordingPath\": \"recordings\",  \r\n  \"classScheduledDates\": [\r\n    \"2024-12-15T15:11:08.750+00:00\",  \r\n    \"2025-01-15T15:11:08.750+00:00\",\r\n    \"2025-02-15T15:11:08.750+00:00\",\r\n    \"2025-03-15T15:11:08.750+00:00\",\r\n    \"2025-04-15T15:11:08.750+00:00\",\r\n    \"2025-05-15T15:11:08.750+00:00\"\r\n  ]\r\n}\r\n",
+							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"{{updatedClassComments}}\",\r\n  \"classDate\": \"{{updatedClassDate}}\",\r\n  \"classDescription\": \"{{updatedClassDescription}}\",\r\n  \"classNo\": {{updatedClassNo}},\r\n  \"classNotes\": \"{{updatedClassNotes}}\",\r\n  \"classRecordingPath\": \"{{updatedClassRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": {{updatedClassScheduledDates}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
