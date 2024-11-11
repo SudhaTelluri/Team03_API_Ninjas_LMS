@@ -6817,7 +6817,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "34a266b0-504e-482f-9c98-249972266b46",
+				"id": "b6285079-52c4-4ebf-a889-c2b1b03f0a7c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6828,7 +6828,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "ae0db519-429f-4538-b673-ed9e5318593b",
+				"id": "feaff757-7e63-44f3-90e5-8d4d6e32759b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6883,6 +6883,10 @@
 					"function validateSchema(data, schema) {\r",
 					"    const isValid = tv4.validate(data, schema);\r",
 					"    \r",
+					"function validateSchema(data, schema) {\r",
+					"    const validate = ajv.compile(schema);\r",
+					"    const isValid = validate(data);\r",
+					"\r",
 					"    // Postman test for schema validation\r",
 					"    pm.test(\"Schema validation\", function () {\r",
 					"        pm.expect(isValid).to.be.true;\r",
@@ -6890,7 +6894,7 @@
 					"\r",
 					"    // If validation fails, log errors\r",
 					"    if (!isValid) {\r",
-					"        console.log(\"Schema validation error:\", tv4.error);\r",
+					"        console.log(\"Schema validation error:\", validate.errors);\r",
 					"    }\r",
 					"}\r",
 					"\r",
