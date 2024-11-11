@@ -3383,7 +3383,7 @@
 									"function generateRandomLetters() {\r",
 									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
 									"    var result = '';\r",
-									"    for (let i = 0; i < 4; i++) {\r",
+									"    for (var i = 0; i < 4; i++) {\r",
 									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
 									"    }\r",
 									"    return result;\r",
@@ -3396,6 +3396,19 @@
 									"pm.collectionVariables.set(\"programName1\", programName1);\r",
 									"\r",
 									"console.log(\"Generated Program Name 1: \" + programName1);\r",
+									"\r",
+									"\r",
+									"// Directly set the values for the variables\r",
+									"var programDescription = \"A QA team specializing in API testing.\";\r",
+									"var programStatus = \"Active\";\r",
+									"\r",
+									"// Set these values as local variables for the request\r",
+									"pm.variables.set(\"programDescription\", programDescription);\r",
+									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"\r",
+									"// Access data from CSV file\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
 									""
 								],
@@ -3419,7 +3432,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3512,7 +3525,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"A team focused on automating the testing of APIs for performance and reliability.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"{{programDescription2}}\",\r\n  \"programStatus\": \"{{programStatus2}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
