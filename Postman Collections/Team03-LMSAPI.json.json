@@ -3453,13 +3453,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -3497,13 +3496,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -3541,13 +3539,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\");\r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -3579,13 +3576,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -3617,13 +3613,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -3634,8 +3629,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "6d24a30e-54f9-4c4f-b177-a69768135b19",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
