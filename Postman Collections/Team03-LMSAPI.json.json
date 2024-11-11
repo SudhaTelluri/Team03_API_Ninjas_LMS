@@ -2302,7 +2302,7 @@
 					"response": []
 				},
 				{
-					"name": "Create New Batch",
+					"name": "Create New Batch1",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2345,8 +2345,7 @@
 									"const selectedBatchType = \"Beginner\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
-									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
-									"// const selectedBatchClassCount = Number(batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]); // Default to \"Beginner\" if type not found\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; \r",
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
 									"const batchData = {\r",
@@ -4161,7 +4160,7 @@
 					"response": []
 				},
 				{
-					"name": "Create New Batch To Test Neg Scenarios",
+					"name": "Create New Batch1",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4204,9 +4203,7 @@
 									"const selectedBatchType = \"Beginner\"; // You can dynamically determine this based on your test setup\r",
 									"\r",
 									"// Retrieve batch description and number of classes based on the selected batch type\r",
-									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; // Default to \"Beginner\" if type not found\r",
-									"// const selectedBatchClassCount = Number(batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"]); // Default to \"Beginner\" if type not found\r",
-									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
+									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
 									"const batchData = {\r",
 									"    batchName: batchName1,\r",
@@ -4235,6 +4232,7 @@
 							"script": {
 								"id": "1e181056-b122-4292-b654-2e891600392b",
 								"exec": [
+									"var responseBody=pm.response.json();\r",
 									"// Get the batchId from the response body\r",
 									"var batchId1 = pm.response.json().batchId;\r",
 									"\r",
@@ -4252,7 +4250,7 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(201);  \r",
+									"testStatusCode(201);   \r",
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(201,\"Created\");\r",
 									"\r",
@@ -4263,7 +4261,7 @@
 							}
 						}
 					],
-					"id": "de5810f0-9fec-44a5-a8ff-97851be64f9b",
+					"id": "1109de00-c2ae-4b57-9cae-e250dbd5d009",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
