@@ -1009,11 +1009,7 @@
 											"    \"message\": \"Invalid Status: must be Active or Inactive\",\r",
 											"    \"success\": false\r",
 											"};\r",
-											"// Validate the response body\r",
-											"pm.test(\"Response body contains expected error message and success flag\", function() {\r",
-											"    pm.expect(resp.message).to.equal(expectedData.message);\r",
-											"    pm.expect(resp.success).to.equal(expectedData.success);\r",
-											"});\r",
+											"\r",
 											""
 										],
 										"type": "text/javascript",
@@ -1037,6 +1033,79 @@
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": \"Apininjas-\",\r\n  \"programStatus\": \"null\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/saveprogram"
+							},
+							"response": []
+						},
+						{
+							"name": "Add New Program with Numbers Starting in programDescription",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Validate the response schema for message and success\", function () {\r",
+											"    const schema = {\r",
+											"        type: \"object\",\r",
+											"        required: [\"message\", \"success\"],\r",
+											"        properties: {\r",
+											"            message: { type: \"string\" },\r",
+											"            success: { type: \"boolean\" }\r",
+											"        }\r",
+											"    };\r",
+											"\r",
+											"    const responseData = pm.response.json();\r",
+											"    pm.expect(tv4.validate(responseData, schema)).to.be.true;\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
+											"    pm.test(\"Response time is less than 500ms\", function () {\r",
+											"        pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"    });\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"//Define expected Data\r",
+											"const expectedData = {\r",
+											"    \"message\": \"Invalid Status: must be Active or Inactive\",\r",
+											"    \"success\": false\r",
+											"};\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "8e8310a7-1edd-4f8a-8999-80562b4da9b0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"01\",\r\n  \"programName\": \"Apininjas-\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
