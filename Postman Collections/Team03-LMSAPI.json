@@ -1003,7 +1003,18 @@
 											"        pm.expect(pm.response.responseTime).to.be.below(500);\r",
 											"    });\r",
 											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});"
+											"});\r",
+											"//Define expected Data\r",
+											"const expectedData = {\r",
+											"    \"message\": \"Invalid Status: must be Active or Inactive\",\r",
+											"    \"success\": false\r",
+											"};\r",
+											"// Validate the response body\r",
+											"pm.test(\"Response body contains expected error message and success flag\", function() {\r",
+											"    pm.expect(resp.message).to.equal(expectedData.message);\r",
+											"    pm.expect(resp.success).to.equal(expectedData.success);\r",
+											"});\r",
+											""
 										],
 										"type": "text/javascript",
 										"packages": {}
