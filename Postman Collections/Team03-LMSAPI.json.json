@@ -764,7 +764,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing.-Updated by programId1\",\r\n  \"programId\": {{programId1}},\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programId\": \"{{programId}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\",\r\n  \"creationTime\": \"{{creationTime}}\",\r\n  \"lastModTime\": \"{{lastModTime}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
