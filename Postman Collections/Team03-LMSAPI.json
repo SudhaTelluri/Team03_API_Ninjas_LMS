@@ -1441,6 +1441,55 @@
 							"response": []
 						},
 						{
+							"name": "Add New Program with all Special characters in programDescription Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "46cf5083-2750-45ce-bc1f-23875941b4a2",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c95f4880-09bb-4c46-b38e-a08506ad940a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"SDET-Java\",\r\n  \"programName\": \"A#$%\",\r\n  \"programStatus\": \"Active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/saveprogram"
+							},
+							"response": []
+						},
+						{
 							"name": "Get all Program Negative invalid api",
 							"event": [
 								{
