@@ -2871,6 +2871,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "526a9a11-54ac-469f-a315-bc445994d9b2",
+								"exec": [
+									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"Downloads\";\r",
+									"\r",
+									"pm.variables.set(\"classRecordingPath\", classRecordingPath);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "a4784699-07a9-45ae-b120-aed6bc4d1903",
