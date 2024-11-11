@@ -30,8 +30,8 @@
 									"\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
-									"//var validateSchema = eval(pm.collectionVariables.get(\"validateSchema\"));\r",
-									"eval(pm.collectionVariables.get(\"validateSchema\"));\r",
+									"var validateSchemaString = pm.collectionVariables.get(\"validateSchema\");\r",
+									"var validateSchema = eval(`(${validateSchemaString})`);\r",
 									"\r",
 									"const schema = {\r",
 									"    \"type\": \"object\",\r",
@@ -6820,7 +6820,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "c537154f-dba3-46a2-a034-dc2dcfc3efcd",
+				"id": "813af38b-b368-4d78-bfac-7191585e4e3c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6831,7 +6831,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "74990388-9bb1-4132-b866-08733e08afaf",
+				"id": "5d87924e-2860-41dd-b8e5-d3c6eb214b1d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6911,8 +6911,8 @@
 					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError.toString());\r",
 					"pm.collectionVariables.set(\"assertMessageAndSuccess\", assertMessageAndSuccess.toString());\r",
-					"//pm.collectionVariables.set(\"validateSchema\", validateSchema.toString());\r",
-					"pm.collectionVariables.set(\"validateSchema\", validateSchema);\r",
+					"pm.collectionVariables.set(\"validateSchema\", validateSchema.toString());\r",
+					"//pm.collectionVariables.set(\"validateSchema\", validateSchema);\r",
 					"\r",
 					"\r",
 					"\r",
