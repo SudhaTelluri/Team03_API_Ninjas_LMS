@@ -790,7 +790,7 @@
 							"response": []
 						},
 						{
-							"name": "Delete program by id",
+							"name": "Delete program by programId",
 							"event": [
 								{
 									"listen": "test",
@@ -1967,7 +1967,25 @@
 							"response": []
 						},
 						{
-							"name": "Delete program by programname Copy",
+							"name": "Delete program by programname with InvalidprogramName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e22afd14-1b4a-4054-956a-8316ad953451",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "bbfa6005-13a1-463e-b63b-91a470d9224a",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -1986,7 +2004,7 @@
 							"response": []
 						},
 						{
-							"name": "Delete program by id Copy",
+							"name": "Delete program by InvalidprogramId",
 							"id": "73125d30-cf7a-4bef-a5b4-c35597a663ab",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -2000,7 +2018,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}/deletebyprogid/16874"
+								"url": "{{baseURL}}/deletebyprogid/{{programId1}}"
 							},
 							"response": []
 						}
