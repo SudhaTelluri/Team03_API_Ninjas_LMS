@@ -2932,6 +2932,30 @@
 				},
 				{
 					"name": "GET Batch By BatchId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "01a75a58-4cc1-4275-a977-d33d5b73c592",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(200,\"OK\");\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "e933760d-2638-43b6-b420-fe826bb3d1fd",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
