@@ -597,12 +597,12 @@
 								},
 								"method": "GET",
 								"header": [],
-								"url": "{{baseURL}}/programs/{{programId}}"
+								"url": "{{baseURL}}/programs/{{programId1}}"
 							},
 							"response": []
 						},
 						{
-							"name": "Update Program with programid",
+							"name": "Update Program with programName1",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -675,7 +675,7 @@
 							"response": []
 						},
 						{
-							"name": "Update program by programname",
+							"name": "Update program by programId",
 							"event": [
 								{
 									"listen": "test",
@@ -745,7 +745,7 @@
 										}
 									}
 								},
-								"url": "{{baseURL}}/putprogram/{{programId}}"
+								"url": "{{baseURL}}/putprogram/{{programId1}}"
 							},
 							"response": []
 						},
@@ -785,7 +785,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}/deletebyprogname/{{programName}}"
+								"url": "{{baseURL}}/deletebyprogname/{{programName1}}"
 							},
 							"response": []
 						},
