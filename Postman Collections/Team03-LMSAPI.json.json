@@ -3633,12 +3633,12 @@
 							"script": {
 								"id": "53f5c8d4-98cd-4e94-83f2-ea43638408af",
 								"exec": [
-									"var response = pm.response.json();  \r",
+									"var responseBody = pm.response.json();  \r",
 									"\r",
 									"// Extract classId and staffId from the response\r",
-									"var classId = response.csId;\r",
-									"var staffId = response.classStaffId;  \r",
-									"var classrecordings=response.classRecordingPath;\r",
+									"var classId = responseBody.csId;\r",
+									"var staffId = responseBody.classStaffId;  \r",
+									"var classrecordings=responseBody.classRecordingPath;\r",
 									"\r",
 									"// Store classId and staffId in collection variables\r",
 									"pm.collectionVariables.set(\"classId\", classId);\r",
