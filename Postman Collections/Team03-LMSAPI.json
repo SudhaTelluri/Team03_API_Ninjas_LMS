@@ -1569,8 +1569,8 @@
 							"script": {
 								"id": "5ef8ccba-9b57-4803-96da-481f67a0828b",
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -1596,7 +1596,22 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get Assigned Program/(401)Batch(es) of All Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fb93699a-fd95-4527-90b9-6dfe17ca7116",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "165bc52e-10bf-40ad-84e0-2e082d5eea5b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1609,7 +1624,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
+					"name": "Delete All Programs/Batches assigned to the User By UserId",
 					"id": "a3c05586-67af-44fb-bdee-ee428107623f",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1617,7 +1632,7 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}/"
+						"url": "{{baseURL}}/U73"
 					},
 					"response": []
 				},
