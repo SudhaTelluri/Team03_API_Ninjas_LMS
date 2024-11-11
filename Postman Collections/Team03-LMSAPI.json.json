@@ -6119,15 +6119,14 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"// Retrieve program data or use defaults if not available\r",
-									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A description of the program\";\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A new Program teaching is mandatory is launched\";\r",
 									"var programName = pm.iterationData.get(\"programName\") || \"New Program\";\r",
-									"var programStatus = pm.iterationData.get(\"programStatus\"); // This should remain null if empty\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
-									"// Set variables for use in the request\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programName\", programName);\r",
-									"pm.variables.set(\"programStatus\", programStatus);"
+									"pm.variables.set(\"programStatus\", programStatus);\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -6149,7 +6148,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": {{programStatus}}\r\n}",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": {{programStatus}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
