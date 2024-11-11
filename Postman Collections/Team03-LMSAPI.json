@@ -111,7 +111,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}/login//"
+						"url": "{{baseURL}}/login"
 					},
 					"response": []
 				},
@@ -141,7 +141,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"userLoginEmailId\": \"sde@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}",
+							"raw": "{\n  \"userLoginEmailId\": \"\",\n  \"password\": \"LmsHackathon@2024\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -153,15 +153,15 @@
 					"response": []
 				},
 				{
-					"name": "User Login (Internal Server Error)",
+					"name": "(Bad Request)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"id": "e78e8db9-61df-45fe-9f0c-23f5be0aa8c0",
 								"exec": [
-									"pm.test(\"Status code is 500\", function () {",
-									"    pm.response.to.have.status(500);",
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
 									"});"
 								],
 								"type": "text/javascript",
@@ -178,7 +178,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"userLoginEmailId\": \"sde@gmail.com\",\n  \"password\": \"LmsHackathon@2024\"\n}",
+							"raw": "// {\n//   \"userLoginEmailId\": \"sde@gmail.com\",\n//   \"password\": \"LmsHackathon@2024\"\n// }",
 							"options": {
 								"raw": {
 									"language": "json"
