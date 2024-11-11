@@ -1218,7 +1218,20 @@
 											"});\r",
 											"//Define expected Data\r",
 											"const expectedData = {\r",
-											"    \"message\": \"InvalprogramDescription must begin with letter and can only have letters, numbers, comma, hyphen, colon, period, underscore and space\",\r",
+											"    \"message\": \"programName Must contain only letters and sometimes hyphens\",\r",
+											"    \"success\": false\r",
+											"};\r",
+											"function validateResponse(actualData) {\r",
+											"    // Check if actualData has the same `message` and `success` values as expectedData\r",
+											"    return (\r",
+											"        actualData.message === expectedData.message &&\r",
+											"        actualData.success === expectedData.success\r",
+											"    );\r",
+											"}\r",
+											"\r",
+											"// Example usage\r",
+											"const actualData = {\r",
+											"    \"message\": \"programName Must contain only letters and sometimes hyphens\",\r",
 											"    \"success\": false\r",
 											"};\r",
 											"\r",
@@ -1244,7 +1257,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"01\",\r\n  \"programName\": \"Apininjas-\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+									"raw": "{\r\n  \"programDescription\": \"SDET\",\r\n  \"programName\": \"Apininjas-01\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
