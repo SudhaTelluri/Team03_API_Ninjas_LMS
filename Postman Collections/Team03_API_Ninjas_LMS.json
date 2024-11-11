@@ -1557,7 +1557,7 @@
 						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}/userRoleProgramBatchMap/U73"
+						"url": "{{baseURL}}/userRoleProgramBatchMap/{{UserId}}"
 					},
 					"response": []
 				},
@@ -1604,7 +1604,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}"
+						"url": "{{baseURL}}/userRoleProgramBatchMap//"
 					},
 					"response": []
 				},
