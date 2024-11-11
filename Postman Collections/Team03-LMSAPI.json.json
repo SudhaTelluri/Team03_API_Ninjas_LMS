@@ -5199,9 +5199,9 @@
 							"script": {
 								"id": "6d24a30e-54f9-4c4f-b177-a69768135b19",
 								"exec": [
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"var programName2 = pm.collectionVariables.get(\"programName2\");\r",
 									"\r",
-									"var classTopic = programName1 + Math.floor(1000 + Math.random() * 9000) + \" An introduction to AI\";\r",
+									"var classTopic = programName2 + Math.floor(1000 + Math.random() * 9000) + \" An introduction to AI\";\r",
 									"\r",
 									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
 									"\r",
