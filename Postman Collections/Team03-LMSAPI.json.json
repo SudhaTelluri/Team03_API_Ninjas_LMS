@@ -3946,7 +3946,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}deletebyprogname/{{programName2}}"
+						"url": "{{baseURL}}deletebyprogname/{{programName1}}"
 					},
 					"response": []
 				},
