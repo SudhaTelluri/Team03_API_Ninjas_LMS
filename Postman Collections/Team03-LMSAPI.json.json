@@ -97,7 +97,9 @@
 									"// Set as environment variables\r",
 									"var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
 									"var password = pm.collectionVariables.get(\"password\");\r",
-									""
+									"\r",
+									"console.log(\"User Email: \" + userLoginEmailId);\r",
+									"console.log(\"Password: \" + password);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -7393,7 +7395,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "5a72c1df-9fa6-48f6-a0e9-7b58ca6a03e9",
+				"id": "d443beae-5777-417e-b6c9-c41669a93a07",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7404,7 +7406,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "934fd3b1-6142-4540-888a-712fbaf3b5bf",
+				"id": "a79ac07b-a560-49d7-a225-1ded7968586a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
