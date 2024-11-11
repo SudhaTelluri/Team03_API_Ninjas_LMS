@@ -7000,7 +7000,7 @@
 							"script": {
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
-									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team doing Sepsis Project\";\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
 									"var invalidProgramName = pm.iterationData.get(\"invalidProgramName\") || \"APINinjas-Sepsis\";\r",
 									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
 									"\r",
