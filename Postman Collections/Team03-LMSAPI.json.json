@@ -6214,13 +6214,39 @@
 				},
 				{
 					"name": "User Log Out",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2627e90-1d95-4ea3-ad35-45964f1461d8",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(200);   \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "4301e05c-1e0c-4f81-8dfa-29f9e4fc6973",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}logoutlms"
 					},
 					"response": []
 				}
