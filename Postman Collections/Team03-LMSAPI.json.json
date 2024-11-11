@@ -1322,7 +1322,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}batches/{{batchId1}}"
+						"url": "{{baseURL}}batches/{{batchId2}}"
 					},
 					"response": []
 				}
@@ -6307,7 +6307,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "27e80292-60fb-4c45-a3b3-5591ae525a40",
+				"id": "b0f46d81-0776-4e99-953a-2567a2bcfe2b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6318,7 +6318,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "09954e76-ce37-4d90-96dd-93930980c06f",
+				"id": "b4641758-2c26-4c97-b570-6441eace5a1d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6388,59 +6388,59 @@
 	"variable": [
 		{
 			"key": "bearerToken",
-			"value": ""
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTMxOTc4MSwiZXhwIjoxNzMxMzQ4NTgxfQ.AJA_2TlBDSHBt9NW79jUwcCx878iK2vfDSu3yWeLqIo7HPO0Vj8bZT8p1RVfZ4mav5kWzwuCGalKpNo5YeeGIQ"
 		},
 		{
 			"key": "programName1",
-			"value": ""
+			"value": "APINinjas-iF"
 		},
 		{
 			"key": "programName2",
-			"value": ""
+			"value": "APINinjas-tEnY"
 		},
 		{
 			"key": "programId1",
-			"value": ""
+			"value": 17267
 		},
 		{
 			"key": "programId2",
-			"value": ""
+			"value": 17262
 		},
 		{
 			"key": "updatedProgramName",
-			"value": ""
+			"value": "APINinjas-nB"
 		},
 		{
 			"key": "batchName1",
-			"value": ""
+			"value": "APINinjas-iF411"
 		},
 		{
 			"key": "batchName2",
-			"value": ""
+			"value": "APINinjas-tEnY190"
 		},
 		{
 			"key": "batchId2",
-			"value": ""
+			"value": 9404
 		},
 		{
 			"key": "batchId1",
-			"value": ""
+			"value": 9406
 		},
 		{
 			"key": "classTopic",
-			"value": ""
+			"value": "APINinjas-iF7204An introduction to AI"
 		},
 		{
 			"key": "classId",
-			"value": ""
+			"value": 679
 		},
 		{
 			"key": "staffId",
-			"value": ""
+			"value": "U53"
 		},
 		{
 			"key": "classrecordings",
-			"value": ""
+			"value": "recordings"
 		},
 		{
 			"key": "sampleStudentId",
@@ -6454,7 +6454,7 @@
 		},
 		{
 			"key": "invalidStudentId",
-			"value": "U5000",
+			"value": "U500",
 			"type": "string"
 		},
 		{
@@ -6498,19 +6498,19 @@
 		},
 		{
 			"key": "testResponseTime",
-			"value": ""
+			"value": "function testResponseTime(maxTime) {\r\n    pm.test(`Response time is less than ${maxTime}ms`, () => {\r\n        pm.expect(pm.response.responseTime).to.be.below(maxTime);\r\n    });\r\n}"
 		},
 		{
 			"key": "testStatusCode",
-			"value": ""
+			"value": "function testStatusCode(expectedStatus) {\r\n    pm.test(`Status code is ${expectedStatus}`, () => {\r\n        pm.response.to.have.status(expectedStatus);\r\n    });\r\n}"
 		},
 		{
 			"key": "testHeader",
-			"value": ""
+			"value": "function testHeader(headerName) {\r\n    pm.test(`Header \"${headerName}\" is present`, () => {\r\n        pm.response.to.have.header(headerName);\r\n    });\r\n}"
 		},
 		{
 			"key": "testStatusLine",
-			"value": ""
+			"value": "function(expectedStatusCode, expectedStatusMessage) {\r\n    pm.test(`Status line should be \"${expectedStatusCode} ${expectedStatusMessage}\"`, function () {\r\n        pm.expect(pm.response.code).to.eql(expectedStatusCode);\r\n        pm.expect(pm.response.status).to.eql(expectedStatusMessage);\r\n    });\r\n}"
 		},
 		{
 			"key": "userIdForProgramBatchMap",
@@ -6534,15 +6534,15 @@
 		},
 		{
 			"key": "assertNotFoundError",
-			"value": ""
+			"value": "function assertNotFoundError(responseBody, expectedMessage) {\r\n    pm.test(\"Error message is as expected\", function () {\r\n        pm.expect(responseBody.message.trim()).to.eql(expectedMessage.trim());\r\n    });\r\n\r\n    pm.test(\"Success is false\", function () {\r\n        pm.expect(responseBody.success).to.be.false;\r\n    });\r\n}"
 		},
 		{
 			"key": "assertMessageAndSuccess",
-			"value": ""
+			"value": "function assertMessageAndSuccess(responseBody,) {\r\n    pm.test(\"Response contains a message and success is false\", function() {\r\n        // Ensure that the response contains the 'message' property\r\n        pm.expect(responseBody).to.have.property(\"message\");\r\n        // Logs the message to console\r\n                 console.log(\"Message content:\", responseBody.message); \r\n                      \r\n        // Ensure that the 'success' field is false\r\n        pm.expect(responseBody).to.have.property(\"success\", false);\r\n    });\r\n}"
 		},
 		{
 			"key": "baseURL",
-			"value": "",
+			"value": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/",
 			"type": "string"
 		}
 	]
