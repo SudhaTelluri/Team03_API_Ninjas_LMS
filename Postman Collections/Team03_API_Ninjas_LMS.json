@@ -144,7 +144,7 @@
 					"response": []
 				},
 				{
-					"name": "User Login (500 Internal Server Error)",
+					"name": "User Login (Internal Server Error)",
 					"event": [
 						{
 							"listen": "test",
