@@ -1656,6 +1656,98 @@
 							"response": []
 						},
 						{
+							"name": "Update program by programId with null programStatus",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9d1b22fd-36db-4ae0-880f-fd6147cfa1a2",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "c56d92f1-c217-42d4-9ed5-a42f9428d8b3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"apininjas\",\r\n  \"programStatus\": \"null\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/putprogram/{{programId1}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Update program by programId with invalid programname",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "9d1b22fd-36db-4ae0-880f-fd6147cfa1a2",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "24362d09-aaf4-401f-8e54-54e416d76e84",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"Apininjas\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/putprogram/{{programId1}}"
+							},
+							"response": []
+						},
+						{
 							"name": "Update Program with InvalidprogramName",
 							"event": [
 								{
