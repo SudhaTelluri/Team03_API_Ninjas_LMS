@@ -299,9 +299,9 @@
 										"exec": [
 											"var responseBody=pm.response.json();\r",
 											"var programId=responseBody.programId;\r",
-											"pm.globals.set(\"programId\",programId);\r",
+											"pm.globals.set(\"programId1\",programId);\r",
 											"var programName=responseBody.programName;\r",
-											"pm.globals.set(\"programName\",programName);\r",
+											"pm.globals.set(\"programName1\",programName);\r",
 											"console.log(\"ProgramId set as global variable: \" + programId);\r",
 											"console.log(\"programName set as global variable: \" + programId);\r",
 											"pm.test(\"Status code is 201\", function () {\r",
@@ -426,7 +426,7 @@
 							"response": []
 						},
 						{
-							"name": "Add New Program program2",
+							"name": "Add New Program-program2",
 							"event": [
 								{
 									"listen": "test",
@@ -435,9 +435,9 @@
 										"exec": [
 											"var responseBody=pm.response.json();\r",
 											"var programId=responseBody.programId;\r",
-											"pm.globals.set(\"programId\",programId);\r",
+											"pm.globals.set(\"programId2\",programId);\r",
 											"var programName=responseBody.programName;\r",
-											"pm.globals.set(\"programName\",programName);\r",
+											"pm.globals.set(\"programName2\",programName);\r",
 											"console.log(\"ProgramId set as global variable: \" + programId);\r",
 											"console.log(\"programName set as global variable: \" + programId);\r",
 											"pm.test(\"Status code is 201\", function () {\r",
