@@ -3737,8 +3737,6 @@
 									"console.log(\"Schema:\", schema);\r",
 									"\r",
 									"validateSchema(responseBody, schema,\"POST Class Creation\");\r",
-									"\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
