@@ -4471,8 +4471,8 @@
 									"    batchDescription: selectedBatchDescription,\r",
 									"    batchNoOfClasses: selectedBatchClassCount, \r",
 									"    batchStatus: batchStatus,\r",
-									"    programId: programId1,\r",
-									"    programName: programName1\r",
+									"    programId: programId2,\r",
+									"    programName: programName2\r",
 									"};\r",
 									"\r",
 									"// Set the batchData as the request body\r",
@@ -4589,10 +4589,10 @@
 								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
 								"exec": [
 									"// Retrieve the programName1 collection variable\r",
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"var programName2 = pm.collectionVariables.get(\"programName2\");\r",
 									"\r",
 									"// Generate a unique class topic by appending a random 4-digit number\r",
-									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000) + \" An introduction to AI\";\r",
+									"const classTopic = programName2 + Math.floor(1000 + Math.random() * 9000) + \" An introduction to AI\";\r",
 									"\r",
 									"// Store the generated classTopic as a collection variable\r",
 									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
@@ -4782,7 +4782,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchId\": {{batchId1}},\r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"classScheduledDates\": {{classScheduledDates}}\r\n}\r\n",
+							"raw": "{\r\n  \"batchId\": {{batchId2}},\r\n  \"classComments\": \"{{classComments}}\",\r\n  \"classDate\": \"{{classDate}}\",\r\n  \"classDescription\": \"{{classDescription}}\",\r\n  \"classNo\": {{classNo}},\r\n  \"classNotes\": \"{{classNotes}}\",\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"classStaffId\": \"{{classStaffId}}\",\r\n  \"classTopic\": \"{{classTopic}}\",\r\n  \"classStatus\": \"{{classStatus}}\",\r\n  \"batchName\": \"{{batchName2}}\",\r\n  \"classScheduledDates\": {{classScheduledDates}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
