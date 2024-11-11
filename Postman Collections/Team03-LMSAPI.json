@@ -684,6 +684,15 @@
 										"exec": [
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"    pm.test(\"Response time is less than 200ms\", function () {\r",
+											"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+											"    });\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -776,7 +785,7 @@
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "{{baseURL}}/deletebyprogname/{{programName}}}"
+								"url": "{{baseURL}}/deletebyprogname/{{programName}}"
 							},
 							"response": []
 						},
@@ -793,6 +802,12 @@
 											"});\r",
 											"pm.test(\"Content-Type is present\", function () {\r",
 											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Response time is less than 200ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
 											"});"
 										],
 										"type": "text/javascript",
