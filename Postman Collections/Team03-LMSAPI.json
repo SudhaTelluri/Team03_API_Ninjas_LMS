@@ -839,72 +839,6 @@
 					"name": "NegativeScenarios",
 					"item": [
 						{
-							"name": "Add New Program with missing mandatory field",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
-										"exec": [
-											"pm.test(\"Status code is 400\", function () {\r",
-											"    pm.response.to.have.status(400);\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Validate the response schema for message and success\", function () {\r",
-											"    const schema = {\r",
-											"        type: \"object\",\r",
-											"        required: [\"message\", \"success\"],\r",
-											"        properties: {\r",
-											"            message: { type: \"string\" },\r",
-											"            success: { type: \"boolean\" }\r",
-											"        }\r",
-											"    };\r",
-											"\r",
-											"    const responseData = pm.response.json();\r",
-											"    pm.expect(tv4.validate(responseData, schema)).to.be.true;\r",
-											"});\r",
-											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.test(\"Content-Type is present\", function () {\r",
-											"        pm.response.to.have.header(\"Content-Type\");\r",
-											"    });\r",
-											"    pm.test(\"Response time is less than 500ms\", function () {\r",
-											"        pm.expect(pm.response.responseTime).to.be.below(500);\r",
-											"    });\r",
-											"    pm.response.to.have.status(\"Bad Request\");\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"id": "ee66653c-a978-4070-b71f-8c5d8dbc57f8",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{bearerToken}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": \"\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseURL}}/saveprogram"
-							},
-							"response": []
-						},
-						{
 							"name": "Add New Program without authorization",
 							"event": [
 								{
@@ -945,6 +879,72 @@
 								}
 							],
 							"id": "a8561d18-acb3-466c-a2d2-697f6462a553",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": \"\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/saveprogram"
+							},
+							"response": []
+						},
+						{
+							"name": "Add New Program with missing mandatory field",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Validate the response schema for message and success\", function () {\r",
+											"    const schema = {\r",
+											"        type: \"object\",\r",
+											"        required: [\"message\", \"success\"],\r",
+											"        properties: {\r",
+											"            message: { type: \"string\" },\r",
+											"            success: { type: \"boolean\" }\r",
+											"        }\r",
+											"    };\r",
+											"\r",
+											"    const responseData = pm.response.json();\r",
+											"    pm.expect(tv4.validate(responseData, schema)).to.be.true;\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
+											"    pm.test(\"Response time is less than 500ms\", function () {\r",
+											"        pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"    });\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "ee66653c-a978-4070-b71f-8c5d8dbc57f8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1071,21 +1071,21 @@
 							"response": []
 						},
 						{
-							"name": "Get program by programid Copy",
+							"name": "Get program by InvalidprogramId",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "d84d3818-1393-43bc-91d0-bb8a05309b55",
 										"exec": [
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
 											"});\r",
 											"pm.test(\"Content-Type is present\", function () {\r",
 											"    pm.response.to.have.header(\"Content-Type\");\r",
 											"});\r",
 											"pm.test(\"Status code name has string\", function () {\r",
-											"    pm.response.to.have.status(\"OK\");\r",
+											"    pm.response.to.have.status(\"Not Found\");\r",
 											"});"
 										],
 										"type": "text/javascript",
