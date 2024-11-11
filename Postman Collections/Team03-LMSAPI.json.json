@@ -27,6 +27,7 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"eval(pm.collectionVariables.get(\"validateSchema\"));\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
@@ -60,7 +61,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}",
+							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6803,7 +6804,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b0f46d81-0776-4e99-953a-2567a2bcfe2b",
+				"id": "34a266b0-504e-482f-9c98-249972266b46",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6814,7 +6815,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b4641758-2c26-4c97-b570-6441eace5a1d",
+				"id": "ae0db519-429f-4538-b673-ed9e5318593b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6866,6 +6867,20 @@
 					"    });\r",
 					"}\r",
 					"\r",
+					"function validateSchema(data, schema) {\r",
+					"    const isValid = tv4.validate(data, schema);\r",
+					"    \r",
+					"    // Postman test for schema validation\r",
+					"    pm.test(\"Schema validation\", function () {\r",
+					"        pm.expect(isValid).to.be.true;\r",
+					"    });\r",
+					"\r",
+					"    // If validation fails, log errors\r",
+					"    if (!isValid) {\r",
+					"        console.log(\"Schema validation error:\", tv4.error);\r",
+					"    }\r",
+					"}\r",
+					"\r",
 					"//Save the functions globally within the collection for use\r",
 					"pm.collectionVariables.set(\"testResponseTime\", testResponseTime.toString());\r",
 					"pm.collectionVariables.set(\"testStatusCode\", testStatusCode.toString());\r",
@@ -6873,6 +6888,7 @@
 					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError.toString());\r",
 					"pm.collectionVariables.set(\"assertMessageAndSuccess\", assertMessageAndSuccess.toString());\r",
+					"pm.collectionVariables.set(\"validateSchema\", validateSchema.toString());\r",
 					"\r",
 					"\r",
 					"\r",
