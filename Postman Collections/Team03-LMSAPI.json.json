@@ -3612,10 +3612,10 @@
 								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
 								"exec": [
 									"// Retrieve the programName2 collection variable\r",
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
+									"var programName2 = pm.collectionVariables.get(\"programName2\");\r",
 									"\r",
 									"// Generate a unique class topic by appending a random 4-digit number\r",
-									"const classTopic = programName1 + Math.floor(1000 + Math.random() * 9000)+\"An introduction to AI\";\r",
+									"const classTopic = programName2 + Math.floor(1000 + Math.random() * 9000)+\"An introduction to AI\";\r",
 									"\r",
 									"// Store the generated classTopic as a collection variable\r",
 									"pm.collectionVariables.set(\"classTopic\", classTopic);\r",
