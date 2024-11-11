@@ -2005,6 +2005,21 @@
 						},
 						{
 							"name": "Delete program by InvalidprogramId",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "a7db5c13-f862-4760-bdc9-75dff6794be2",
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "73125d30-cf7a-4bef-a5b4-c35597a663ab",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
