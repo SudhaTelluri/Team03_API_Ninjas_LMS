@@ -4111,7 +4111,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4240,7 +4240,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
