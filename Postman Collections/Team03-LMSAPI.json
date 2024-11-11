@@ -689,6 +689,29 @@
 										"type": "text/javascript",
 										"packages": {}
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8bfd843f-6b88-4a9e-9d29-0f04a86b06f0",
+										"exec": [
+											"const teamName = \"APINinjas\"; // Base name of the team\r",
+											"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+											"let suffix = \"\";\r",
+											"for (let i = 0; i < 4; i++) {\r",
+											"    suffix += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+											"}\r",
+											"const updatedprogramName = `${teamName}-${suffix}`; \r",
+											"\r",
+											"// Set the program status\r",
+											"//const programStatus = \"Active\";\r",
+											"// Set new programName and any other parameters as environment variables\r",
+											"pm.environment.set(\"updatedprogramName\", updatedprogramName);\r",
+											"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
 								}
 							],
 							"id": "74b304d5-07e8-4b4e-98ac-ae1e92c9d620",
@@ -706,7 +729,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"23km\",\r\n  \"programStatus\": \"{{progrmstatus}}\"\r\n}",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -719,6 +742,27 @@
 						},
 						{
 							"name": "Delete program by programname",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "58dc2e65-af2d-4514-8108-95da237c4f7b",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"pm.test(\"Response time is less than 200ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"id": "3b997467-4b7a-498f-a6ec-852ae653a118",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
