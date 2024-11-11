@@ -7393,7 +7393,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "2b1e8233-bb9f-44c2-9b6d-706baa9035b8",
+				"id": "71c2a957-d3ac-4f35-b68a-59e77fd3e679",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7404,7 +7404,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5a839218-852f-4ae1-9811-a5b161c87589",
+				"id": "b0f8ebef-209c-4390-b0ac-37330460c669",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7496,6 +7496,11 @@
 		{
 			"key": "bearerToken",
 			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTMxOTc4MSwiZXhwIjoxNzMxMzQ4NTgxfQ.AJA_2TlBDSHBt9NW79jUwcCx878iK2vfDSu3yWeLqIo7HPO0Vj8bZT8p1RVfZ4mav5kWzwuCGalKpNo5YeeGIQ"
+		},
+		{
+			"key": "password",
+			"value": "LmsHackathon@2024",
+			"type": "string"
 		},
 		{
 			"key": "userLoginEmailId",
