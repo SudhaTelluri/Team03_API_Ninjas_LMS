@@ -673,7 +673,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing-Updated description using programName1\",\r\n  \"programName\": \"{{updatedProgramName}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{updatedProgramName}}\",\r\n  \"programDescription\": \"{{updatedProgramDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
