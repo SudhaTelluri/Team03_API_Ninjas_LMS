@@ -941,6 +941,19 @@
 									"\r",
 									"console.log(\"Generated Program Name 1: \" + programName1);\r",
 									"\r",
+									"\r",
+									"// Directly set the values for the variables\r",
+									"var programDescription = \"A QA team specializing in API testing.\";\r",
+									"var programStatus = \"Active\";\r",
+									"\r",
+									"// Set these values as local variables for the request\r",
+									"pm.variables.set(\"programDescription\", programDescription);\r",
+									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"\r",
+									"// Access data from CSV file\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -963,7 +976,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"A QA team specializing in API testing.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -999,6 +1012,20 @@
 									"pm.collectionVariables.set(\"programName2\", programName2);\r",
 									"\r",
 									"console.log(\"Generated Program Name 2: \" + programName2);\r",
+									"\r",
+									"// Default values\r",
+									"var programDescription2 = \"A team focused on API automation.\";\r",
+									"var programStatus2 = \"Active\";\r",
+									"\r",
+									"pm.variables.set(\"programDescription2\", programDescription2);\r",
+									"pm.variables.set(\"programStatus2\", programStatus2);\r",
+									"\r",
+									"// Access data from CSV file\r",
+									"var programDescription = pm.iterationData.get(\"programDescription2\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus2\");\r",
+									"\r",
+									"\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1056,7 +1083,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"A team focused on automating the testing of APIs for performance and reliability.\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{programName2}}\",\r\n  \"programDescription\": \"{{programDescription2}}\",\r\n  \"programStatus\": \"{{programStatus2}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
