@@ -720,6 +720,10 @@
 									"\r",
 									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
 									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									"\r",
+									"\r",
+									"var updatedProgramDescription = pm.iterationData.get(\"updatedProgramDescription\") || \"A QA team specializing in API testing.-local variable\";\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
 									""
 								],
 								"type": "text/javascript",
@@ -764,7 +768,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programId\": \"{{programId}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\",\r\n  \"creationTime\": \"{{creationTime}}\",\r\n  \"lastModTime\": \"{{lastModTime}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programId\": \"{{programId1}}\",\r\n  \"programName\": \"{{updatedProgramName}}\",\r\n  \"programDescription\": \"{{updatedProgramDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\",\r\n  \"creationTime\": \"{{creationTime}}\",\r\n  \"lastModTime\": \"{{lastModTime}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
