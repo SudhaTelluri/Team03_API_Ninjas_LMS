@@ -28,13 +28,26 @@
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
 									"eval(pm.collectionVariables.get(\"validateSchema\"));\r",
+									"\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(500)\r",
 									"testStatusCode(200);    \r",
 									"testHeader(\"Content-Type\"); \r",
-									"testStatusLine(200,\"OK\");"
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"const schema = {\r",
+									"    \"type\": \"object\",\r",
+									"    \"properties\": {\r",
+									"        \"userLoginEmailId\": { \"type\": \"string\", \"format\": \"email\" },\r",
+									"        \"password\": { \"type\": \"string\", \"minLength\": 8 }\r",
+									"    },\r",
+									"    \"required\": [\"userLoginEmailId\", \"password\"],\r",
+									"    \"additionalProperties\": false\r",
+									"};\r",
+									"\r",
+									"validateSchema(responseBody, schema);"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -7056,6 +7069,10 @@
 			"key": "baseURL",
 			"value": "https://lms-hackthon-oct24-3efc7e0df381.herokuapp.com/lms/",
 			"type": "string"
+		},
+		{
+			"key": "validateSchema",
+			"value": ""
 		}
 	]
 }
