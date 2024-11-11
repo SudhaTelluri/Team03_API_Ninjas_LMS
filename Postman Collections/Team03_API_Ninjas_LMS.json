@@ -1355,7 +1355,7 @@
 							"response": []
 						},
 						{
-							"name": "Add New Program with all invalid fields Copy",
+							"name": "Add New Program with all Special characters in programDescription",
 							"event": [
 								{
 									"listen": "test",
@@ -1429,7 +1429,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"***\",\r\n  \"programName\": \"####\",\r\n  \"programStatus\": \"0\"\r\n}\r\n",
+									"raw": "{\r\n  \"programDescription\": \"&*#\",\r\n  \"programName\": \"{{programname}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
