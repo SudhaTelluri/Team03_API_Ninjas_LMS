@@ -2888,7 +2888,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"classRecordingPath\": \"recordingspath\",\r\n  \"csId\": {{classId}}\r\n}\r\n",
+							"raw": "{\r\n  \"classRecordingPath\": \"{{classRecordingPath}}\",\r\n  \"csId\": {{classId}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
