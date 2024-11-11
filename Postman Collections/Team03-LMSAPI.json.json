@@ -95,8 +95,8 @@
 									"var password = pm.iterationData.get(\"password\");\r",
 									"\r",
 									"// Set as environment variables\r",
-									"pm.collectionVariables.get(\"userLoginEmailId\");\r",
-									"pm.collectionVariables.get(\"password\");\r",
+									"var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
+									"var password = pm.collectionVariables.get(\"password\");\r",
 									""
 								],
 								"type": "text/javascript",
