@@ -6819,7 +6819,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b6285079-52c4-4ebf-a889-c2b1b03f0a7c",
+				"id": "c537154f-dba3-46a2-a034-dc2dcfc3efcd",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6830,7 +6830,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "feaff757-7e63-44f3-90e5-8d4d6e32759b",
+				"id": "74990388-9bb1-4132-b866-08733e08afaf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6882,6 +6882,9 @@
 					"    });\r",
 					"}\r",
 					"\r",
+					"const Ajv = require('ajv');\r",
+					"const ajv = new Ajv();\r",
+					"\r",
 					"function validateSchema(data, schema) {\r",
 					"    const isValid = tv4.validate(data, schema);\r",
 					"    \r",
@@ -6907,7 +6910,8 @@
 					"pm.collectionVariables.set(\"testStatusLine\", testStatusLine.toString());\r",
 					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError.toString());\r",
 					"pm.collectionVariables.set(\"assertMessageAndSuccess\", assertMessageAndSuccess.toString());\r",
-					"pm.collectionVariables.set(\"validateSchema\", validateSchema.toString());\r",
+					"//pm.collectionVariables.set(\"validateSchema\", validateSchema.toString());\r",
+					"pm.collectionVariables.set(\"validateSchema\", validateSchema);\r",
 					"\r",
 					"\r",
 					"\r",
