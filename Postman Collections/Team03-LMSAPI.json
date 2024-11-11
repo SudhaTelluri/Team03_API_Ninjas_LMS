@@ -2402,6 +2402,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}/userRoleProgramBatchMap//"
@@ -2438,7 +2444,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}/U73"
+						"url": "{{baseURL}}//userRoleProgramBatchMap/deleteAll/{userId}"
 					},
 					"response": []
 				},
@@ -2464,8 +2470,15 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": "{{baseURL}}/"
 					},
 					"response": []
 				},
@@ -2476,6 +2489,12 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": "{{baseURL}}/U"
@@ -2496,11 +2515,17 @@
 			"id": "81edca4c-d470-42dc-a972-ce90331eafea"
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "{{bearerToken}}"
+		}
+	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f470b4a8-6eda-430d-a48b-d5edb2ab0ca7",
+				"id": "ce9aef6d-3e20-409c-95cf-3e54fde7cbaf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -2511,7 +2536,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5e58c4d1-bdca-4720-8efa-398b64345baa",
+				"id": "4ad5d823-c73c-4e57-8f31-1222e518b32b",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
