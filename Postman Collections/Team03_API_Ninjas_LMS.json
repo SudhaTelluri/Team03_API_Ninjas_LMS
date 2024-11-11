@@ -839,15 +839,15 @@
 					"name": "NegativeScenarios",
 					"item": [
 						{
-							"name": "Add New Program Copy",
+							"name": "Add New Program with misssing mandatory field",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
 										"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
 										"exec": [
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -870,7 +870,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": null,\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+									"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": \"\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -912,6 +912,194 @@
 								"method": "GET",
 								"header": [],
 								"url": "{{baseURL}}/allPrograms"
+							},
+							"response": []
+						},
+						{
+							"name": "Get program by programid Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d84d3818-1393-43bc-91d0-bb8a05309b55",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Content-Type is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "22a5ce83-26d5-43d3-ab95-dd0e49bb0a38",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{baseURL}}/programs/{{programId}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Program with programid Copy",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6a90a9e9-ba97-48f2-b7d0-6102c8f2d562",
+										"exec": [
+											"const teamName = \"APINinjas\"; // Base name of the team\r",
+											"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+											"let suffix = \"\";\r",
+											"for (let i = 0; i < 4; i++) {\r",
+											"    suffix += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+											"}\r",
+											"const updatedprogramName = `${teamName}-${suffix}`; \r",
+											"\r",
+											"// Set the program status\r",
+											"//const programStatus = \"Active\";\r",
+											"// Set new programName and any other parameters as environment variables\r",
+											"pm.environment.set(\"updatedprogramName\", updatedprogramName);\r",
+											"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "03df07e7-0adf-40c7-864c-77795f84f699",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"        pm.response.to.have.status(\"Ok\");\r",
+											"    });\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "513c5a22-26ff-4ecc-afb8-7709af8d1c40",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/program/{{programName}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Update program by programname Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "d98b9a5a-601a-4ddf-ad76-5e42675a42dc",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"    pm.test(\"Response time is less than 200ms\", function () {\r",
+											"        pm.expect(pm.response.responseTime).to.be.below(200);\r",
+											"    });\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "8bfd843f-6b88-4a9e-9d29-0f04a86b06f0",
+										"exec": [
+											"const teamName = \"APINinjas\"; // Base name of the team\r",
+											"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+											"let suffix = \"\";\r",
+											"for (let i = 0; i < 4; i++) {\r",
+											"    suffix += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+											"}\r",
+											"const updatedprogramName = `${teamName}-${suffix}`; \r",
+											"\r",
+											"// Set the program status\r",
+											"//const programStatus = \"Active\";\r",
+											"// Set new programName and any other parameters as environment variables\r",
+											"pm.environment.set(\"updatedprogramName\", updatedprogramName);\r",
+											"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b21a46b1-021b-4225-bd29-cc0947138f43",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"{{updatedprogramStatus}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/putprogram/{{programId}}"
 							},
 							"response": []
 						},
