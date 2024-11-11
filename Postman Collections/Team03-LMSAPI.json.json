@@ -223,7 +223,7 @@
 									"console.log(\"Response Body:\", responseBody);\r",
 									"console.log(\"Schema:\", schema);\r",
 									"\r",
-									"validateSchema(responseBody, schema);\r",
+									"validateSchema(responseBody, schema,\"Post Program Creation\");\r",
 									"\r",
 									""
 								],
@@ -6936,7 +6936,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "05a932f2-6d55-44c7-89c9-7be33d8c30b1",
+				"id": "d0536fe5-4970-42e2-8e69-5942ab3e1eac",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6947,7 +6947,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "44c921ff-5839-4d0a-b4bc-cddbfe1db5ae",
+				"id": "e45c369a-a205-4061-91d6-52dccd40ceb0",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -6999,21 +6999,22 @@
 					"    });\r",
 					"}\r",
 					"\r",
-					"// var Ajv = require('ajv');\r",
-					"// var ajv = new Ajv();\r",
+					"function validateSchema(data, schema, testName) {\r",
+					"    var Ajv = require('ajv');\r",
+					"    var ajv = new Ajv();\r",
 					"\r",
-					"function validateSchema(data, schema) {\r",
+					"    // Compile the schema with AJV\r",
 					"    var validate = ajv.compile(schema);\r",
 					"    var isValid = validate(data);\r",
 					"\r",
 					"    // Postman test for schema validation\r",
-					"    pm.test(\"Schema validation\", function () {\r",
+					"    pm.test(testName + \" Schema validation\", function () {\r",
 					"        pm.expect(isValid).to.be.true;\r",
 					"    });\r",
 					"\r",
 					"    // If validation fails, log errors\r",
 					"    if (!isValid) {\r",
-					"        console.log(\"Schema validation error:\", validate.errors);\r",
+					"        console.log(testName + \" Schema validation error:\", validate.errors);\r",
 					"    }\r",
 					"}\r",
 					"\r",
@@ -7025,7 +7026,7 @@
 					"pm.collectionVariables.set(\"assertNotFoundError\", assertNotFoundError.toString());\r",
 					"pm.collectionVariables.set(\"assertMessageAndSuccess\", assertMessageAndSuccess.toString());\r",
 					"pm.collectionVariables.set(\"validateSchema\", validateSchema.toString());\r",
-					"//pm.collectionVariables.set(\"validateSchema\", validateSchema);\r",
+					"\r",
 					"\r",
 					"\r",
 					"\r",
