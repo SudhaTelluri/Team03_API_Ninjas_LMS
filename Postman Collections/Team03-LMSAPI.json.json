@@ -32,11 +32,6 @@
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"var validateSchema = eval(pm.collectionVariables.get(\"validateSchema\"));\r",
 									"\r",
-									"testResponseTime(500)\r",
-									"testStatusCode(200);    \r",
-									"testHeader(\"Content-Type\"); \r",
-									"testStatusLine(200,\"OK\");\r",
-									"\r",
 									"const schema = {\r",
 									"    \"type\": \"object\",\r",
 									"    \"properties\": {\r",
@@ -47,7 +42,14 @@
 									"    \"additionalProperties\": false\r",
 									"};\r",
 									"\r",
-									"validateSchema(responseBody, schema);"
+									"validateSchema(responseBody, schema);\r",
+									"\r",
+									"testResponseTime(500)\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
