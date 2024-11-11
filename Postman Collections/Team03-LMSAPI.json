@@ -2183,7 +2183,27 @@
 		},
 		{
 			"name": "Logout",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "a09a7df0-162c-4ebf-a673-cc7252b4451a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/logoutlms"
+					},
+					"response": []
+				}
+			],
 			"id": "fa966a7f-d95a-4fd5-a0db-81870c8cc121"
 		},
 		{
