@@ -7156,13 +7156,11 @@
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
 									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
-									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || \"InvalidProgramId123\";\r",
-									"var programName = pm.iterationData.get(\"programName\") || \"Default Program Name\";\r",
+									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || 55;\r",
 									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
 									"\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"invalidProgramId\", invalidProgramId);\r",
-									"pm.variables.set(\"programName\", programName);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									""
 								],
@@ -7222,7 +7220,7 @@
 								}
 							}
 						},
-						"url": "{{baseURL}}putprogram/{{invalidProgramId}}"
+						"url": "{{baseURL}}program/{{invalidProgramId}}"
 					},
 					"response": []
 				},
