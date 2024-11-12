@@ -6939,7 +6939,7 @@
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
 									"var noProgramDescription = pm.iterationData.get(\"noProgramDescription\");\r",
-									"var programName = pm.iterationData.get(\"programName1\");\r",
+									"var programName1 = pm.iterationData.get(\"programName1\");\r",
 									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
 									"pm.variables.set(\"noProgramDescription\", noProgramDescription);\r",
