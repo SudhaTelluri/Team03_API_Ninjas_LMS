@@ -4882,9 +4882,7 @@
 							"script": {
 								"id": "0de3f09b-b396-497d-b9f3-d984bf647487",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -4938,9 +4936,7 @@
 							"script": {
 								"id": "ee3c59ca-0b4a-4cb3-a81b-fd5f21a4ea0c",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -4988,9 +4984,7 @@
 							"script": {
 								"id": "bf1ef958-4a7f-4ba2-8fd1-edd2952e3f16",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5044,9 +5038,7 @@
 							"script": {
 								"id": "6112cf78-f0d6-43ee-879f-bdd64b64d11f",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5100,9 +5092,7 @@
 							"script": {
 								"id": "b8ca2e30-28ae-4cc3-bc16-3fed8b3a6e80",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5156,9 +5146,7 @@
 							"script": {
 								"id": "900df0e1-8393-47b0-8369-bff570ef550d",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5212,9 +5200,7 @@
 							"script": {
 								"id": "7205acef-f9d7-42e8-a79c-adf81d53628b",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5268,9 +5254,7 @@
 							"script": {
 								"id": "d0d74dab-89fe-40ba-b93a-3f7c64d25343",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5318,9 +5302,7 @@
 							"script": {
 								"id": "54e239a7-d86d-4455-95c1-aadae2bdeb7b",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5413,9 +5395,6 @@
 									"pm.variables.set(\"classStaffId\", classStaffId);\r",
 									"pm.variables.set(\"classStatus\", classStatus);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -5483,9 +5462,7 @@
 									"\r",
 									"pm.variables.set(\"classRecordingPath\", classRecordingPath);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5551,9 +5528,7 @@
 							"script": {
 								"id": "d59cbfc8-fee9-4f7a-bd46-5f537826267f",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5604,9 +5579,7 @@
 							"script": {
 								"id": "f2f11c85-bccb-40ff-9c2c-75bb93513bc5",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5663,9 +5636,7 @@
 							"script": {
 								"id": "10deb69a-e824-41f2-b473-6d26ba0854ea",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5719,9 +5690,7 @@
 							"script": {
 								"id": "5d79867e-45cd-4839-b099-69a4d937ecfb",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5778,9 +5747,7 @@
 							"script": {
 								"id": "1f3f9c38-bf0f-4821-b1c7-713e0db4a920",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5828,9 +5795,7 @@
 							"script": {
 								"id": "7731f387-fbec-4cd0-b653-dc44a2944296",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5929,9 +5894,7 @@
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
+									"\r",
 									"\r",
 									""
 								],
@@ -6031,9 +5994,7 @@
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -6202,9 +6163,7 @@
 									"pm.variables.set(\"classStaffId\", classStaffId);\r",
 									"pm.variables.set(\"classStatus\", classStatus);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
