@@ -280,14 +280,13 @@
 			],
 			"id": "7e4608fb-b709-43eb-b667-95a6467e2e0d",
 			"auth": {
-				"type": "bearer",
-				"bearer": {}
+				"type": "noauth"
 			},
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "a5bcd333-07ae-4a44-91e7-51295397d31c",
+						"id": "f3c1e4da-45fd-4be9-a8aa-0b755f29880e",
 						"type": "text/javascript",
 						"packages": {},
 						"exec": [
@@ -298,7 +297,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "95bd3ee8-18b7-4542-b24d-9138b3013724",
+						"id": "30319e76-6270-4b56-96cd-c80cb12f6ac1",
 						"type": "text/javascript",
 						"packages": {},
 						"exec": [
@@ -2480,7 +2479,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{bearerToken}}"
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTM3MDYxOSwiZXhwIjoxNzMxMzk5NDE5fQ.JUUxpWFkrBzlrvbPpVY1sbtP3RqLhSONIJoxYTkq-6PEWpXEBfm6wggS5aBjy1syGHmKkkIl94bvgrqopz0myQ"
 							}
 						},
 						"method": "GET",
