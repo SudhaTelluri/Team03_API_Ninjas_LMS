@@ -2383,7 +2383,38 @@
 					"response": []
 				},
 				{
-					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"name": "Get Assigned Program/Batch(es) of All Users (Not Found)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f85c8f46-7186-4cdd-9b16-4ebfbe3ed1ee",
+								"exec": [
+									"pm.test(\"Response status code is 404\", function () {",
+									"  pm.expect(pm.response.code).to.equal(404);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response Content-Type is text/plain\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/plain\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body contains the message 'Invalid endpoint'\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid endpoint\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"id": "58a9e715-c442-4367-b007-ab2c0fd17210",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2396,70 +2427,46 @@
 					"response": []
 				},
 				{
-					"name": "Get Assigned Program/(404)Batch(es) of All Users",
+					"name": "Get Assigned Program/Batch(es) of All Users (Empty EndPoint)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "5ef8ccba-9b57-4803-96da-481f67a0828b",
+								"id": "82f5b589-e86e-41cc-b9e2-4b0314aef571",
 								"exec": [
-									"pm.test(\"Status code is 404\", function () {\r",
-									"    pm.response.to.have.status(404);\r",
-									"});"
+									"pm.test(\"Response status code is 404\", function () {",
+									"    pm.expect(pm.response.code).to.equal(404);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response Content-Type is text/plain\", function () {",
+									"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"text/plain\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response body contains the message 'Invalid endpoint'\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Invalid endpoint\");",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is within an acceptable range\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
 							}
 						}
 					],
-					"id": "3c356080-aed2-46d0-8780-28bb3ae9b8a8",
+					"id": "abbbb7e3-eb94-4a71-a07c-5d6b1ec1157b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
 						"method": "GET",
 						"header": [],
-						"url": "{{baseURL}}/userRoleProgramBatchMap/{{UserId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Assigned Program/(401)Batch(es) of All Users",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "fb93699a-fd95-4527-90b9-6dfe17ca7116",
-								"exec": [
-									"pm.test(\"Status code is 401\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
-								],
-								"type": "text/javascript",
-								"packages": {}
-							}
-						}
-					],
-					"id": "165bc52e-10bf-40ad-84e0-2e082d5eea5b",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": {
-								"token": "{{bearerToken}}"
-							}
-						},
-						"method": "GET",
-						"header": [],
-						"url": "{{baseURL}}/userRoleProgramBatchMap//"
+						"url": "{{baseURL}}/"
 					},
 					"response": []
 				},
