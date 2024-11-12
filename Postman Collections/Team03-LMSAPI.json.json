@@ -7077,7 +7077,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programId\": {{invalidProgramId}},\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programId\": {{invalidProgramId}},\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
