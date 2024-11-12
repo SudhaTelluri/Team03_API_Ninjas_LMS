@@ -265,6 +265,9 @@
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									"\r",
 									"\r",
 									""
@@ -370,6 +373,10 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(201,\"Created\");\r",
 									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -422,7 +429,10 @@
 									"testStatusCode(200);    \r",
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
-									""
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -431,8 +441,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "8fe1d1b9-e08a-499d-b8a9-3add76349abc",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -472,6 +486,10 @@
 									"testStatusCode(200);    \r",
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -481,8 +499,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "4d6d6106-fb5c-47a0-977a-33b2b1028e16",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -522,6 +544,10 @@
 									"testStatusCode(200);    \r",
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -531,8 +557,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "1c1afb48-9cef-44ba-97d5-f9c43919c8fa",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -585,6 +615,11 @@
 									"\r",
 									"pm.variables.set(\"updatedProgramDescription\", updatedProgramDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -723,6 +758,11 @@
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"pm.variables.set(\"creationTime\", creationTime);\r",
 									"pm.variables.set(\"lastModTime\", lastModTime);\r",
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -797,7 +837,22 @@
 									"testStatusCode(200);   \r",
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									"\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9eb36560-263f-4f3f-921a-94950decd5f0",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -841,6 +896,21 @@
 									"testStatusCode(200);    // Check if status code is 200\r",
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
 									"testStatusLine(200,\"OK\");\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7fd5943b-22d9-445c-a6ae-08a3f337a562",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -940,6 +1010,9 @@
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1038,6 +1111,9 @@
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
 									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									"\r",
 									""
 								],
