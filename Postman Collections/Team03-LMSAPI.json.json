@@ -6363,6 +6363,9 @@
 									"pm.variables.set(\"invalidProgramDescription\", invalidProgramDescription);\r",
 									"pm.variables.set(\"invalidProgramName\", invalidProgramName);\r",
 									"pm.variables.set(\"invalidProgramStauts\", invalidProgramStauts);\r",
+									"\r",
+									"let iterationCount = pm.environment.get(\"iterationCount\") || 0;\r",
+									"\r",
 									""
 								],
 								"type": "text/javascript",
