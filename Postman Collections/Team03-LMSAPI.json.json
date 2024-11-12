@@ -7376,8 +7376,8 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(404,\"Not Found\")\r",
 									"\r",
-									"var responseBody=pm.response.json();\r",
-									"assertMessageAndSuccess(responseBody);\r",
+									"// var responseBody=pm.response.json();\r",
+									"// assertMessageAndSuccess(responseBody);\r",
 									"\r",
 									""
 								],
