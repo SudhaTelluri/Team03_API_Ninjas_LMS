@@ -7842,6 +7842,14 @@
 		{
 			"key": "validateSchema",
 			"value": "function validateSchema(data, schema, testName) {\r\n    var Ajv = require('ajv');\r\n    var ajv = new Ajv();\r\n\r\n    // Compile the schema with AJV\r\n    var validate = ajv.compile(schema);\r\n    var isValid = validate(data);\r\n\r\n    // Postman test for schema validation\r\n    pm.test(testName + \" Schema validation\", function () {\r\n        pm.expect(isValid).to.be.true;\r\n    });\r\n\r\n    // If validation fails, log errors\r\n    if (!isValid) {\r\n        console.log(testName + \" Schema validation error:\", validate.errors);\r\n    }\r\n}"
+		},
+		{
+			"key": "adminID",
+			"value": ""
+		},
+		{
+			"key": "classrecordings",
+			"value": ""
 		}
 	]
 }
