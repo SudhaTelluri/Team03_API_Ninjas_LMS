@@ -7309,11 +7309,11 @@
 							"script": {
 								"id": "5db35245-07ef-43bb-bb1b-9812d6ff3da7",
 								"exec": [
-									"var invalidBatchDescription = pm.iterationData.get(\"invalidBatchDescription\") || \"Invalid batch description\";\r",
+									"var invalidBatchDescription = pm.iterationData.get(\"invalidBatchDescription\") || \"Invalid batch description&*&*&*\";\r",
 									"var missingBatchName = pm.iterationData.get(\"missingBatchName\") || \"\";\r",
 									"var invalidBatchNoOfClasses = pm.iterationData.get(\"invalidBatchNoOfClasses\") || \"NotANumber\";\r",
-									"var invalidBatchStatus = pm.iterationData.get(\"invalidBatchStatus\") || \"InvalidStatus\";\r",
-									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || \"InvalidProgramId123\";\r",
+									"var invalidBatchStatus = pm.iterationData.get(\"invalidBatchStatus\") || \"Inactiveee\";\r",
+									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || \"Invalid###123\";\r",
 									"var missingProgramName = pm.iterationData.get(\"missingProgramName\") || \"\";\r",
 									"\r",
 									"pm.variables.set(\"invalidBatchDescription\", invalidBatchDescription);\r",
