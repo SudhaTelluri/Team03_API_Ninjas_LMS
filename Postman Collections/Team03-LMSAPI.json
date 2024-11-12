@@ -2072,6 +2072,152 @@
 							"response": []
 						},
 						{
+							"name": "Update Program with valid programName with Null programStatus",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6a90a9e9-ba97-48f2-b7d0-6102c8f2d562",
+										"exec": [
+											"const teamName = \"APINinjas\"; // Base name of the team\r",
+											"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+											"let suffix = \"\";\r",
+											"for (let i = 0; i < 4; i++) {\r",
+											"    suffix += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+											"}\r",
+											"const updatedprogramName = `${teamName}-${suffix}`; \r",
+											"\r",
+											"// Set the program status\r",
+											"//const programStatus = \"Active\";\r",
+											"// Set new programName and any other parameters as environment variables\r",
+											"pm.environment.set(\"updatedprogramName\", updatedprogramName);\r",
+											"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "03df07e7-0adf-40c7-864c-77795f84f699",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"        pm.response.to.have.status(\"Ok\");\r",
+											"    });\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "9c69c13e-fc6b-4e8c-b45a-a1033a8a0d5e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"null\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/program/{{programName1}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Program with valid programName and requestbody",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "6a90a9e9-ba97-48f2-b7d0-6102c8f2d562",
+										"exec": [
+											"const teamName = \"APINinjas\"; // Base name of the team\r",
+											"const letters = \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\";\r",
+											"let suffix = \"\";\r",
+											"for (let i = 0; i < 4; i++) {\r",
+											"    suffix += letters.charAt(Math.floor(Math.random() * letters.length));\r",
+											"}\r",
+											"const updatedprogramName = `${teamName}-${suffix}`; \r",
+											"\r",
+											"// Set the program status\r",
+											"//const programStatus = \"Active\";\r",
+											"// Set new programName and any other parameters as environment variables\r",
+											"pm.environment.set(\"updatedprogramName\", updatedprogramName);\r",
+											"pm.environment.set(\"updatedprogramStatus\", \"Active\"); // Or any other valid statu"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "03df07e7-0adf-40c7-864c-77795f84f699",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.test(\"Status code name has string\", function () {\r",
+											"        pm.response.to.have.status(\"Ok\");\r",
+											"    });\r",
+											"    pm.test(\"Content-Type is present\", function () {\r",
+											"        pm.response.to.have.header(\"Content-Type\");\r",
+											"    });\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "154c0245-da47-421f-8bd2-715c97c5a443",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "{{bearerToken}}"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"null\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}/program/{{programName1}}"
+							},
+							"response": []
+						},
+						{
 							"name": "Delete program by programname with InvalidprogramName",
 							"event": [
 								{
