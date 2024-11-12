@@ -6549,7 +6549,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{invalidProgramName}}\",\r\n  \"programDescription\": \"{{invalidProgramDescription}}\",\r\n  \"programStatus\": \"{{invalidProgramStauts}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -6710,7 +6710,7 @@
 					"response": []
 				},
 				{
-					"name": "Neg-CreateBatch-BadRequest Copy",
+					"name": "Neg-Create Batch With Invalid Data",
 					"event": [
 						{
 							"listen": "prerequest",
