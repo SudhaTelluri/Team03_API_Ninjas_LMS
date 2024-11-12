@@ -3781,8 +3781,8 @@
 									"    batchDescription: selectedBatchDescription,\r",
 									"    batchNoOfClasses: selectedBatchClassCount, \r",
 									"    batchStatus: batchStatus,\r",
-									"    programId: programId1,\r",
-									"    programName: programName1\r",
+									"    programId: programId2,\r",
+									"    programName: programName2\r",
 									"};\r",
 									"\r",
 									"// Set the batchData as the request body\r",
@@ -3890,7 +3890,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4021,7 +4021,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId2}}\",\r\n    \"programName\": \"{{programName2}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{batchDescription}}\",\r\n    \"batchName\": \"{{batchName1}}\",\r\n    \"batchNoOfClasses\": \"{{batchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{batchStatus}}\",\r\n    \"programId\": \"{{programId}}\",\r\n    \"programName\": \"{{programName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
