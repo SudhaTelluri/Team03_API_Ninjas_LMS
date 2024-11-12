@@ -2637,7 +2637,9 @@
 							"script": {
 								"id": "526a9a11-54ac-469f-a315-bc445994d9b2",
 								"exec": [
-									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"https://www.google.com/\";\r",
+									"//var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"https://www.google.com/\";\r",
+									"\r",
+									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\");\r",
 									"\r",
 									"pm.variables.set(\"classRecordingPath\", classRecordingPath);"
 								],
@@ -3028,8 +3030,11 @@
 									"var password = pm.iterationData.get(\"password\");\r",
 									"\r",
 									"// Set as environment variables\r",
-									"var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
-									"var password = pm.collectionVariables.get(\"password\");\r",
+									"// var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
+									"// var password = pm.collectionVariables.get(\"password\");\r",
+									"\r",
+									"pm.variables.set(\"userLoginEmailId\", userLoginEmailId);\r",
+									"pm.variables.set(\"password\", password);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -3046,7 +3051,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"userLoginEmailId\": \"sdet@gmail.com\",\r\n  \"password\": \"LmsHackathon@2024\"\r\n}",
+							"raw": "{\r\n  \"userLoginEmailId\": \"{{userLoginEmailId}}\",\r\n  \"password\": \"{{password}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
