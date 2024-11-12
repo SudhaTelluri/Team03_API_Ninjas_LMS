@@ -2325,7 +2325,40 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
-									"});"
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response has the required fields\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('array');\r",
+									"\r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item).to.include.all.keys('userId', 'roleId', 'programId', 'batchId', 'userRoleProgramBatchStatus');\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"UserId and roleId should be non-empty strings\", function () {\r",
+									"  const responseData = pm.response.json();\r",
+									"  \r",
+									"  responseData.forEach(function(item) {\r",
+									"    pm.expect(item.userId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"UserId should not be empty\");\r",
+									"    pm.expect(item.roleId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"RoleId should not be empty\");\r",
+									"  });\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"ProgramId and batchId are non-negative integers\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    responseData.forEach(function(item) {\r",
+									"        pm.expect(item.programId).to.be.a('number').and.to.be.at.least(0, \"ProgramId should be a non-negative integer\");\r",
+									"        pm.expect(item.batchId).to.be.a('number').and.to.be.at.least(0, \"BatchId should be a non-negative integer\");\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -2346,6 +2379,19 @@
 						"method": "GET",
 						"header": [],
 						"url": "{{baseURL}}/userRoleProgramBatchMap"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Assigned Program/Batch(es) of All Users Copy",
+					"id": "58a9e715-c442-4367-b007-ab2c0fd17210",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/userRoleProgramBatchMapp"
 					},
 					"response": []
 				},
