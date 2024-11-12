@@ -7088,12 +7088,16 @@
 							"script": {
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
-									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
-									"var programName = pm.iterationData.get(\"nullProgramName\") || \"\";\r",
-									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
+									"// var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
+									"// var nullProgramName = pm.iterationData.get(\"nullProgramName\") || \"\";\r",
+									"// var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
+									"\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var nullProgramName = pm.iterationData.get(\"nullProgramName\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
-									"pm.variables.set(\"programName\", programName);\r",
+									"pm.variables.set(\"nullProgramName\", nullProgramName);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									""
 								],
@@ -7146,7 +7150,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programId\": {{programId1}},\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programId\": {{programId1}},\r\n  \"programName\": \"{{nullProgramName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
