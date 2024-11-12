@@ -6003,11 +6003,11 @@
 									"// var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
 									"\r",
 									"var batchDescription = pm.iterationData.get(\"batchDescription\");\r",
-									"var batchNoOfClasses = pm.iterationData.get(\"batchNoOfClasses\");\r",
+									"var outOfScopeBatchNoOfClasses = pm.iterationData.get(\"outOfScopeBatchNoOfClasses\");\r",
 									"var batchStatus = pm.iterationData.get(\"batchStatus\");\r",
 									"\r",
 									"pm.variables.set(\"batchDescription\", batchDescription);\r",
-									"pm.variables.set(\"batchNoOfClasses\", batchNoOfClasses);\r",
+									"pm.variables.set(\"outOfScopeBatchNoOfClasses\", outOfScopeBatchNoOfClasses);\r",
 									"pm.variables.set(\"batchStatus\", batchStatus);\r",
 									"\r",
 									""
@@ -6055,7 +6055,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"batchNoOfClasses\": {{batchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": \"{{programId1}}\",\r\n  \"programName\": \"{{programName1}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"batchNoOfClasses\": {{outOfScopeBatchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": \"{{programId1}}\",\r\n  \"programName\": \"{{programName1}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
