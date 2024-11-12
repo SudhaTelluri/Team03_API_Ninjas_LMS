@@ -6943,7 +6943,7 @@
 									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
 									"pm.variables.set(\"noProgramDescription\", noProgramDescription);\r",
-									"pm.variables.set(\"programName1\", programName);\r",
+									"pm.variables.set(\"programName1\", programName1);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									""
 								],
