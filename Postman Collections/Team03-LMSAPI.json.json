@@ -2261,9 +2261,7 @@
 							"script": {
 								"id": "6ca3e0a0-59ae-4ac1-aef1-829f8db25798",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -6758,15 +6756,6 @@
 							"script": {
 								"id": "211c10ac-6027-4849-b6ee-4204950e739f",
 								"exec": [
-									"// Retrieve the programName1 collection variable\r",
-									"var programName1 = pm.collectionVariables.get(\"programName1\");\r",
-									"\r",
-									"// Store the generated classTopic as a collection variable\r",
-									"var classTopic=pm.collectionVariables.get(classTopic);\r",
-									"\r",
-									"// Log the classTopic for verification\r",
-									"console.log(\"Class Topic \", classTopic);\r",
-									"\r",
 									"// Retrieve iteration data or set default values for other variables\r",
 									"var invalidClassComments = pm.iterationData.get(\"invalidClassComments\");\r",
 									"var invalidClassDate = pm.iterationData.get(\"invalidClassDate\");\r",
