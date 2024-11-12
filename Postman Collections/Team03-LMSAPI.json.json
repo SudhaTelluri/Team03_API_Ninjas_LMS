@@ -265,10 +265,9 @@
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
-									"\r",
+									"// Increment the iteration count\r",
+									"let iterationCount = pm.variables.get(\"iteration\") || 0;\r",
+									"pm.variables.set(\"iteration\", iterationCount + 1);\r",
 									"\r",
 									""
 								],
@@ -335,10 +334,6 @@
 									"\r",
 									"pm.variables.set(\"programDescription2\", programDescription2);\r",
 									"pm.variables.set(\"programStatus2\", programStatus2);\r",
-									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									"\r",
 									""
 								],
@@ -441,9 +436,7 @@
 							"script": {
 								"id": "8fe1d1b9-e08a-499d-b8a9-3add76349abc",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -499,9 +492,7 @@
 							"script": {
 								"id": "4d6d6106-fb5c-47a0-977a-33b2b1028e16",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -557,9 +548,7 @@
 							"script": {
 								"id": "1c1afb48-9cef-44ba-97d5-f9c43919c8fa",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -616,9 +605,6 @@
 									"pm.variables.set(\"updatedProgramDescription\", updatedProgramDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									"\r",
 									""
 								],
@@ -758,11 +744,6 @@
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"pm.variables.set(\"creationTime\", creationTime);\r",
 									"pm.variables.set(\"lastModTime\", lastModTime);\r",
-									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
-									"\r",
 									""
 								],
 								"type": "text/javascript",
@@ -850,9 +831,7 @@
 							"script": {
 								"id": "9eb36560-263f-4f3f-921a-94950decd5f0",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -908,9 +887,6 @@
 							"script": {
 								"id": "7fd5943b-22d9-445c-a6ae-08a3f337a562",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1010,9 +986,6 @@
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1110,10 +1083,6 @@
 									"\r",
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
-									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									"\r",
 									""
 								],
@@ -1252,9 +1221,7 @@
 							"script": {
 								"id": "f3d3dc43-5ca9-44d3-ba43-f30707642228",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1302,9 +1269,7 @@
 							"script": {
 								"id": "85324904-4d4d-4695-9eed-2411df306380",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1358,9 +1323,7 @@
 							"script": {
 								"id": "1a919f01-7f4b-4522-8134-c66378913f7a",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1414,9 +1377,7 @@
 							"script": {
 								"id": "2f1a027d-6a22-4534-9d57-f1a8847e105e",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1504,9 +1465,6 @@
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
 									"\r",
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -1644,9 +1602,7 @@
 							"script": {
 								"id": "c04b2484-5c13-4371-a4ff-cbbcd57d3a03",
 								"exec": [
-									"if (pm.info.iteration > 0) {\r",
-									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
