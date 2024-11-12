@@ -7588,7 +7588,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0af56736-972d-4384-9d23-03fdb0d9d091",
+				"id": "0709846a-8602-4141-9a8c-00a361833bb8",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7599,7 +7599,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "8315994b-6a0a-4453-84d9-1376f8d1245a",
+				"id": "d556515e-636e-4d48-8f32-e9195b93f824",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7690,69 +7690,60 @@
 	"variable": [
 		{
 			"key": "bearerToken",
-			"value": null
-		},
-		{
-			"key": "password",
-			"value": "LmsHackathon@2024",
-			"type": "string"
-		},
-		{
-			"key": "userLoginEmailId",
-			"value": "sdet@gmail.com",
-			"type": "string"
+			"value": ""
 		},
 		{
 			"key": "programName1",
-			"value": "APINinjas-UTea"
+			"value": ""
 		},
 		{
 			"key": "programName2",
-			"value": "APINinjas-Vaef"
+			"value": ""
 		},
 		{
 			"key": "programId1",
-			"value": 17307
+			"value": ""
 		},
 		{
 			"key": "programId2",
-			"value": 17308
+			"value": ""
 		},
 		{
 			"key": "updatedProgramName",
-			"value": "APINinjas-tipF"
+			"value": ""
 		},
 		{
 			"key": "batchName1",
-			"value": "APINinjas-Vaef209"
+			"value": ""
 		},
 		{
 			"key": "batchName2",
-			"value": "APINinjas-Vaef479"
+			"value": ""
 		},
 		{
 			"key": "batchId2",
-			"value": 9437
+			"value": ""
 		},
 		{
 			"key": "batchId1",
-			"value": 9436
+			"value": ""
 		},
 		{
 			"key": "classTopic",
-			"value": "APINinjas-Vaef6283An introduction to AI"
+			"value": ""
 		},
 		{
 			"key": "classId",
-			"value": 716
+			"value": ""
 		},
 		{
 			"key": "staffId",
-			"value": "U53"
+			"value": ""
 		},
 		{
 			"key": "classrecordings",
-			"value": "recordings"
+			"value": "",
+			"disabled": true
 		},
 		{
 			"key": "sampleStudentId",
@@ -7766,7 +7757,7 @@
 		},
 		{
 			"key": "invalidStudentId",
-			"value": "U500",
+			"value": "U5000",
 			"type": "string"
 		},
 		{
@@ -7797,11 +7788,13 @@
 		{
 			"key": "ourUserId",
 			"value": "U73",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "adminID",
-			"value": null
+			"value": "U73",
+			"disabled": true
 		},
 		{
 			"key": "sampleUserIdOfUser",
@@ -7810,24 +7803,25 @@
 		},
 		{
 			"key": "testResponseTime",
-			"value": "function testResponseTime(maxTime) {\r\n    pm.test(`Response time is less than ${maxTime}ms`, () => {\r\n        pm.expect(pm.response.responseTime).to.be.below(maxTime);\r\n    });\r\n}"
+			"value": ""
 		},
 		{
 			"key": "testStatusCode",
-			"value": "function testStatusCode(expectedStatus) {\r\n    pm.test(`Status code is ${expectedStatus}`, () => {\r\n        pm.response.to.have.status(expectedStatus);\r\n    });\r\n}"
+			"value": ""
 		},
 		{
 			"key": "testHeader",
-			"value": "function testHeader(headerName) {\r\n    pm.test(`Header \"${headerName}\" is present`, () => {\r\n        pm.response.to.have.header(headerName);\r\n    });\r\n}"
+			"value": ""
 		},
 		{
 			"key": "testStatusLine",
-			"value": "function(expectedStatusCode, expectedStatusMessage) {\r\n    pm.test(`Status line should be \"${expectedStatusCode} ${expectedStatusMessage}\"`, function () {\r\n        pm.expect(pm.response.code).to.eql(expectedStatusCode);\r\n        pm.expect(pm.response.status).to.eql(expectedStatusMessage);\r\n    });\r\n}"
+			"value": ""
 		},
 		{
 			"key": "userIdForProgramBatchMap",
 			"value": "U57",
-			"type": "string"
+			"type": "string",
+			"disabled": true
 		},
 		{
 			"key": "invalidBatchName",
@@ -7836,7 +7830,7 @@
 		},
 		{
 			"key": "invalidProgramId",
-			"value": "55",
+			"value": "",
 			"type": "string"
 		},
 		{
@@ -7846,7 +7840,7 @@
 		},
 		{
 			"key": "assertNotFoundError",
-			"value": "function assertNotFoundError(responseBody, expectedMessage) {\r\n    pm.test(\"Error message is as expected\", function () {\r\n        pm.expect(responseBody.message.trim()).to.eql(expectedMessage.trim());\r\n    });\r\n\r\n    pm.test(\"Success is false\", function () {\r\n        pm.expect(responseBody.success).to.be.false;\r\n    });\r\n}"
+			"value": ""
 		},
 		{
 			"key": "assertMessageAndSuccess",
