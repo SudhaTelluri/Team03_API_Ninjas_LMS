@@ -2523,7 +2523,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete All Programs/Batches assigned to the User By UserId Copy",
+					"name": "Delete All Programs/Batches assigned to the User By InValid UserId",
 					"event": [
 						{
 							"listen": "test",
@@ -2557,7 +2557,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete All Programs/Batches assigned to the User By UserId(Unauthorized)",
+					"name": "Delete All Programs/Batches assigned to the User By UserId(Empty EndPoint)",
 					"id": "fc46ed86-9817-42e4-8e05-86a0fb93b73b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
