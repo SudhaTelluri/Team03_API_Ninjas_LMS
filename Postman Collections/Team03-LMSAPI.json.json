@@ -6930,9 +6930,9 @@
 							"script": {
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
-									"var noProgramDescription = pm.iterationData.get(\"noProgramDescription\") || \" \";\r",
-									"var programName = pm.iterationData.get(\"programName1\") || \"Existing Program Name\";\r",
-									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
+									"var noProgramDescription = pm.iterationData.get(\"noProgramDescription\");\r",
+									"var programName = pm.iterationData.get(\"programName1\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
 									"pm.variables.set(\"noProgramDescription\", noProgramDescription);\r",
 									"pm.variables.set(\"programName1\", programName);\r",
@@ -7007,9 +7007,13 @@
 							"script": {
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
-									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
-									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || 55;\r",
-									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
+									"// var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
+									"// var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || 55;\r",
+									"// var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
+									"\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
 									"\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"invalidProgramId\", invalidProgramId);\r",
