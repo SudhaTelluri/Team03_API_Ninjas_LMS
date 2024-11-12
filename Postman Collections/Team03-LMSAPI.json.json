@@ -8429,26 +8429,10 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a37a09de-3f32-4a85-a996-4149ae61191d",
+				"id": "d1e55c5c-7844-44d5-839c-9f1f5a1c6e26",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"let iterationCount = pm.environment.get(\"iterationCount\") || 0;\r",
-					"pm.environment.set(\"iterationCount\", iterationCount + 1);\r",
-					"\r",
-					"if (iterationCount === 0) {\r",
-					"    if (pm.request.name === \"Create Program\") {\r",
-					"        postman.setNextRequest(\"Create Batch\");\r",
-					"    } else if (pm.request.name === \"Create Batch\") {\r",
-					"        postman.setNextRequest(\"Create User\");\r",
-					"    } else {\r",
-					"        postman.setNextRequest(null);\r",
-					"    }\r",
-					"} else {\r",
-					"    if (pm.request.name !== \"Create Program\") {\r",
-					"        postman.setNextRequest(\"Create Program\");\r",
-					"    }\r",
-					"}\r",
 					""
 				]
 			}
@@ -8456,7 +8440,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "68461181-c6b8-425a-b555-aa833b01d1fc",
+				"id": "cc4bb591-d7cf-462d-b37c-849c7c8be327",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
