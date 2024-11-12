@@ -6212,20 +6212,20 @@
 							"script": {
 								"id": "74323826-886a-4628-90c4-8137d66a8cf0",
 								"exec": [
-									"var responseBody = pm.response.json();\r",
+									"// var responseBody = pm.response.json();\r",
 									"\r",
-									"// Check if the response indicates an error (success is false)\r",
-									"if (responseBody.success === false) {\r",
-									"    // Print the error message from the response\r",
-									"    console.error(\"Error: \" + responseBody.message);\r",
-									"} else if (responseBody && responseBody.programId) {\r",
-									"    // If the response contains programId and programName, print them\r",
-									"    console.log(\"Program ID: \" + responseBody.programId);\r",
-									"    console.log(\"Program Name: \" + responseBody.programName);\r",
-									"} else {\r",
-									"    // If neither condition is met, log a failure\r",
-									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
-									"}\r",
+									"// // Check if the response indicates an error (success is false)\r",
+									"// if (responseBody.success === false) {\r",
+									"//     // Print the error message from the response\r",
+									"//     console.error(\"Error: \" + responseBody.message);\r",
+									"// } else if (responseBody && responseBody.programId) {\r",
+									"//     // If the response contains programId and programName, print them\r",
+									"//     console.log(\"Program ID: \" + responseBody.programId);\r",
+									"//     console.log(\"Program Name: \" + responseBody.programName);\r",
+									"// } else {\r",
+									"//     // If neither condition is met, log a failure\r",
+									"//     console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"// }\r",
 									"\r",
 									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
@@ -6247,6 +6247,13 @@
 								],
 								"type": "text/javascript",
 								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
