@@ -2470,7 +2470,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "Get Assigned Program/Batch of a User By User Id",
 					"id": "fea0cae6-f006-4359-a846-9e5123d52bb8",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2479,7 +2479,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTM3MDYxOSwiZXhwIjoxNzMxMzk5NDE5fQ.JUUxpWFkrBzlrvbPpVY1sbtP3RqLhSONIJoxYTkq-6PEWpXEBfm6wggS5aBjy1syGHmKkkIl94bvgrqopz0myQ"
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTM3MDY4MSwiZXhwIjoxNzMxMzk5NDgxfQ.3fwDs7sj-SBqZEMiO_UKyXH3AYHUjKY1Pdqfew39QF9GYxqzpUvCK9kFMwZu6j1UOHA4g4NAoHSVZs04f43TqA"
 							}
 						},
 						"method": "GET",
