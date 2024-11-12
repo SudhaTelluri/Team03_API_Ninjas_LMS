@@ -98,8 +98,8 @@
 									"// var userLoginEmailId = pm.collectionVariables.get(\"userLoginEmailId\");\r",
 									"// var password = pm.collectionVariables.get(\"password\");\r",
 									"\r",
-									"pm.variables.set(\"programDescription\", programDescription);\r",
-									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"pm.variables.set(\"userLoginEmailId\", userLoginEmailId);\r",
+									"pm.variables.set(\"password\", password);\r",
 									""
 								],
 								"type": "text/javascript",
