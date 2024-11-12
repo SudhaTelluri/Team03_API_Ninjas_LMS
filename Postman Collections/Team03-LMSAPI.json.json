@@ -5004,8 +5004,6 @@
 							"script": {
 								"id": "fa0c176c-fbdc-497a-81e9-f87a427501e1",
 								"exec": [
-									"//var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"https://www.google.com/\";\r",
-									"\r",
 									"var classRecordingPath = pm.iterationData.get(\"classRecordingPath\");\r",
 									"\r",
 									"pm.variables.set(\"classRecordingPath\", classRecordingPath);"
@@ -5268,13 +5266,12 @@
 									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
 									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
 									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
-									"// Retrieve the function from collection variables\r",
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
 									"testResponseTime(1000)\r",
-									"testStatusCode(200);    // Check if status code is 200\r",
-									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
+									"testStatusCode(200);    \r",
+									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
 								],
@@ -5462,8 +5459,6 @@
 									"const selectedBatchDescription = batchDescriptions[selectedBatchType] || batchDescriptions[\"Beginner\"]; \r",
 									"const selectedBatchClassCount = batchClassCounts[selectedBatchType] || batchClassCounts[\"Beginner\"];\r",
 									"\r",
-									"//var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
-									"\r",
 									"var batchStatus = pm.iterationData.get(\"batchStatus\");\r",
 									"\r",
 									"\r",
@@ -5608,20 +5603,6 @@
 									"// Log the classTopic for verification\r",
 									"console.log(\"Generated Class Topic:\", classTopic);\r",
 									"\r",
-									"// // Retrieve iteration data or set default values for other variables\r",
-									"// var classComments = pm.iterationData.get(\"classComments\") || \"API BOOTCAMP\";\r",
-									"// var classDate = pm.iterationData.get(\"classDate\") || \"2024-11-25\";\r",
-									"// var classDescription = pm.iterationData.get(\"classDescription\") || \"Every month going on\";\r",
-									"// var classNo = pm.iterationData.get(\"classNo\") || 3;\r",
-									"// var classNotes = pm.iterationData.get(\"classNotes\") || \"Gherkins\";\r",
-									"// var classRecordingPath = pm.iterationData.get(\"classRecordingPath\") || \"recordings\";\r",
-									"// var classStaffId = pm.iterationData.get(\"classStaffId\") || \"U53\";\r",
-									"// var classStatus = pm.iterationData.get(\"classStatus\") || \"Active\";\r",
-									"// // Get the classScheduledDates variable (either from iteration data or a default value)\r",
-									"// let classScheduledDates = pm.iterationData.get(\"classScheduledDates\") || \"2024-12-15T15:11:08.750Z,2025-01-15T15:11:08.750Z,2025-02-15T15:11:08.750Z\";\r",
-									"\r",
-									"\r",
-									"\r",
 									"var classComments = pm.iterationData.get(\"classComments\");\r",
 									"var classDate = pm.iterationData.get(\"classDate\");\r",
 									"var classDescription = pm.iterationData.get(\"classDescription\");\r",
@@ -5757,11 +5738,6 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"// // Directly set the values for the variables\r",
-									"// var programDescription = \"A QA team specializing in API testing.\";\r",
-									"// var programStatus = \"Active\";\r",
-									"\r",
-									"\r",
 									"// Access data from CSV file\r",
 									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
 									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
@@ -5840,10 +5816,6 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"// var programDescription = pm.iterationData.get(\"programDescription\") || \"A new Program teaching is mandatory is launched\";\r",
-									"// var programName = pm.iterationData.get(\"programName\") || \"New Program\";\r",
-									"// var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
-									"\r",
 									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
 									"var programName = pm.iterationData.get(\"programName\");\r",
 									"var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
@@ -5892,10 +5864,6 @@
 							"script": {
 								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
 								"exec": [
-									"// var batchDescription = pm.iterationData.get(\"batchDescription\") || \"Intro to AI keep yourself updated\";\r",
-									"// var batchNoOfClasses = pm.iterationData.get(\"batchNoOfClasses\") || 200;\r",
-									"// var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
-									"\r",
 									"var batchDescription = pm.iterationData.get(\"batchDescription\");\r",
 									"var outOfScopeBatchNoOfClasses = pm.iterationData.get(\"outOfScopeBatchNoOfClasses\");\r",
 									"var batchStatus = pm.iterationData.get(\"batchStatus\");\r",
