@@ -5998,9 +5998,13 @@
 							"script": {
 								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
 								"exec": [
-									"var batchDescription = pm.iterationData.get(\"batchDescription\") || \"Intro to AI keep yourself updated\";\r",
-									"var batchNoOfClasses = pm.iterationData.get(\"batchNoOfClasses\") || 200;\r",
-									"var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
+									"// var batchDescription = pm.iterationData.get(\"batchDescription\") || \"Intro to AI keep yourself updated\";\r",
+									"// var batchNoOfClasses = pm.iterationData.get(\"batchNoOfClasses\") || 200;\r",
+									"// var batchStatus = pm.iterationData.get(\"batchStatus\") || \"Active\";\r",
+									"\r",
+									"var batchDescription = pm.iterationData.get(\"batchDescription\");\r",
+									"var batchNoOfClasses = pm.iterationData.get(\"batchNoOfClasses\");\r",
+									"var batchStatus = pm.iterationData.get(\"batchStatus\");\r",
 									"\r",
 									"pm.variables.set(\"batchDescription\", batchDescription);\r",
 									"pm.variables.set(\"batchNoOfClasses\", batchNoOfClasses);\r",
