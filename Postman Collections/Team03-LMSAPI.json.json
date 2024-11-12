@@ -7588,7 +7588,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "0709846a-8602-4141-9a8c-00a361833bb8",
+				"id": "ae081553-a440-44b1-b070-1c5bbdb41e51",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7599,7 +7599,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "d556515e-636e-4d48-8f32-e9195b93f824",
+				"id": "012be68a-c15f-40ff-9717-41cae33b6dee",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -7690,55 +7690,55 @@
 	"variable": [
 		{
 			"key": "bearerToken",
-			"value": ""
+			"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJTZGV0QGdtYWlsLmNvbSIsImlhdCI6MTczMTM3OTYyMywiZXhwIjoxNzMxNDA4NDIzfQ.19lGyd6Ycs8n2luRm8gF6h1oYRYcnm007gfQvoWrfcSW_uAummirYejqcI-1eQ0Bykip2WcUId84ct7Q9N9vHQ"
 		},
 		{
 			"key": "programName1",
-			"value": ""
+			"value": "APINinjas-HbGO"
 		},
 		{
 			"key": "programName2",
-			"value": ""
+			"value": "APINinjas-xRdf"
 		},
 		{
 			"key": "programId1",
-			"value": ""
+			"value": 17503
 		},
 		{
 			"key": "programId2",
-			"value": ""
+			"value": 17489
 		},
 		{
 			"key": "updatedProgramName",
-			"value": ""
+			"value": "APINinjas-Dr"
 		},
 		{
 			"key": "batchName1",
-			"value": ""
+			"value": "APINinjas-UQlQ742"
 		},
 		{
 			"key": "batchName2",
-			"value": ""
+			"value": "APINinjas-xRdf316"
 		},
 		{
 			"key": "batchId2",
-			"value": ""
+			"value": 9495
 		},
 		{
 			"key": "batchId1",
-			"value": ""
+			"value": 9496
 		},
 		{
 			"key": "classTopic",
-			"value": ""
+			"value": "APINinjas-UuRe8438 An introduction to AI"
 		},
 		{
 			"key": "classId",
-			"value": ""
+			"value": 758
 		},
 		{
 			"key": "staffId",
-			"value": ""
+			"value": "U53"
 		},
 		{
 			"key": "classrecordings",
@@ -7757,7 +7757,7 @@
 		},
 		{
 			"key": "invalidStudentId",
-			"value": "U5000",
+			"value": "U500",
 			"type": "string"
 		},
 		{
@@ -7803,19 +7803,19 @@
 		},
 		{
 			"key": "testResponseTime",
-			"value": ""
+			"value": "function testResponseTime(maxTime) {\r\n    pm.test(`Response time is less than ${maxTime}ms`, () => {\r\n        pm.expect(pm.response.responseTime).to.be.below(maxTime);\r\n    });\r\n}"
 		},
 		{
 			"key": "testStatusCode",
-			"value": ""
+			"value": "function testStatusCode(expectedStatus) {\r\n    pm.test(`Status code is ${expectedStatus}`, () => {\r\n        pm.response.to.have.status(expectedStatus);\r\n    });\r\n}"
 		},
 		{
 			"key": "testHeader",
-			"value": ""
+			"value": "function testHeader(headerName) {\r\n    pm.test(`Header \"${headerName}\" is present`, () => {\r\n        pm.response.to.have.header(headerName);\r\n    });\r\n}"
 		},
 		{
 			"key": "testStatusLine",
-			"value": ""
+			"value": "function(expectedStatusCode, expectedStatusMessage) {\r\n    pm.test(`Status line should be \"${expectedStatusCode} ${expectedStatusMessage}\"`, function () {\r\n        pm.expect(pm.response.code).to.eql(expectedStatusCode);\r\n        pm.expect(pm.response.status).to.eql(expectedStatusMessage);\r\n    });\r\n}"
 		},
 		{
 			"key": "userIdForProgramBatchMap",
@@ -7830,7 +7830,7 @@
 		},
 		{
 			"key": "invalidProgramId",
-			"value": "",
+			"value": "55",
 			"type": "string"
 		},
 		{
@@ -7840,7 +7840,7 @@
 		},
 		{
 			"key": "assertNotFoundError",
-			"value": ""
+			"value": "function assertNotFoundError(responseBody, expectedMessage) {\r\n    pm.test(\"Error message is as expected\", function () {\r\n        pm.expect(responseBody.message.trim()).to.eql(expectedMessage.trim());\r\n    });\r\n\r\n    pm.test(\"Success is false\", function () {\r\n        pm.expect(responseBody.success).to.be.false;\r\n    });\r\n}"
 		},
 		{
 			"key": "assertMessageAndSuccess",
