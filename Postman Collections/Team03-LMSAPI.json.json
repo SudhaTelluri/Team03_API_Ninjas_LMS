@@ -5946,13 +5946,17 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A new Program teaching is mandatory is launched\";\r",
-									"var programName = pm.iterationData.get(\"programName\") || \"New Program\";\r",
-									"var invalidProgramStatus = pm.iterationData.get(\"invalidProgramStatus\");\r",
+									"// var programDescription = pm.iterationData.get(\"programDescription\") || \"A new Program teaching is mandatory is launched\";\r",
+									"// var programName = pm.iterationData.get(\"programName\") || \"New Program\";\r",
+									"// var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
+									"\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var programName = pm.iterationData.get(\"programName\");\r",
+									"var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
 									"\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"programName\", programName);\r",
-									"pm.variables.set(\"invalidProgramStatus\", invalidProgramStatus);\r",
+									"pm.variables.set(\"nullProgramStauts\", nullProgramStauts);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -5975,7 +5979,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{invalidProgramStatus}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{nullProgramStauts}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
