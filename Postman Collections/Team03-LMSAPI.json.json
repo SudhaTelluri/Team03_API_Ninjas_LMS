@@ -6462,6 +6462,106 @@
 					"response": []
 				},
 				{
+					"name": "Neg-Create Program With Inavlid Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "26b3e6db-0832-4184-b1be-fb1a3bfaf95b",
+								"exec": [
+									"var responseBody = pm.response.json();\r",
+									"\r",
+									"// Check if the response indicates an error (success is false)\r",
+									"if (responseBody.success === false) {\r",
+									"    // Print the error message from the response\r",
+									"    console.error(\"Error: \" + responseBody.message);\r",
+									"} else if (responseBody && responseBody.programId) {\r",
+									"    // If the response contains programId and programName, print them\r",
+									"    console.log(\"Program ID: \" + responseBody.programId);\r",
+									"    console.log(\"Program Name: \" + responseBody.programName);\r",
+									"} else {\r",
+									"    // If neither condition is met, log a failure\r",
+									"    console.error(\"Failed to retrieve programId1 from the response.\");\r",
+									"}\r",
+									"\r",
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertNotFoundErrorString = pm.collectionVariables.get(\"assertNotFoundError\");\r",
+									"\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertNotFoundError = eval(`(${assertNotFoundErrorString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(400);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(400,\"Bad Request\");\r",
+									"\r",
+									"// Construct the expected error message\r",
+									"const expectedMessage = \"cannot create program , since already exists\";\r",
+									"\r",
+									"// Check if the response body contains the expected message and status is false\r",
+									"pm.test(\"Response contains expected message and status is false\", function() {\r",
+									"    pm.expect(responseBody).to.have.property(\"message\", expectedMessage);\r",
+									"    pm.expect(responseBody).to.have.property(\"success\", false);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
+								"exec": [
+									"// Access data from CSV file\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
+									"\r",
+									"// Set these values as local variables for the request\r",
+									"pm.variables.set(\"programDescription\", programDescription);\r",
+									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "7146bf14-62bb-4b48-87f3-bcc705d45316",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{bearerToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Create Program with Null Status",
 					"event": [
 						{
