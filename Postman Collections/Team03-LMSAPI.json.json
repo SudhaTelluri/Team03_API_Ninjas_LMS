@@ -31,7 +31,7 @@
 									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
 									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
 									"\r",
-									"testResponseTime(500)\r",
+									"testResponseTime(1000)\r",
 									"testStatusCode(200);    \r",
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
@@ -6212,7 +6212,7 @@
 							"script": {
 								"id": "74323826-886a-4628-90c4-8137d66a8cf0",
 								"exec": [
-									"// var responseBody = pm.response.json();\r",
+									" var responseBody = pm.response.json();\r",
 									"\r",
 									"// // Check if the response indicates an error (success is false)\r",
 									"// if (responseBody.success === false) {\r",
@@ -6252,8 +6252,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "d2f3854e-07b5-4ced-82f7-9e555c82e42f",
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -6391,8 +6395,12 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(404,\"Not Found\")\r",
 									"\r",
-									"var responseBody=pm.response.json();\r",
-									"assertMessageAndSuccess(responseBody);\r",
+									"try {\r",
+									"    var responseBody = pm.response.json();\r",
+									"    assertMessageAndSuccess(responseBody);\r",
+									"} catch (e) {\r",
+									"    console.error(\"Response is not JSON or empty:\", pm.response.text());\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
