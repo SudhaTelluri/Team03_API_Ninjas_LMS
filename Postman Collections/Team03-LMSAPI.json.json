@@ -7155,24 +7155,15 @@
 							"script": {
 								"id": "f1971ae8-1918-455d-bf6c-e0368527020e",
 								"exec": [
-									"// Function to generate a random 3-letter string\r",
-									"function generateRandomLetters() {\r",
-									"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
-									"    let result = '';\r",
-									"    for (let i = 0; i < 2; i++) {\r",
-									"        result = result+characters.charAt(Math.floor(Math.random() * characters.length));\r",
-									"    }\r",
-									"    return result;\r",
-									"}\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\") || \"A QA team specializing in API testing.\";\r",
+									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || \"InvalidProgramId123\";\r",
+									"var programName = pm.iterationData.get(\"programName\") || \"Default Program Name\";\r",
+									"var programStatus = pm.iterationData.get(\"programStatus\") || \"Active\";\r",
 									"\r",
-									"// Generate dynamic program name\r",
-									"let updatedProgramName = \"APINinjas-\" + generateRandomLetters();\r",
-									"\r",
-									"// Set the program name as collection variables\r",
-									"pm.collectionVariables.set(\"updatedProgramName\", updatedProgramName);\r",
-									"\r",
-									"console.log(\"ProgramName1 before updation :\"+pm.collectionVariables.get(\"programName1\"));\r",
-									"console.log(\"Updated ProgramName: \" + updatedProgramName);\r",
+									"pm.variables.set(\"programDescription\", programDescription);\r",
+									"pm.variables.set(\"invalidProgramId\", invalidProgramId);\r",
+									"pm.variables.set(\"programName\", programName);\r",
+									"pm.variables.set(\"programStatus\", programStatus);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -7224,7 +7215,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"A QA team specializing in API testing.-Updated by Invalid ProgramId\",\r\n  \"programId\": {{invalidProgramId}},\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programId\": {{invalidProgramId}},\r\n  \"programName\": \"{{programName}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
