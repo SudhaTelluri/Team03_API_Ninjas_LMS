@@ -7174,14 +7174,14 @@
 									"var invalidBatchNoOfClasses = pm.iterationData.get(\"invalidBatchNoOfClasses\") || \"NotANumber\";\r",
 									"var invalidBatchStatus = pm.iterationData.get(\"invalidBatchStatus\") || \"Inactiveee\";\r",
 									"var invalidProgramId = pm.iterationData.get(\"invalidProgramId\") || \"Invalid###123\";\r",
-									"var missingProgramName = pm.iterationData.get(\"missingProgramName\") || \"\";\r",
+									"var nullProgramName = pm.iterationData.get(\"nullProgramName\") || \"\";\r",
 									"\r",
 									"pm.variables.set(\"invalidBatchDescription\", invalidBatchDescription);\r",
 									"pm.variables.set(\"missingBatchName\", missingBatchName);\r",
 									"pm.variables.set(\"invalidBatchNoOfClasses\", invalidBatchNoOfClasses);\r",
 									"pm.variables.set(\"invalidBatchStatus\", invalidBatchStatus);\r",
 									"pm.variables.set(\"invalidProgramId\", invalidProgramId);\r",
-									"pm.variables.set(\"missingProgramName\", missingProgramName);\r",
+									"pm.variables.set(\"nullProgramName\", nullProgramName);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -7233,7 +7233,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"batchDescription\": \"{{invalidBatchDescription}}\",\r\n    \"batchName\": \"{{missingBatchName}}\",\r\n    \"batchNoOfClasses\": \"{{invalidBatchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{invalidBatchStatus}}\",\r\n    \"programId\": \"{{invalidProgramId}}\",\r\n    \"programName\": \"{{missingProgramName}}\"\r\n}\r\n",
+							"raw": "{\r\n    \"batchDescription\": \"{{invalidBatchDescription}}\",\r\n    \"batchName\": \"{{missingBatchName}}\",\r\n    \"batchNoOfClasses\": \"{{invalidBatchNoOfClasses}}\",\r\n    \"batchStatus\": \"{{invalidBatchStatus}}\",\r\n    \"programId\": \"{{invalidProgramId}}\",\r\n    \"programName\": \"{{nullProgramName}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
