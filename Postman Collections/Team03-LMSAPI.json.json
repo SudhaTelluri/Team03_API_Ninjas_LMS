@@ -3678,6 +3678,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8b0a6a79-58dd-4454-8509-7cbb31979fed",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "c97ba19a-eda4-41f0-add4-043f02cf7f82",
@@ -3717,6 +3730,19 @@
 									"testHeader(\"Content-Type\");\r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ea5bc638-d419-4d5d-b933-ddaf043462e3",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -3772,6 +3798,10 @@
 									"\r",
 									"pm.variables.set(\"updatedProgramDescription\", updatedProgramDescription);\r",
 									"pm.variables.set(\"programStatus\", programStatus);\r",
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -3864,6 +3894,10 @@
 									"pm.variables.set(\"programStatus\", programStatus);\r",
 									"pm.variables.set(\"creationTime\", creationTime);\r",
 									"pm.variables.set(\"lastModTime\", lastModTime);\r",
+									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -3943,6 +3977,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "715a3564-62a1-429d-8ea5-fda12f6ea487",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "f8c99c08-4c2b-4360-994f-18deaffd4781",
@@ -3983,6 +4030,19 @@
 									"testHeader(\"Content-Type\"); // Check if the Content-Type header is present\r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "96652e07-77c3-4494-86f1-479272999e0c",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -4071,7 +4131,9 @@
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
 									"\r",
-									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4334,6 +4396,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c8788fa5-d8a9-4c73-aad6-ef27d71a7ea2",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "56d32474-f3fc-4714-a4e8-411b6452685e",
@@ -4367,6 +4442,19 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9f116961-8efa-488e-8772-f043f5a1fd15",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -4414,6 +4502,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c0e554a9-8f95-41bc-9090-f8b5be17d898",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "bb8d72e8-1fd9-4054-b3bc-4828a846b0a0",
@@ -4453,6 +4554,19 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "44baeabc-ffbe-4814-8904-104ee4b8cbb6",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -4540,7 +4654,9 @@
 									"// Log for verification\r",
 									"console.log(\"Request Body:\", batchData);\r",
 									"\r",
-									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4616,6 +4732,19 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "eb9ad039-7ae6-4fac-a564-c4397d54afa1",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -4702,6 +4831,9 @@
 									"pm.variables.set(\"classStaffId\", classStaffId);\r",
 									"pm.variables.set(\"classStatus\", classStatus);\r",
 									"\r",
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}\r",
 									""
 								],
 								"type": "text/javascript",
@@ -4878,8 +5010,14 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"packages": {},
-								"type": "text/javascript"
+								"id": "0de3f09b-b396-497d-b9f3-d984bf647487",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -4924,6 +5062,19 @@
 								"type": "text/javascript",
 								"packages": {}
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ee3c59ca-0b4a-4cb3-a81b-fd5f21a4ea0c",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
 						}
 					],
 					"id": "59cf85dd-8a57-4fbd-a7e7-0540840b80c8",
@@ -4957,6 +5108,19 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "bf1ef958-4a7f-4ba2-8fd1-edd2952e3f16",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -5000,6 +5164,19 @@
 									"testHeader(\"Content-Type\"); \r",
 									"testStatusLine(200,\"OK\");\r",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "6112cf78-f0d6-43ee-879f-bdd64b64d11f",
+								"exec": [
+									"if (pm.info.iteration > 0) {\r",
+									"    postman.setNextRequest(null);  // Skip this request after the first iteration\r",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
