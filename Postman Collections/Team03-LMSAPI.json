@@ -2479,7 +2479,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "{{token}}"
+								"token": "{{bearerToken}}"
 							}
 						},
 						"method": "GET",
