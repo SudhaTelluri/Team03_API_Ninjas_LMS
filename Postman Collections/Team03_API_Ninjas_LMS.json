@@ -2471,6 +2471,19 @@
 					"response": []
 				},
 				{
+					"name": "New Request",
+					"id": "fea0cae6-f006-4359-a846-9e5123d52bb8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseURL}}/userRoleProgramBatchMap/{{UserId}}"
+					},
+					"response": []
+				},
+				{
 					"name": "Delete All Programs/Batches assigned to the User By UserId",
 					"event": [
 						{
