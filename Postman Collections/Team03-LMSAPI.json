@@ -2145,7 +2145,7 @@
 							"response": []
 						},
 						{
-							"name": "Update Program with valid programName and requestbody",
+							"name": "Update Program with valid programName and requestbody ProgramName with numbers",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -2206,7 +2206,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"{{updatedprogramName}}\",\r\n  \"programStatus\": \"null\"\r\n}\r\n\r\n",
+									"raw": "{\r\n  \"programDescription\": \"updated program\",\r\n  \"programName\": \"56lp\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
