@@ -2518,7 +2518,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}//userRoleProgramBatchMap/deleteAll/{userId}"
+						"url": "{{baseURL}}/userRoleProgramBatchMap/deleteAll/{{UserId}}"
 					},
 					"response": []
 				},
@@ -2552,7 +2552,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}/"
+						"url": "{{baseURL}}/userRoleProgramBatchMap/deleteAll/U1000"
 					},
 					"response": []
 				},
@@ -2571,7 +2571,7 @@
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseURL}}/U"
+						"url": "{{baseURL}}/"
 					},
 					"response": []
 				}
