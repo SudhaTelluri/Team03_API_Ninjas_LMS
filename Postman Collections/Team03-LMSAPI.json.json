@@ -6520,14 +6520,13 @@
 							"script": {
 								"id": "cc70d1c4-b2ad-4097-9eab-4f60b41baecb",
 								"exec": [
-									"// Access data from CSV file\r",
-									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
-									"var programStatus = pm.iterationData.get(\"programStatus\");\r",
+									"var invalidProgramDescription = pm.iterationData.get(\"invalidProgramDescription\");\r",
+									"var invalidProgramName = pm.iterationData.get(\"invalidProgramName\");\r",
+									"var invalidProgramStauts = pm.iterationData.get(\"invalidProgramStauts\");\r",
 									"\r",
-									"// Set these values as local variables for the request\r",
-									"pm.variables.set(\"programDescription\", programDescription);\r",
-									"pm.variables.set(\"programStatus\", programStatus);\r",
-									"\r",
+									"pm.variables.set(\"invalidProgramDescription\", invalidProgramDescription);\r",
+									"pm.variables.set(\"invalidProgramName\", invalidProgramName);\r",
+									"pm.variables.set(\"invalidProgramStauts\", invalidProgramStauts);\r",
 									""
 								],
 								"type": "text/javascript",
@@ -6691,6 +6690,78 @@
 						}
 					],
 					"id": "48f19c1a-f541-4115-9c35-a7c37ac7d680",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"batchDescription\": \"{{batchDescription}}\",\r\n  \"batchName\": \"{{batchName1}}\",\r\n  \"batchNoOfClasses\": {{outOfScopeBatchNoOfClasses}},\r\n  \"batchStatus\": \"{{batchStatus}}\",\r\n  \"programId\": \"{{programId1}}\",\r\n  \"programName\": \"{{programName1}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}batches"
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-CreateBatch-BadRequest Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "df0389b8-5a1c-4b3d-bbbe-52c857c347b1",
+								"exec": [
+									"var batchDescription = pm.iterationData.get(\"batchDescription\");\r",
+									"var outOfScopeBatchNoOfClasses = pm.iterationData.get(\"outOfScopeBatchNoOfClasses\");\r",
+									"var batchStatus = pm.iterationData.get(\"batchStatus\");\r",
+									"\r",
+									"pm.variables.set(\"batchDescription\", batchDescription);\r",
+									"pm.variables.set(\"outOfScopeBatchNoOfClasses\", outOfScopeBatchNoOfClasses);\r",
+									"pm.variables.set(\"batchStatus\", batchStatus);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe3f0d1f-50b9-4d9f-8828-1905f489ba45",
+								"exec": [
+									"// Retrieve and evaluate each function from collection to make it usable in this request\r",
+									"eval(pm.collectionVariables.get(\"testResponseTime\"));\r",
+									"eval(pm.collectionVariables.get(\"testStatusCode\"));\r",
+									"eval(pm.collectionVariables.get(\"testHeader\"));\r",
+									"var testStatusLineString = pm.collectionVariables.get(\"testStatusLine\");\r",
+									"var assertMessageAndSuccessString=pm.collectionVariables.get(\"assertMessageAndSuccess\");\r",
+									"\r",
+									"var testStatusLine = eval(`(${testStatusLineString})`);\r",
+									"var assertMessageAndSuccess = eval(`(${assertMessageAndSuccessString})`);\r",
+									"\r",
+									"testResponseTime(1000)\r",
+									"testStatusCode(400);    \r",
+									"testHeader(\"Content-Type\"); \r",
+									"testStatusLine(400,\"Bad Request\")\r",
+									"\r",
+									"var responseBody=pm.response.json();\r",
+									"assertMessageAndSuccess(responseBody);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "b1f94b1d-aaac-4cf9-a308-9e5f2bac6c4b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
