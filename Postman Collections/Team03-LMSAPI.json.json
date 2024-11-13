@@ -8236,6 +8236,18 @@
 						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{sampleInvalidUserId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "e94d7b6a-176b-422b-9fba-497739ed31d7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			],
 			"id": "2bb4b8bf-ca08-4c8a-8830-ae9b9503323b"
