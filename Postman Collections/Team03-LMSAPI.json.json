@@ -6497,32 +6497,32 @@
 							"script": {
 								"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
 								"exec": [
-									"pm.test(\"Status code is 400\", function () {\r",
-									"    pm.response.to.have.status(400);\r",
-									"});\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var programName = pm.iterationData.get(\"programName\");\r",
+									"var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
 									"\r",
-									"pm.test(\"Validate the response schema for message and success\", function () {\r",
-									"    const schema = {\r",
-									"        type: \"object\",\r",
-									"        required: [\"message\", \"success\"],\r",
-									"        properties: {\r",
-									"            message: { type: \"string\" },\r",
-									"            success: { type: \"boolean\" }\r",
-									"        }\r",
-									"    };\r",
+									"pm.variables.set(\"programDescription\", programDescription);\r",
+									"pm.variables.set(\"programName\", programName);\r",
+									"pm.variables.set(\"nullProgramStauts\", nullProgramStauts);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "963c8448-4108-4e77-be19-28a9589c33b0",
+								"exec": [
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var programName = pm.iterationData.get(\"programName\");\r",
+									"var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
 									"\r",
-									"    const responseData = pm.response.json();\r",
-									"    pm.expect(tv4.validate(responseData, schema)).to.be.true;\r",
-									"});\r",
-									"pm.test(\"Status code name has string\", function () {\r",
-									"    pm.test(\"Content-Type is present\", function () {\r",
-									"        pm.response.to.have.header(\"Content-Type\");\r",
-									"    });\r",
-									"    pm.test(\"Response time is less than 500ms\", function () {\r",
-									"        pm.expect(pm.response.responseTime).to.be.below(500);\r",
-									"    });\r",
-									"    pm.response.to.have.status(\"Bad Request\");\r",
-									"});"
+									"pm.variables.set(\"programDescription\", programDescription);\r",
+									"pm.variables.set(\"programName\", programName);\r",
+									"pm.variables.set(\"nullProgramStauts\", nullProgramStauts);\r",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -6544,7 +6544,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programDescription\": \"\",\r\n  \"programName\": \"\",\r\n  \"programStatus\": \"Active\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{nullProgramName}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{nullProgramStatus}}\"\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
