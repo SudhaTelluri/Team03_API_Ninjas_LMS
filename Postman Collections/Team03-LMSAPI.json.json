@@ -6490,7 +6490,7 @@
 					"response": []
 				},
 				{
-					"name": "Add New Program with missing mandatory field Copy",
+					"name": "Add New Program with missing mandatory fields",
 					"event": [
 						{
 							"listen": "test",
