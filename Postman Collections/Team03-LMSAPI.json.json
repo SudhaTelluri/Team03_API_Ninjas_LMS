@@ -6398,6 +6398,69 @@
 					"response": []
 				},
 				{
+					"name": "Add New Program without authorization",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "421b8bfa-e240-43f5-be20-f9adb85aa329",
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Validate the response schema for message and success\", function () {\r",
+									"    const schema = {\r",
+									"        type: \"object\",\r",
+									"        required: [\"message\", \"success\"],\r",
+									"        properties: {\r",
+									"            message: { type: \"string\" },\r",
+									"            success: { type: \"boolean\" }\r",
+									"        }\r",
+									"    };\r",
+									"\r",
+									"    const responseData = pm.response.json();\r",
+									"    pm.expect(tv4.validate(responseData, schema)).to.be.true;\r",
+									"});\r",
+									"pm.test(\"Status code name has string\", function () {\r",
+									"    pm.test(\"Content-Type is present\", function () {\r",
+									"        pm.response.to.have.header(\"Content-Type\");\r",
+									"    });\r",
+									"    pm.test(\"Response time is less than 500ms\", function () {\r",
+									"        pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"    });\r",
+									"    pm.response.to.have.status(\"Bad Request\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"id": "f8851f1f-6f51-406f-9558-975269e7a8d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"programName\": \"{{programName1}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{programStatus}}\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}saveprogram"
+					},
+					"response": []
+				},
+				{
 					"name": "Neg-Create Program with Null Status",
 					"event": [
 						{
@@ -8234,18 +8297,6 @@
 						"method": "DELETE",
 						"header": [],
 						"url": "{{baseURL}}userRoleProgramBatchMap/deleteAll/{{sampleInvalidUserId}}"
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"id": "e94d7b6a-176b-422b-9fba-497739ed31d7",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
 					},
 					"response": []
 				}
