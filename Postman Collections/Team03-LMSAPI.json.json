@@ -6524,9 +6524,9 @@
 							"script": {
 								"id": "963c8448-4108-4e77-be19-28a9589c33b0",
 								"exec": [
-									"var programDescription = pm.iterationData.get(\"programDescription\")||\"sample\";\r",
-									"var nullProgramName = pm.iterationData.get(\"nullProgramName\")||\"\";\r",
-									"var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\")||\"\";\r",
+									"var programDescription = pm.iterationData.get(\"programDescription\");\r",
+									"var nullProgramName = pm.iterationData.get(\"nullProgramName\");\r",
+									"var nullProgramStauts = pm.iterationData.get(\"nullProgramStauts\");\r",
 									"\r",
 									"pm.variables.set(\"programDescription\", programDescription);\r",
 									"pm.variables.set(\"nullProgramName\", nullProgramName);\r",
@@ -6553,7 +6553,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"programName\": \"{{nullProgramName}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": \"{{nullProgramStatus}}\"\r\n}\r\n",
+							"raw": "{\r\n  \"programName\": \"{{nullProgramName}}\",\r\n  \"programDescription\": \"{{programDescription}}\",\r\n  \"programStatus\": {{nullProgramStatus}}\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
